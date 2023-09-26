@@ -11,14 +11,12 @@
   "job_details_section",
   "company",
   "mode_of_transport",
-  "vehicle",
   "column_break_bdrsj",
   "date",
   "customer",
-  "invoice_section_section",
-  "sales_invoice",
-  "notes",
-  "amended_from"
+  "amended_from",
+  "vehicle_data_section",
+  "vehicle"
  ],
  "fields": [
   {
@@ -61,23 +59,6 @@
    "options": "Customer"
   },
   {
-   "fieldname": "invoice_section_section",
-   "fieldtype": "Section Break",
-   "hidden": 1,
-   "label": "Invoice Section"
-  },
-  {
-   "fieldname": "sales_invoice",
-   "fieldtype": "Link",
-   "label": "Sales Invoice",
-   "options": "Sales Invoice"
-  },
-  {
-   "fieldname": "notes",
-   "fieldtype": "Text",
-   "label": "Notes"
-  },
-  {
    "fieldname": "amended_from",
    "fieldtype": "Link",
    "label": "Amended From",
@@ -85,11 +66,16 @@
    "options": "Job Details",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "vehicle_data_section",
+   "fieldtype": "Section Break",
+   "label": "Vehicle Data"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-26 13:03:37.392106",
+ "modified": "2023-09-26 13:33:10.267669",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Job Details",
