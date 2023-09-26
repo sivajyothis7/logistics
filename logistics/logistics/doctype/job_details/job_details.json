@@ -36,7 +36,7 @@
    "fieldname": "mode_of_transport",
    "fieldtype": "Select",
    "label": "Mode of Transport",
-   "options": "\nRoad\nAir\nSea\nRail"
+   "options": "\nRoad\nAir\nSea\nWarehouse"
   },
   {
    "fieldname": "vehicle",
@@ -89,7 +89,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-26 12:55:55.014196",
+ "modified": "2023-09-26 13:03:37.392106",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Job Details",
