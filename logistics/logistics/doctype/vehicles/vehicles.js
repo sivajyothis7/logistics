@@ -9,7 +9,7 @@ frappe.ui.form.on('Vehicles', {
 		frm.set_query("current_driver", function() {
 			return {
 				filters: [
-					["Drivers","status","in",["Active"]]
+					["Drivers","status","in",["Vehicle Not Assigned"]]
 				]
 			};
 		});

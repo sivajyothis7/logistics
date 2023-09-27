@@ -6,5 +6,5 @@ from frappe.model.document import Document
 
 class Vehicles(Document):
 	def validate(self):
-		frappe.db.set_value("Drivers",{'name':self.current_driver},'status','Not-Active')	
+		frappe.db.set_value("Drivers",{'name':self.current_driver},'status','Vehicle Assigned')	
 		frappe.db.set_value("Drivers",{'name':self.current_driver},'current_vehicle',self.name)

@@ -11,9 +11,16 @@
   "naming_series",
   "name1",
   "capacity",
-  "type",
   "reg_number",
+  "column_break_eaikc",
+  "type",
   "current_driver",
+  "insurance_details_section",
+  "insurance_company",
+  "policy_no",
+  "column_break_qsihz",
+  "start_date",
+  "end_date",
   "amended_from"
  ],
  "fields": [
@@ -44,7 +51,7 @@
   {
    "fieldname": "reg_number",
    "fieldtype": "Data",
-   "label": "Reg Number"
+   "label": "Registration Number"
   },
   {
    "fieldname": "current_driver",
@@ -60,11 +67,44 @@
    "options": "Vehicles",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "column_break_eaikc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "insurance_details_section",
+   "fieldtype": "Section Break",
+   "label": "Insurance Details"
+  },
+  {
+   "fieldname": "insurance_company",
+   "fieldtype": "Data",
+   "label": "Insurance Company"
+  },
+  {
+   "fieldname": "policy_no",
+   "fieldtype": "Data",
+   "label": "Policy No"
+  },
+  {
+   "fieldname": "column_break_qsihz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-27 10:11:38.221545",
+ "modified": "2023-09-27 14:02:49.780645",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Vehicles",
