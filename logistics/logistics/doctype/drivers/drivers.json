@@ -33,7 +33,7 @@
   },
   {
    "fieldname": "mobile",
-   "fieldtype": "Data",
+   "fieldtype": "Phone",
    "label": "Mobile"
   },
   {
@@ -62,7 +62,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-26 22:45:33.290999",
+ "modified": "2023-09-27 08:28:00.704783",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Drivers",
