@@ -14,8 +14,7 @@
   "vehicle_type",
   "vehicle_number",
   "current_vehicle",
-  "id_proof",
-  "test"
+  "id_proof"
  ],
  "fields": [
   {
@@ -59,16 +58,11 @@
    "fieldname": "id_proof",
    "fieldtype": "Attach Image",
    "label": "ID Proof"
-  },
-  {
-   "fieldname": "test",
-   "fieldtype": "Data",
-   "label": "test"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-27 08:36:55.196948",
+ "modified": "2023-09-27 08:45:00.995641",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Drivers",
