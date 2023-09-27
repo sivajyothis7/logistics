@@ -38,9 +38,9 @@
   },
   {
    "fieldname": "vehicle",
-   "fieldtype": "Link",
+   "fieldtype": "Table",
    "label": "Vehicle",
-   "options": "Vehicle"
+   "options": "Vehicle Data"
   },
   {
    "fieldname": "column_break_bdrsj",
@@ -75,7 +75,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-26 13:33:10.267669",
+ "modified": "2023-09-26 14:57:20.390593",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Job Details",
