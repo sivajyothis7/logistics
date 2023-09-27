@@ -16,8 +16,7 @@
   "customer",
   "amended_from",
   "vehicle_data_section",
-  "vehicle",
-  "selected_vehicle"
+  "vehicle"
  ],
  "fields": [
   {
@@ -72,16 +71,11 @@
    "fieldname": "vehicle_data_section",
    "fieldtype": "Section Break",
    "label": "Vehicle Data"
-  },
-  {
-   "fieldname": "selected_vehicle",
-   "fieldtype": "Data",
-   "label": "selected_vehicle"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-27 15:28:36.822396",
+ "modified": "2023-09-27 17:38:31.088589",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Job Details",
