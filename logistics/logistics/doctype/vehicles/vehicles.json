@@ -13,7 +13,8 @@
   "capacity",
   "type",
   "reg_number",
-  "current_driver"
+  "current_driver",
+  "amended_from"
  ],
  "fields": [
   {
@@ -47,13 +48,23 @@
   },
   {
    "fieldname": "current_driver",
-   "fieldtype": "Data",
-   "label": "Current Driver"
+   "fieldtype": "Link",
+   "label": "Current Driver",
+   "options": "Drivers"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Vehicles",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-26 22:19:59.229467",
+ "modified": "2023-09-27 07:18:39.551301",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Vehicles",

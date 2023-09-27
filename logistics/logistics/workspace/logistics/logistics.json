@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"NISfT_b0hT\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Logistics</span>\",\"col\":12}},{\"id\":\"9l_cVj1YE4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Details\",\"col\":3}}]",
+ "content": "[{\"id\":\"NISfT_b0hT\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Logistics</span>\",\"col\":12}},{\"id\":\"9l_cVj1YE4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Details\",\"col\":3}},{\"id\":\"EGzpczOIYo\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Vehicles\",\"col\":3}},{\"id\":\"GLC3_gHt36\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Drivers\",\"col\":3}}]",
  "creation": "2023-09-26 12:26:21.243756",
  "custom_blocks": [],
  "docstatus": 0,
@@ -12,7 +12,7 @@
  "is_hidden": 0,
  "label": "Logistics",
  "links": [],
- "modified": "2023-09-26 17:09:05.536124",
+ "modified": "2023-09-27 07:31:02.705086",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Logistics",
@@ -29,6 +29,20 @@
    "doc_view": "List",
    "label": "Job Details",
    "link_to": "Job Details",
+   "type": "DocType"
+  },
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "label": "Drivers",
+   "link_to": "Drivers",
+   "type": "DocType"
+  },
+  {
+   "color": "Orange",
+   "doc_view": "List",
+   "label": "Vehicles",
+   "link_to": "Vehicles",
    "type": "DocType"
   }
  ],
