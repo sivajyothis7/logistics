@@ -12,8 +12,9 @@
   "name1",
   "mobile",
   "vehicle_type",
-  "vehicle_number",
   "current_vehicle",
+  "vehicle_number",
+  "status",
   "id_proof"
  ],
  "fields": [
@@ -59,11 +60,22 @@
    "fieldname": "id_proof",
    "fieldtype": "Attach Image",
    "label": "ID Proof"
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "\nActive\nNot-Active"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-27 09:49:38.962224",
+ "modified": "2023-09-27 11:53:20.687156",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Drivers",
