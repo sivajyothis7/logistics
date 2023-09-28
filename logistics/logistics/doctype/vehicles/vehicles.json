@@ -12,6 +12,7 @@
   "name1",
   "capacity",
   "reg_number",
+  "active",
   "column_break_eaikc",
   "type",
   "current_driver",
@@ -100,11 +101,17 @@
    "fieldname": "end_date",
    "fieldtype": "Date",
    "label": "End Date"
+  },
+  {
+   "default": "0",
+   "fieldname": "active",
+   "fieldtype": "Check",
+   "label": "Active"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-27 14:02:49.780645",
+ "modified": "2023-09-28 07:05:38.465870",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Vehicles",
