@@ -6,6 +6,9 @@ frappe.ui.form.on('Job Details', {
                 args: {
                     doctype: 'Vehicles',
                     fields: ['name', 'name1'],
+					filters: {
+                        'active': 1 
+                    }
                 },
                 callback: function(r) {
                     if (r.message) {
