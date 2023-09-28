@@ -22,7 +22,8 @@
   "column_break_qsihz",
   "start_date",
   "end_date",
-  "amended_from"
+  "amended_from",
+  "test"
  ],
  "fields": [
   {
@@ -107,11 +108,16 @@
    "fieldname": "active",
    "fieldtype": "Check",
    "label": "Active"
+  },
+  {
+   "fieldname": "test",
+   "fieldtype": "Autocomplete",
+   "label": "test"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-28 07:05:38.465870",
+ "modified": "2023-09-28 08:04:48.720212",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Vehicles",
