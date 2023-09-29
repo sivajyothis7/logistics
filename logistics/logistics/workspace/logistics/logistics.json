@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"NISfT_b0hT\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Logistics</span>\",\"col\":12}},{\"id\":\"9l_cVj1YE4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Details\",\"col\":3}},{\"id\":\"EGzpczOIYo\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Vehicles\",\"col\":3}},{\"id\":\"GLC3_gHt36\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Drivers\",\"col\":3}}]",
+ "content": "[{\"id\":\"NISfT_b0hT\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Logistics</span>\",\"col\":12}},{\"id\":\"9l_cVj1YE4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Details\",\"col\":3}},{\"id\":\"GLC3_gHt36\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Drivers\",\"col\":3}},{\"id\":\"EGzpczOIYo\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Vehicles\",\"col\":3}},{\"id\":\"gQCN8T4G6b\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"2Z8WqbQpJb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Daily Log\",\"col\":3}}]",
  "creation": "2023-09-26 12:26:21.243756",
  "custom_blocks": [],
  "docstatus": 0,
@@ -12,7 +12,7 @@
  "is_hidden": 0,
  "label": "Logistics",
  "links": [],
- "modified": "2023-09-27 07:31:02.705086",
+ "modified": "2023-09-29 09:37:17.238523",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Logistics",
@@ -32,17 +32,26 @@
    "type": "DocType"
   },
   {
-   "color": "Red",
+   "color": "Yellow",
    "doc_view": "List",
-   "label": "Drivers",
-   "link_to": "Drivers",
+   "label": "Daily Log",
+   "link_to": "Daily Log",
    "type": "DocType"
   },
   {
-   "color": "Orange",
+   "color": "Green",
    "doc_view": "List",
    "label": "Vehicles",
    "link_to": "Vehicles",
+   "stats_filter": "{\"active\":[\"=\",1]}",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "label": "Drivers",
+   "link_to": "Drivers",
+   "stats_filter": "{\"status\":[\"=\",\"Vehicle Not Assigned\"]}",
    "type": "DocType"
   }
  ],

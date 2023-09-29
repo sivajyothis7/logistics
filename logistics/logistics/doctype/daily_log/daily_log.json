@@ -1,0 +1,146 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-09-29 09:28:50.317525",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "general_section",
+  "date",
+  "driver",
+  "driver_name",
+  "mobile_no",
+  "column_break_kkvfx",
+  "company",
+  "vehicle_number",
+  "vehicle_type",
+  "id_no",
+  "logistics_section",
+  "from",
+  "company_rate",
+  "advance_paid",
+  "column_break_abpnp",
+  "to",
+  "driver_rate"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "driver",
+   "fieldtype": "Link",
+   "label": "Driver ",
+   "options": "Drivers"
+  },
+  {
+   "fetch_from": "driver.name1",
+   "fieldname": "driver_name",
+   "fieldtype": "Data",
+   "label": "Driver Name"
+  },
+  {
+   "fetch_from": "driver.mobile",
+   "fieldname": "mobile_no",
+   "fieldtype": "Data",
+   "label": "Mobile No"
+  },
+  {
+   "fetch_from": "driver.license_number",
+   "fieldname": "id_no",
+   "fieldtype": "Data",
+   "label": "ID No."
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fetch_from": "driver.current_vehicle",
+   "fieldname": "vehicle_number",
+   "fieldtype": "Data",
+   "label": "Vehicle Number"
+  },
+  {
+   "fetch_from": "driver.current_vehicle",
+   "fieldname": "vehicle_type",
+   "fieldtype": "Data",
+   "label": "Vehicle Type"
+  },
+  {
+   "fieldname": "general_section",
+   "fieldtype": "Section Break",
+   "label": "General"
+  },
+  {
+   "fieldname": "from",
+   "fieldtype": "Data",
+   "label": "From"
+  },
+  {
+   "fieldname": "to",
+   "fieldtype": "Data",
+   "label": "To"
+  },
+  {
+   "fieldname": "driver_rate",
+   "fieldtype": "Data",
+   "label": "Driver rate"
+  },
+  {
+   "fieldname": "company_rate",
+   "fieldtype": "Data",
+   "label": "Company rate"
+  },
+  {
+   "default": "0",
+   "fieldname": "advance_paid",
+   "fieldtype": "Check",
+   "label": "Advance paid"
+  },
+  {
+   "fieldname": "column_break_kkvfx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_abpnp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "logistics_section",
+   "fieldtype": "Section Break",
+   "label": "Logistics Details"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-09-29 09:39:29.964191",
+ "modified_by": "Administrator",
+ "module": "Logistics",
+ "name": "Daily Log",
+ "name_case": "Title Case",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

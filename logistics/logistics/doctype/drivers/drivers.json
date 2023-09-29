@@ -22,6 +22,8 @@
   "issuing_date",
   "column_break_7lva8",
   "expiry_date",
+  "vehicle_list_section",
+  "vehicle_list",
   "amended_from"
  ],
  "fields": [
@@ -109,11 +111,22 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "options": "Drivers"
+  },
+  {
+   "fieldname": "vehicle_list_section",
+   "fieldtype": "Section Break",
+   "label": "Vehicle List"
+  },
+  {
+   "fieldname": "vehicle_list",
+   "fieldtype": "Table",
+   "label": "Vehicle List",
+   "options": "Vehicle List"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-27 13:59:33.137818",
+ "modified": "2023-09-28 12:54:39.474458",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Drivers",

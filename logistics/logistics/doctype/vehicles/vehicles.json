@@ -22,8 +22,7 @@
   "column_break_qsihz",
   "start_date",
   "end_date",
-  "amended_from",
-  "test"
+  "amended_from"
  ],
  "fields": [
   {
@@ -107,17 +106,15 @@
    "default": "0",
    "fieldname": "active",
    "fieldtype": "Check",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Active"
-  },
-  {
-   "fieldname": "test",
-   "fieldtype": "Autocomplete",
-   "label": "test"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-28 08:04:48.720212",
+ "modified": "2023-09-28 09:28:31.395863",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Vehicles",
