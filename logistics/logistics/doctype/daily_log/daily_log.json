@@ -1,6 +1,6 @@
 {
  "actions": [],
- "autoname": "autoincrement",
+ "autoname": "format:WP-{company}-{driver_name}-{##}",
  "creation": "2023-09-29 09:28:50.317525",
  "default_view": "List",
  "doctype": "DocType",
@@ -120,12 +120,12 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-29 09:47:47.808663",
+ "modified": "2023-09-29 09:50:43.515956",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Log",
  "name_case": "Title Case",
- "naming_rule": "Autoincrement",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
