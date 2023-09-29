@@ -1,6 +1,6 @@
 {
  "actions": [],
- "allow_rename": 1,
+ "autoname": "autoincrement",
  "creation": "2023-09-29 09:28:50.317525",
  "default_view": "List",
  "doctype": "DocType",
@@ -120,11 +120,12 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-29 09:39:29.964191",
+ "modified": "2023-09-29 09:47:47.808663",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Log",
  "name_case": "Title Case",
+ "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [
   {
