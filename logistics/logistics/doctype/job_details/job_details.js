@@ -11,13 +11,19 @@ frappe.ui.form.on('Job Details', {
                         label: __('Select Driver'),
                         options: 'Drivers',
                         reqd: true,
+						
                         
                     },
                     {
                         fieldtype: 'Link',
                         label: __('Select Vehicle'),
                         fieldname: 'selected_vehicle',
-                        options: 'Vehicles', 
+                        options: 'Vehicles',
+						get_query() {
+							return {
+								filters: { current_driver: dialog.get_value('selected_driver') }
+							}
+						}, 
                         reqd: true
                     }
                 ],
