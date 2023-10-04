@@ -10,13 +10,14 @@
   "general_section",
   "date",
   "driver",
-  "driver_name",
   "mobile_no",
+  "vehicle",
+  "vehicle_type",
   "column_break_kkvfx",
   "company",
-  "vehicle_number",
-  "vehicle_type",
+  "driver_name",
   "id_no",
+  "vehicle_number",
   "logistics_section",
   "from",
   "company_rate",
@@ -62,11 +63,13 @@
    "options": "Company"
   },
   {
+   "fetch_from": "vehicle.reg_number",
    "fieldname": "vehicle_number",
    "fieldtype": "Data",
    "label": "Vehicle Number"
   },
   {
+   "fetch_from": "vehicle.type",
    "fieldname": "vehicle_type",
    "fieldtype": "Data",
    "label": "Vehicle Type"
@@ -114,11 +117,17 @@
    "fieldname": "logistics_section",
    "fieldtype": "Section Break",
    "label": "Logistics Details"
+  },
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "label": "Vehicle",
+   "options": "Vehicles"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-10-04 15:33:54.311359",
+ "modified": "2023-10-04 16:56:37.817502",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Log",
