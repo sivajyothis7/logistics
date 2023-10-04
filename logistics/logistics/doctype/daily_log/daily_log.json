@@ -62,13 +62,11 @@
    "options": "Company"
   },
   {
-   "fetch_from": "driver.current_vehicle",
    "fieldname": "vehicle_number",
    "fieldtype": "Data",
    "label": "Vehicle Number"
   },
   {
-   "fetch_from": "driver.current_vehicle",
    "fieldname": "vehicle_type",
    "fieldtype": "Data",
    "label": "Vehicle Type"
@@ -120,7 +118,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-29 09:50:43.515956",
+ "modified": "2023-10-04 15:00:01.769231",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Log",
