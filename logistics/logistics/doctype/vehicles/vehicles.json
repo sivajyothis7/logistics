@@ -10,8 +10,8 @@
  "field_order": [
   "naming_series",
   "name1",
-  "capacity",
   "reg_number",
+  "capacity",
   "active",
   "column_break_eaikc",
   "type",
@@ -45,9 +45,9 @@
   },
   {
    "fieldname": "type",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "label": "Type",
-   "options": "Low Load\nMedium Load,\nHigh Load"
+   "options": "Vehicle Type"
   },
   {
    "fieldname": "reg_number",
@@ -114,7 +114,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-28 09:28:31.395863",
+ "modified": "2023-10-04 10:02:36.349420",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Vehicles",

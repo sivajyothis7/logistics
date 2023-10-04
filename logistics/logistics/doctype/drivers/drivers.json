@@ -8,13 +8,12 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "general_section",
   "naming_series",
   "name1",
-  "mobile",
-  "status",
-  "column_break_0hpax",
-  "current_vehicle",
   "id_proof",
+  "column_break_0hpax",
+  "mobile",
   "vehicle_number",
   "license_details_section",
   "license_number",
@@ -22,8 +21,6 @@
   "issuing_date",
   "column_break_7lva8",
   "expiry_date",
-  "vehicle_list_section",
-  "vehicle_list",
   "amended_from"
  ],
  "fields": [
@@ -53,26 +50,9 @@
    "label": "Vehicle Number"
   },
   {
-   "fieldname": "current_vehicle",
-   "fieldtype": "Link",
-   "label": "Current Vehicle",
-   "options": "Vehicles"
-  },
-  {
    "fieldname": "id_proof",
    "fieldtype": "Attach Image",
    "label": "ID Proof"
-  },
-  {
-   "default": "Vehicle Not Assigned",
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "in_filter": 1,
-   "in_list_view": 1,
-   "in_preview": 1,
-   "in_standard_filter": 1,
-   "label": "Vehicle Status",
-   "options": "\nVehicle Not Assigned\nVehicle Assigned"
   },
   {
    "fieldname": "column_break_0hpax",
@@ -113,20 +93,19 @@
    "options": "Drivers"
   },
   {
-   "fieldname": "vehicle_list_section",
+   "fieldname": "general_section",
    "fieldtype": "Section Break",
-   "label": "Vehicle List"
-  },
-  {
-   "fieldname": "vehicle_list",
-   "fieldtype": "Table",
-   "label": "Vehicle List",
-   "options": "Vehicle List"
+   "label": "General"
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2023-09-28 12:54:39.474458",
+ "links": [
+  {
+   "link_doctype": "Vehicles",
+   "link_fieldname": "current_driver"
+  }
+ ],
+ "modified": "2023-10-04 09:50:13.924210",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Drivers",

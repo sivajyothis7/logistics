@@ -12,7 +12,7 @@
  "is_hidden": 0,
  "label": "Logistics",
  "links": [],
- "modified": "2023-09-29 09:37:17.238523",
+ "modified": "2023-10-04 09:37:40.939501",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Logistics",
@@ -24,6 +24,13 @@
  "roles": [],
  "sequence_id": 5.0,
  "shortcuts": [
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Vehicles",
+   "link_to": "Vehicles",
+   "type": "DocType"
+  },
   {
    "color": "Grey",
    "doc_view": "List",
@@ -39,19 +46,11 @@
    "type": "DocType"
   },
   {
-   "color": "Green",
-   "doc_view": "List",
-   "label": "Vehicles",
-   "link_to": "Vehicles",
-   "stats_filter": "{\"active\":[\"=\",1]}",
-   "type": "DocType"
-  },
-  {
    "color": "Blue",
    "doc_view": "List",
    "label": "Drivers",
    "link_to": "Drivers",
-   "stats_filter": "{\"status\":[\"=\",\"Vehicle Not Assigned\"]}",
+   "stats_filter": "",
    "type": "DocType"
   }
  ],
