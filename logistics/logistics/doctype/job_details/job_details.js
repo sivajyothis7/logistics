@@ -11,32 +11,44 @@ frappe.ui.form.on('Job Details', {
                         label: __('Select Driver'),
                         options: 'Drivers',
                         reqd: true,
-						
-                        
                     },
                     {
                         fieldtype: 'Link',
                         label: __('Select Vehicle'),
                         fieldname: 'selected_vehicle',
                         options: 'Vehicles',
-						get_query() {
-							return {
-								filters: { current_driver: dialog.get_value('selected_driver') }
-							}
-						}, 
-                        reqd: true
+                        reqd: true,
+                        get_query: function() {
+                            const selectedDriver = dialog.get_value('selected_driver');
+                            return {
+                                filters: [
+                                    ['active', '=', 1], // Only select vehicles with the "Active" checkbox checked
+                                    ['current_driver', '=', selectedDriver]
+                                ]
+                            };
+                        }
                     }
                 ],
                 primary_action: function() {
                     // Handle the selected driver and vehicle here
                     var selected_driver = dialog.get_value('selected_driver');
                     var selected_vehicle = dialog.get_value('selected_vehicle');
-					var vehicle_table = frm.doc.vehicle || [];
-                    var row = frappe.model.add_child(frm.doc, 'vehicle');
-                    row.driver = selected_driver;
-                    row.vehicle_name = selected_vehicle;
-                    frm.refresh_field('vehicle');
-                    dialog.hide();
+                    var vehicle_table = frm.doc.vehicle || [];
+
+                    var exists = vehicle_table.some(function(row) {
+                        return row.driver === selected_driver && row.vehicle_name === selected_vehicle;
+                    });
+
+                    if (!exists) {
+                        var row = frappe.model.add_child(frm.doc, 'vehicle');
+                        row.driver = selected_driver;
+                        row.vehicle_name = selected_vehicle;
+                        frm.refresh_field('vehicle');
+                        dialog.hide();
+                        frappe.msgprint(__('Driver and vehicle added successfully.'), 'Success');
+                    } else {
+                        frappe.msgprint(__('This driver-vehicle combination already exists.'));
+                    }
                 },
                 primary_action_label: __('Submit')
             });
