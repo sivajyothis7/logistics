@@ -17,16 +17,16 @@
    "options": "Drivers"
   },
   {
-   "fetch_from": "driver.current_vehicle",
    "fieldname": "vehicle_name",
-   "fieldtype": "Data",
-   "label": "Vehicle Name"
+   "fieldtype": "Link",
+   "label": "Vehicle Name",
+   "options": "Vehicles"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-09-28 12:41:27.940763",
+ "modified": "2023-10-04 10:56:17.692897",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Driver Data",
