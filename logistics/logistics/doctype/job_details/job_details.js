@@ -1,47 +1,42 @@
 frappe.ui.form.on('Job Details', {
     refresh: function(frm) {
-        frm.add_custom_button(__('Select Vehicle'), function() {
-            frappe.call({
-                method: 'frappe.client.get_list',
-                args: {
-                    doctype: 'Vehicles',
-                    fields: ['name', 'name1'],
-					filters: {
-                        'active': 1 
+        frm.add_custom_button(__('Select Driver'), function() {
+            // Create a custom dialog
+            var dialog = new frappe.ui.Dialog({
+                title: __('Select Driver and Vehicle'),
+                fields: [
+                    {
+                        fieldtype: 'Link',
+                        fieldname: 'selected_driver',
+                        label: __('Select Driver'),
+                        options: 'Drivers',
+                        reqd: true,
+                        
+                    },
+                    {
+                        fieldtype: 'Link',
+                        label: __('Select Vehicle'),
+                        fieldname: 'selected_vehicle',
+                        options: 'Vehicles', 
+                        reqd: true
                     }
+                ],
+                primary_action: function() {
+                    // Handle the selected driver and vehicle here
+                    var selected_driver = dialog.get_value('selected_driver');
+                    var selected_vehicle = dialog.get_value('selected_vehicle');
+					var vehicle_table = frm.doc.vehicle || [];
+                    var row = frappe.model.add_child(frm.doc, 'vehicle');
+                    row.driver = selected_driver;
+                    row.vehicle_name = selected_vehicle;
+                    frm.refresh_field('vehicle');
+                    dialog.hide();
                 },
-                callback: function(r) {
-                    if (r.message) {
-                        var vehicle_options = r.message.map(function(vehicle) {
-                            return {
-                                label: vehicle.name,
-                                value: vehicle.name,
-                                name1: vehicle.name1,
-                            };
-                        });
-
-                        frappe.prompt({
-                            fieldname: 'selected_vehicle',
-                            label: __('Please Select Vehicle'),
-                            fieldtype: 'Select',
-                            options: vehicle_options,
-                        }, function(values) {
-                            var selected_vehicle = values.selected_vehicle;
-                            var selected_name1 = vehicle_options.find(option => option.value === selected_vehicle).name1;
-                            
-                            var existing_vehicles = frm.doc.vehicle || [];
-                            if (!existing_vehicles.some(vehicle => vehicle.data === selected_vehicle)) {
-                                var row = frm.add_child('vehicle', {});
-                                row.data = selected_vehicle;
-                                row.vehicle_name = selected_name1; 
-                                frm.refresh_field('vehicle');
-                            } else {
-                                frappe.msgprint(__('Selected vehicle already exists in Vehicles Data.'));
-                            }
-                        }, __('Select Vehicle'));
-                    }
-                }
+                primary_action_label: __('Submit')
             });
+
+            // Show the dialog
+            dialog.show();
         });
     }
 });
