@@ -21,8 +21,8 @@ frappe.ui.form.on('Job Details', {
 				},
 				action(selections) {
 					selections.forEach(selectedItem => {
-                        const driver = selectedItem.data.some_field; // Replace "some_field" with the actual field name in "Daily Log"
-                        const vehicleName = selectedItem.data.another_field; // Replace "another_field" with the actual field name in "Daily Log"
+                        const driver = selectedItem.data.driver; 
+                        const vehicleName = selectedItem.data.vehicle; 
 
                         // Append a new row to the "vehicle" table
                         const newRow = frm.add_child('vehicle');
