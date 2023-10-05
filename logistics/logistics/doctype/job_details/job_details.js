@@ -1,60 +1,43 @@
 frappe.ui.form.on('Job Details', {
     refresh: function(frm) {
-        frm.add_custom_button(__('Select Driver'), function() {
-            // Create a custom dialog
-            var dialog = new frappe.ui.Dialog({
-                title: __('Select Driver and Vehicle'),
-                fields: [
-                    {
-                        fieldtype: 'Link',
-                        fieldname: 'selected_driver',
-                        label: __('Select Driver'),
-                        options: 'Drivers',
-                        reqd: true,
-                    },
-                    {
-                        fieldtype: 'Link',
-                        label: __('Select Vehicle'),
-                        fieldname: 'selected_vehicle',
-                        options: 'Vehicles',
-                        reqd: true,
-                        get_query: function() {
-                            const selectedDriver = dialog.get_value('selected_driver');
-                            return {
-                                filters: [
-                                    ['active', '=', 1], // Only select vehicles with the "Active" checkbox checked
-                                    ['current_driver', '=', selectedDriver]
-                                ]
-                            };
-                        }
-                    }
-                ],
-                primary_action: function() {
-                    // Handle the selected driver and vehicle here
-                    var selected_driver = dialog.get_value('selected_driver');
-                    var selected_vehicle = dialog.get_value('selected_vehicle');
-                    var vehicle_table = frm.doc.vehicle || [];
+        frm.add_custom_button(__('Select Daily Log'), function() {
+            // MultiSelectDialog for individual child selection
+			new frappe.ui.form.MultiSelectDialog({
+				doctype: "Daily Log",
+				target: frm,
+				setters: {
+					// schedule_date: null,
+					company:null,
+                    date:null
+					
+					// status: 'Pending'
+				},
+				add_filters_group: 1,
+				date_field: "transaction_date",
+				get_query() {
+					return {
+						filters: { docstatus: ['!=', 1] }
+					}
+				},
+				action(selections) {
+					selections.forEach(selectedItem => {
+                        const driver = selectedItem.data.driver; 
+                        const vehicleName = selectedItem.data.vehicle; 
 
-                    var exists = vehicle_table.some(function(row) {
-                        return row.driver === selected_driver && row.vehicle_name === selected_vehicle;
+                        // Append a new row to the "vehicle" table
+                        const newRow = frm.add_child('vehicle');
+                        newRow.driver = driver;
+                        newRow.vehicle_name = vehicleName;
                     });
 
-                    if (!exists) {
-                        var row = frappe.model.add_child(frm.doc, 'vehicle');
-                        row.driver = selected_driver;
-                        row.vehicle_name = selected_vehicle;
-                        frm.refresh_field('vehicle');
-                        dialog.hide();
-                        frappe.msgprint(__('Driver and vehicle added successfully.'), 'Success');
-                    } else {
-                        frappe.msgprint(__('This driver-vehicle combination already exists.'));
-                    }
-                },
-                primary_action_label: __('Submit')
-            });
-
-            // Show the dialog
-            dialog.show();
+                    // Refresh the "vehicle" table to display the new data
+                    frm.refresh_field('vehicle');
+				}
+			});
+			
+			
+		
+			
         });
     }
 });
