@@ -12,16 +12,16 @@
  ],
  "fields": [
   {
-   "fetch_from": "daily_log.driver_name",
+   "fetch_from": "daily_log.driver",
    "fieldname": "driver",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "label": "Driver",
    "options": "Drivers"
   },
   {
-   "fetch_from": "daily_log.vehicle_number",
+   "fetch_from": "daily_log.vehicle",
    "fieldname": "vehicle_name",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "label": "Vehicle Name",
    "options": "Vehicles"
   },
@@ -35,7 +35,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-10-09 08:19:32.619220",
+ "modified": "2023-10-09 08:45:56.603404",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Driver Data",
