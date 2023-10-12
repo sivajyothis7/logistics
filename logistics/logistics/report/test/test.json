@@ -8,18 +8,11 @@
  "doctype": "Report",
  "filters": [
   {
-   "fieldname": "company",
-   "fieldtype": "Link",
-   "label": "Company",
-   "mandatory": 0,
-   "options": "Company",
-   "wildcard_filter": 0
-  },
-  {
    "fieldname": "date",
    "fieldtype": "Date",
    "label": "Date",
    "mandatory": 0,
+   "options": "",
    "wildcard_filter": 0
   },
   {
@@ -33,14 +26,15 @@
  ],
  "idx": 0,
  "is_standard": "Yes",
- "modified": "2023-10-10 16:21:38.448694",
+ "modified": "2023-10-11 09:32:48.979730",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "test",
  "owner": "Administrator",
  "prepared_report": 0,
- "query": "SELECT\n    dl.Date AS 'Date',\n    dl.Driver AS 'Driver',\n    dl.Driver_Name AS 'Driver Name',\n    dl.Vehicle AS 'Vehicle Number',\n    dl.From AS 'Starting Location',\n    dl.To AS 'Destination',\n    dl.Company_Rate AS 'Company Rate',\n    dl.Driver_Rate AS 'Driver Rate'\nFROM `tabDaily Log` dl\nWHERE dl.Driver = %(driver)s\n\n",
+ "query": "SELECT\n    dl.Date AS 'Date',\n    dl.Driver AS 'Driver',\n    dl.Driver_Name AS 'Driver Name',\n    dl.Vehicle AS 'Vehicle Number',\n    dl.From AS 'Starting Location',\n    dl.To AS 'Destination',\n    dl.Company_Rate AS 'Company Rate',\n    dl.Driver_Rate AS 'Driver Rate'\nFROM `tabDaily Log` dl\nWHERE dl.Date = %(date)s\n",
  "ref_doctype": "Daily Log",
+ "reference_report": "",
  "report_name": "test",
  "report_script": "# Sample daily log entries (replace with your data)\ndaily_logs = [\n    {\n        \"Date\": \"2023-10-01\",\n        \"Driver Name\": \"John Doe\",\n        \"Vehicle\": \"XYZ123\",\n        \"From\": \"Warehouse A\",\n        \"To\": \"Customer X\",\n        \"Company Rate\": 100.0,\n        \"Driver Rate\": 50.0,\n    },\n    {\n        \"Date\": \"2023-10-01\",\n        \"Driver Name\": \"Jane Smith\",\n        \"Vehicle\": \"ABC789\",\n        \"From\": \"Warehouse B\",\n        \"To\": \"Customer Y\",\n        \"Company Rate\": 120.0,\n        \"Driver Rate\": 60.0,\n    },\n    # Add more log entries as needed\n]\n\n# Define the date for the report\nreport_date = \"2023-10-01\"\n\n# Create a daily log report for the specified date\ndef create_daily_log_report(logs, date):\n    # Filter logs for the specified date\n    filtered_logs = [log for log in logs if log[\"Date\"] == date]\n\n    # Print the report header\n    print(f\"Daily Log Report for {date}\\n\")\n    print(\"{:<15} {:<15} {:<15} {:<15} {:<15} {:<15}\".format(\n        \"Driver Name\", \"Vehicle\", \"From\", \"To\", \"Company Rate\", \"Driver Rate\"\n    ))\n    print(\"=\" * 90)  # Separator line\n\n    # Print log entries\n    for log in filtered_logs:\n        print(\"{:<15} {:<15} {:<15} {:<15} ${:<14.2f} ${:<14.2f}\".format(\n            log[\"Driver Name\"], log[\"Vehicle\"], log[\"From\"], log[\"To\"],\n            log[\"Company Rate\"], log[\"Driver Rate\"]\n        ))\n\n# Generate the daily log report for the specified date\ncreate_daily_log_report(daily_logs, report_date)\n",
  "report_type": "Query Report",
