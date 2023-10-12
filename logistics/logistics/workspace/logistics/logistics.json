@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"NISfT_b0hT\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Logistics</span>\",\"col\":12}},{\"id\":\"9l_cVj1YE4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Details\",\"col\":3}},{\"id\":\"GLC3_gHt36\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Drivers\",\"col\":3}},{\"id\":\"EGzpczOIYo\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Vehicles\",\"col\":3}},{\"id\":\"gQCN8T4G6b\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"2Z8WqbQpJb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Daily Log\",\"col\":3}},{\"id\":\"EzdlCQI83x\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"mMm5c6p0tb\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports</b></span>\",\"col\":12}},{\"id\":\"xgLj_1hzcf\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Daily Log Reports\",\"col\":3}}]",
+ "content": "[{\"id\":\"NISfT_b0hT\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Logistics</span>\",\"col\":12}},{\"id\":\"9l_cVj1YE4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Details\",\"col\":3}},{\"id\":\"GLC3_gHt36\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Drivers\",\"col\":3}},{\"id\":\"EGzpczOIYo\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Vehicles\",\"col\":3}},{\"id\":\"gQCN8T4G6b\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"2Z8WqbQpJb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Daily Log\",\"col\":3}},{\"id\":\"EzdlCQI83x\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"sBiwIt1hdd\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
  "creation": "2023-09-26 12:26:21.243756",
  "custom_blocks": [],
  "docstatus": 0,
@@ -11,8 +11,27 @@
  "idx": 0,
  "is_hidden": 0,
  "label": "Logistics",
- "links": [],
- "modified": "2023-10-10 06:54:10.175034",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports",
+   "link_count": 1,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Daily Log Reports",
+   "link_count": 0,
+   "link_to": "Daily",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2023-10-12 07:01:14.187416",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Logistics",
@@ -24,13 +43,6 @@
  "roles": [],
  "sequence_id": 5.0,
  "shortcuts": [
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Daily Log Reports",
-   "link_to": "test",
-   "type": "Report"
-  },
   {
    "color": "Green",
    "doc_view": "List",
