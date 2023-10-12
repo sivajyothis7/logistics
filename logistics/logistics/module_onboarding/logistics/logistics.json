@@ -1,0 +1,38 @@
+{
+ "allow_roles": [
+  {
+   "role": "Accounts Manager"
+  }
+ ],
+ "creation": "2023-10-12 07:09:25.186513",
+ "docstatus": 0,
+ "doctype": "Module Onboarding",
+ "documentation_url": "https://www.enfono.com/",
+ "idx": 0,
+ "is_complete": 0,
+ "modified": "2023-10-12 07:09:25.186513",
+ "modified_by": "Administrator",
+ "module": "Logistics",
+ "name": "Logistics",
+ "owner": "Administrator",
+ "steps": [
+  {
+   "step": "Company Set Up"
+  },
+  {
+   "step": "Chart of Accounts"
+  },
+  {
+   "step": "Create a Customer"
+  },
+  {
+   "step": "Create an Item"
+  },
+  {
+   "step": "Create Your First Sales Invoice"
+  }
+ ],
+ "subtitle": "Accounts, Invoices, Daily Logs, and more.",
+ "success_message": "You're ready to start your journey with LOGISTICS Module",
+ "title": "Let's begin your journey"
+}
