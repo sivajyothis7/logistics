@@ -1,7 +1,6 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "\"autoname\": \"custom_name_format:JOB-{customer}-{mode_of_transport}-{####}\"",
  "creation": "2023-09-26 12:55:55.014196",
  "default_view": "List",
  "doctype": "DocType",
@@ -16,8 +15,7 @@
   "customer",
   "amended_from",
   "driver_data_section",
-  "vehicle",
-  "custom_name_format"
+  "vehicle"
  ],
  "fields": [
   {
@@ -72,22 +70,15 @@
    "fieldname": "driver_data_section",
    "fieldtype": "Section Break",
    "label": "Driver Data"
-  },
-  {
-   "default": "JOB-{customer}-{mode_of_transport}-{####}",
-   "fieldname": "custom_name_format",
-   "fieldtype": "Data",
-   "label": "custom_name_format"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-10-11 14:59:12.816330",
+ "modified": "2023-10-13 13:23:33.965237",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Job Details",
  "name_case": "Title Case",
- "naming_rule": "By script",
  "owner": "Administrator",
  "permissions": [
   {

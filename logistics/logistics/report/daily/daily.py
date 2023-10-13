@@ -1,33 +1,70 @@
 import frappe
-from frappe import _
+from frappe import _, msgprint
+from datetime import datetime
 
 def execute(filters=None):
-    columns = [
-        _("Date") + ":Date:90",
-        _("Driver") + ":Link/Driver:120",
-       
-       
-        
+    if not filters:
+        filters = {}
+
+    data, columns = [], []
+
+    columns = get_columns()
+    cs_data = get_cs_data(filters)
+
+    if not cs_data:
+        msgprint(_('No records found'))
+        return columns, cs_data
+
+    return columns, cs_data, None
+
+def get_columns():
+    return [
+        {
+            'fieldname': 'company',
+            'label': _('Company'),
+            'fieldtype': 'Data',
+            'width': '275'
+        },
+        {
+            'fieldname': 'driver',
+            'label': _('Driver'),
+            'fieldtype': 'Data',
+            'width': '275'
+        },
+        {
+            'fieldname': 'date',
+            'label': _('Date'),
+            'fieldtype': 'Data',
+            'width': '275'
+        }
     ]
 
-    # Construct the SQL query with a WHERE clause for filtering
-    conditions = []
-    if filters:
-        if filters.get("from_date"):
-            conditions.append(f"`Date` >= '{filters['from_date']}'")
-        if filters.get("to_date"):
-            conditions.append(f"`Date` <= '{filters['to_date']}'")
-
-    condition_str = " AND ".join(conditions) if conditions else ""
-
-    data = frappe.db.sql(
-        f"""
-        SELECT Date, Driver, Vehicle, `From`, `To`, 
-        FROM `tabDaily Log`
-        WHERE {condition_str}
-        # ORDER BY Date DESC
-        """,
-        as_dict=True,  # Assuming you want the result as a list of dictionaries
+def get_cs_data(filters):
+    conditions = get_conditions(filters)
+    data = frappe.get_all(
+        doctype='Daily Log',
+        fields=['company', 'driver', 'date'],
+        filters=conditions,
+        order_by='date desc'
     )
 
-    return columns, data
+    return data
+
+def get_conditions(filters):
+    conditions = {}
+    if filters.get('from_date'):
+        conditions['date'] = ['>=', filters.get('from_date')]
+    if filters.get('to_date'):
+        if 'date' in conditions:
+            conditions['date'].append('and')
+        else:
+            conditions['date'] = ['<=', filters.get('to_date')]
+    
+    if filters.get('driver'):
+        conditions['driver'] = filters.get('driver')
+    
+    if filters.get('company'):
+        conditions['company'] = filters.get('company')
+
+    return conditions
+
