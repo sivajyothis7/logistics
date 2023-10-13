@@ -52,13 +52,13 @@ def get_cs_data(filters):
 
 def get_conditions(filters):
     conditions = {}
-    if filters.get('from_date'):
+    
+    if filters.get('from_date') and filters.get('to_date'):
+        conditions['date'] = ['between', [filters.get('from_date'), filters.get('to_date')]]
+    elif filters.get('from_date'):
         conditions['date'] = ['>=', filters.get('from_date')]
-    if filters.get('to_date'):
-        if 'date' in conditions:
-            conditions['date'].append('and')
-        else:
-            conditions['date'] = ['<=', filters.get('to_date')]
+    elif filters.get('to_date'):
+        conditions['date'] = ['<=', filters.get('to_date')]
     
     if filters.get('driver'):
         conditions['driver'] = filters.get('driver')
@@ -67,4 +67,3 @@ def get_conditions(filters):
         conditions['company'] = filters.get('company')
 
     return conditions
-

@@ -15,7 +15,7 @@ frappe.query_reports["Daily"] = {
             
         },
         {
-            "fieldname": "date",
+            "fieldname": "from_date",
             "label": __("From Date"),
             "fieldtype": "Date",
         },
