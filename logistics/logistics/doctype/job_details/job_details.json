@@ -73,8 +73,15 @@
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2023-10-13 13:23:33.965237",
+ "links": [
+  {
+   "custom": 1,
+   "group": "Invoice Details",
+   "link_doctype": "Sales Invoice",
+   "link_fieldname": "custom_job_number"
+  }
+ ],
+ "modified": "2023-10-17 07:26:56.186718",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Job Details",

@@ -12,7 +12,6 @@ frappe.query_reports["Daily"] = {
             "label": __("Driver"),
             "fieldtype": "Link",
             "options": "Drivers",
-            
         },
         {
             "fieldname": "from_date",
@@ -23,10 +22,19 @@ frappe.query_reports["Daily"] = {
             "fieldname": "to_date",
             "label": __("To Date"),
             "fieldtype": "Date",
-        }
-    ],
-    
-        // Refresh the report to apply the filters
+        },
        
-    
+        
+        {
+            "fieldname": "from",
+            "label": __("From Location"),
+            "fieldtype": "Data", 
+        },
+        {
+            "fieldname": "to",
+            "label": __("To Location"),
+            "fieldtype": "Data", 
+        }
+        
+    ],
 };
