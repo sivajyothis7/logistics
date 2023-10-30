@@ -26,7 +26,8 @@
   "to",
   "driver_rate",
   "item_details_section",
-  "items"
+  "item_name",
+  "item_details"
  ],
  "fields": [
   {
@@ -132,19 +133,26 @@
   {
    "fieldname": "item_details_section",
    "fieldtype": "Section Break",
-   "label": "Rate Details"
+   "label": "Rate Details",
+   "options": "fa fa-shopping-cart"
   },
   {
-   "fieldname": "items",
+   "fieldname": "item_name",
+   "fieldtype": "Link",
+   "label": "Item Name",
+   "options": "Item"
+  },
+  {
+   "allow_bulk_edit": 1,
+   "fieldname": "item_details",
    "fieldtype": "Table",
-   "label": "Items",
-   "options": "Sales Invoice Item",
-   "reqd": 1
+   "label": "Item Details",
+   "options": "Sales Invoice Item"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-10-30 08:10:25.969146",
+ "modified": "2023-10-30 10:50:07.781580",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Log",
