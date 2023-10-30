@@ -94,17 +94,20 @@
   {
    "fieldname": "driver_rate",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Driver rate"
   },
   {
    "fieldname": "company_rate",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Company rate"
   },
   {
    "default": "0",
    "fieldname": "advance_paid",
    "fieldtype": "Check",
+   "hidden": 1,
    "label": "Advance paid"
   },
   {
@@ -118,7 +121,6 @@
   {
    "fieldname": "logistics_section",
    "fieldtype": "Section Break",
-   "hidden": 1,
    "label": "Logistics Details"
   },
   {
@@ -142,7 +144,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-10-30 07:28:12.253305",
+ "modified": "2023-10-30 08:09:24.941328",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Log",
