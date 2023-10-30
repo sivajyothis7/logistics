@@ -18,6 +18,8 @@
   "driver_name",
   "id_no",
   "vehicle_number",
+  "item_details_section",
+  "items",
   "logistics_section",
   "from",
   "company_rate",
@@ -116,6 +118,7 @@
   {
    "fieldname": "logistics_section",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Logistics Details"
   },
   {
@@ -123,11 +126,23 @@
    "fieldtype": "Link",
    "label": "Vehicle",
    "options": "Vehicles"
+  },
+  {
+   "fieldname": "item_details_section",
+   "fieldtype": "Section Break",
+   "label": "Rate Details"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Sales Invoice Item",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-10-04 16:56:37.817502",
+ "modified": "2023-10-30 07:28:12.253305",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Log",
