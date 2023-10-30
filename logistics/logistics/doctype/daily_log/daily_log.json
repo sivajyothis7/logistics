@@ -18,15 +18,15 @@
   "driver_name",
   "id_no",
   "vehicle_number",
-  "item_details_section",
-  "items",
   "logistics_section",
   "from",
   "company_rate",
   "advance_paid",
   "column_break_abpnp",
   "to",
-  "driver_rate"
+  "driver_rate",
+  "item_details_section",
+  "items"
  ],
  "fields": [
   {
@@ -144,7 +144,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-10-30 08:09:24.941328",
+ "modified": "2023-10-30 08:10:25.969146",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Log",
