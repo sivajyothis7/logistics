@@ -3,15 +3,15 @@
 
 frappe.ui.form.on('Daily Log', {
     refresh: function(frm) {
-        frm.fields_dict['vehicle'].get_query = function(doc) {
-            return {
-                filters: [
-                    ['current_driver', '=', doc.driver],
-                    ['active', "=" ,'1']
+        // frm.fields_dict['vehicle'].get_query = function(doc) {
+        //     return {
+        //         filters: [
+        //             ['current_driver', '=', doc.driver],
+        //             ['active', "=" ,'1']
                    
 
-                ]
-            };
-        };
+        //         ]
+        //     };
+        // };
     }
 });

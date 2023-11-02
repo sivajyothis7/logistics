@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "naming_series:",
+ "autoname": "field:name1",
  "creation": "2023-09-26 22:01:49.840288",
  "default_view": "List",
  "doctype": "DocType",
@@ -9,7 +9,6 @@
  "engine": "InnoDB",
  "field_order": [
   "general_section",
-  "naming_series",
   "name1",
   "id_proof",
   "column_break_0hpax",
@@ -25,18 +24,12 @@
  ],
  "fields": [
   {
-   "fieldname": "naming_series",
-   "fieldtype": "Select",
-   "label": "ID",
-   "options": "DRV-.####.",
-   "reqd": 1
-  },
-  {
    "fieldname": "name1",
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Name",
-   "reqd": 1
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "mobile",
@@ -105,11 +98,11 @@
    "link_fieldname": "current_driver"
   }
  ],
- "modified": "2023-10-04 09:50:13.924210",
+ "modified": "2023-11-02 07:54:04.373537",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Drivers",
- "naming_rule": "By \"Naming Series\" field",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

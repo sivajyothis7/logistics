@@ -10,12 +10,14 @@
   "job_details_section",
   "company",
   "mode_of_transport",
+  "awb_number",
   "column_break_bdrsj",
   "date",
   "customer",
-  "amended_from",
+  "daily_log",
   "driver_data_section",
-  "vehicle"
+  "vehicle",
+  "amended_from"
  ],
  "fields": [
   {
@@ -69,7 +71,19 @@
   {
    "fieldname": "driver_data_section",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Driver Data"
+  },
+  {
+   "fieldname": "awb_number",
+   "fieldtype": "Data",
+   "label": "AWB Number"
+  },
+  {
+   "fieldname": "daily_log",
+   "fieldtype": "Link",
+   "label": "Daily Log",
+   "options": "Daily Log"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -81,7 +95,7 @@
    "link_fieldname": "custom_job_number"
   }
  ],
- "modified": "2023-10-17 07:26:56.186718",
+ "modified": "2023-11-02 08:17:22.944750",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Job Details",

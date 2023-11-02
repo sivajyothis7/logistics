@@ -21,13 +21,9 @@
   "logistics_section",
   "from",
   "company_rate",
-  "advance_paid",
   "column_break_abpnp",
   "to",
-  "driver_rate",
-  "item_details_section",
-  "item_name",
-  "item_details"
+  "driver_rate"
  ],
  "fields": [
   {
@@ -95,21 +91,12 @@
   {
    "fieldname": "driver_rate",
    "fieldtype": "Data",
-   "hidden": 1,
    "label": "Driver rate"
   },
   {
    "fieldname": "company_rate",
    "fieldtype": "Data",
-   "hidden": 1,
    "label": "Company rate"
-  },
-  {
-   "default": "0",
-   "fieldname": "advance_paid",
-   "fieldtype": "Check",
-   "hidden": 1,
-   "label": "Advance paid"
   },
   {
    "fieldname": "column_break_kkvfx",
@@ -129,30 +116,18 @@
    "fieldtype": "Link",
    "label": "Vehicle",
    "options": "Vehicles"
-  },
-  {
-   "fieldname": "item_details_section",
-   "fieldtype": "Section Break",
-   "label": "Rate Details",
-   "options": "fa fa-shopping-cart"
-  },
-  {
-   "fieldname": "item_name",
-   "fieldtype": "Link",
-   "label": "Item Name",
-   "options": "Item"
-  },
-  {
-   "allow_bulk_edit": 1,
-   "fieldname": "item_details",
-   "fieldtype": "Table",
-   "label": "Item Details",
-   "options": "Sales Invoice Item"
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2023-10-30 10:50:07.781580",
+ "links": [
+  {
+   "custom": 1,
+   "group": "Order Details",
+   "link_doctype": "Sales Order",
+   "link_fieldname": "custom_daily_log"
+  }
+ ],
+ "modified": "2023-11-02 09:21:25.892747",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Log",

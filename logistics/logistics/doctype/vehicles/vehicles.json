@@ -1,14 +1,13 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "naming_series:",
+ "autoname": "format:Vehicle-{name1}",
  "creation": "2023-09-26 17:18:17.140797",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "naming_series",
   "name1",
   "reg_number",
   "capacity",
@@ -25,14 +24,6 @@
   "amended_from"
  ],
  "fields": [
-  {
-   "fieldname": "naming_series",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "ID",
-   "options": "VEH-.YYYY.-",
-   "reqd": 1
-  },
   {
    "fieldname": "name1",
    "fieldtype": "Data",
@@ -114,11 +105,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-10-04 10:02:36.349420",
+ "modified": "2023-11-02 07:58:03.912420",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Vehicles",
- "naming_rule": "By \"Naming Series\" field",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
