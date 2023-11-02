@@ -215,3 +215,5 @@ app_license = "MIT"
 # auth_hooks = [
 #	"logistics.auth.validate"
 # ]
+
+fixtures= ["Client Script"]

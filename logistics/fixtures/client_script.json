@@ -1,0 +1,46 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Job Details",
+  "enabled": 0,
+  "modified": "2023-11-02 09:52:54.778966",
+  "module": "",
+  "name": "test",
+  "script": "frappe.ui.form.on('Job Details', {\n    refresh: function(frm) {\n        if (frm.doc.__islocal) {\n            // New unsaved document, don't remove the \"Not Saved\" badge\n        } else {\n            frm.page.clear_indicator('Not Saved');\n        }\n    }\n});\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Daily Log",
+  "enabled": 0,
+  "modified": "2023-11-01 14:53:05.301213",
+  "module": null,
+  "name": "button",
+  "script": "frappe.ui.form.on('Sales Invoice Item', {\n    item_code: function(frm, cdt, cdn) {\n        let row = locals[cdt][cdn];\n        console.log(row);\n        console.log(cdt);\n        console.log(cdn);\n\n        let item_code = row.item_code;\n        console.log(item_code);\n\n        frappe.call({\n            method: 'frappe.client.get_value',\n            args: {\n                'doctype': 'Item',\n                'filters': { 'item_code': item_code },\n                'fieldname': 'item_name'\n            },\n            callback: function (r) {\n                if (!r.exc) {\n                    console.log(r.message);\n                    // Update the 'item_name' field in the Sales Invoice Item form\n                    frappe.model.set_value(cdt, cdn, 'item_name', r.message.item_name);\n                    // Set the 'conversion_factor' field to 1\n                    frappe.model.set_value(cdt, cdn, 'conversion_factor', 1);\n\n                    // Update 'base_rate' and 'base_amount' to match 'rate' and 'amount'\n                    frappe.model.set_value(cdt, cdn, 'base_rate', row.rate);\n                    frappe.model.set_value(cdt, cdn, 'base_amount', row.amount);\n\n                    // Set 'price_list_rate' and 'price_list_rate_with_tax' to match 'rate'\n                    frappe.model.set_value(cdt, cdn, 'price_list_rate', row.rate);\n                    frappe.model.set_value(cdt, cdn, 'price_list_rate_with_tax', row.rate);\n                }\n            }\n        });\n    },\n    qty: function(frm, cdt, cdn) {\n        calculateAmountAndRate(cdt, cdn);\n    },\n    rate: function(frm, cdt, cdn) {\n        calculateAmountAndRate(cdt, cdn);\n\n        // Update 'base_rate' to match 'rate' when 'rate' is changed\n        let row = locals[cdt][cdn];\n        frappe.model.set_value(cdt, cdn, 'base_rate', row.rate);\n        \n        // Update 'price_list_rate' and 'price_list_rate_with_tax' to match 'rate'\n        frappe.model.set_value(cdt, cdn, 'price_list_rate', row.rate);\n        frappe.model.set_value(cdt, cdn, 'base_price_list_rate', row.rate);\n    }\n});\n\nfunction calculateAmountAndRate(cdt, cdn) {\n    let row = locals[cdt][cdn];\n    let qty = row.qty;\n    let rate = row.rate;\n\n    // Calculate the 'Amount'\n    let amount = qty * rate;\n    frappe.model.set_value(cdt, cdn, 'amount', amount);\n\n    // Set 'Rate (Company Currency)' to the same value as 'Rate'\n    frappe.model.set_value(cdt, cdn, 'base_rate', rate);\n\n    // Update 'base_amount' to match 'amount'\n    frappe.model.set_value(cdt, cdn, 'base_amount', amount);\n}\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Sales Invoice",
+  "enabled": 1,
+  "modified": "2023-11-02 09:29:13.317983",
+  "module": "Logistics",
+  "name": "invoice",
+  "script": "frappe.ui.form.on('Sales Invoice', {\n  refresh: function(frm) {\n    if (frm.doc.__islocal) {\n      frm.add_custom_button(__('Sales Order'), function() {\n        erpnext.utils.map_current_doc({\n          method: \"erpnext.selling.doctype.sales_order.sales_order.make_sales_invoice\",\n          source_doctype: \"Sales Order\",\n          target: frm,\n          setters: {\n            customer: frm.doc.customer ||\"\",\n            custom_daily_log: frm.doc.custom_daily_log || \"\",\n          },\n          get_query_filters: {\n            docstatus: 1,\n            status: [\"not in\", [\"Closed\", \"On Hold\"]],\n            per_billed: [\"<\", 99.99],\n            company: frm.doc.company,\n          }\n        });\n      }, __(\"Get Items From\"));\n    }\n  }\n});",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Sales Invoice",
+  "enabled": 0,
+  "modified": "2023-11-01 14:53:47.732908",
+  "module": null,
+  "name": "dummy",
+  "script": "frappe.ui.form.on('Sales Invoice', {\n    refresh: function(frm) {\n        const selectedLogs = [];\n        frm.add_custom_button(__('Select Daily Log'), function() {\n            const dialog = new frappe.ui.form.MultiSelectDialog({\n                doctype: \"Daily Log\",\n                target: frm,\n                setters: {},\n                add_filters_group: 1,\n                date_field: \"transaction_date\",\n                columns: [\"vehicle\", \"driver\"],\n                get_query() {\n                    return {\n                        filters: { docstatus: ['!=', 2] }\n                    };\n                },\n                primary_action_label: 'Get Details',\n                action(selections, args) {\n                    selections.forEach(selectedItem => {\n                        const logName = selectedItem;\n                        if (!selectedLogs.includes(logName)) {\n                            frappe.call({\n                                method: 'frappe.client.get',\n                                args: {\n                                    doctype: 'Daily Log',\n                                    name: logName,\n                                },\n                                callback: function(response) {\n                                    if (response.message) {\n                                        const dailyLogData = response.message;\n                                        dailyLogData.items.forEach(dailyLogItem => {\n                                            const newRow = frm.add_child('items');\n                                            newRow.item_code = dailyLogItem.item_code;\n                                            newRow.qty = dailyLogItem.qty;\n                                        });\n                                        frm.refresh_field('items');\n                                        selectedLogs.push(logName);\n                                        frappe.show_alert(__('<span style=\"color: green;\">Daily Log \"{0}\" items added successfully.</span>', [logName]), 6);\n                                    } else {\n                                        console.error('Error fetching Daily Log data.');\n                                        frappe.show_alert(__('<span style=\"color: red;\">Error fetching Daily Log data for \"{0}\".</span>', [logName]), 6);\n                                    }\n                                }\n                            });\n                        } else {\n                            frappe.show_alert(__('<span style=\"color: red;\">Daily Log \"{0}\" items already exist in the Sales Invoice.</span>', [logName]), 6);\n                        }\n                    });\n                }\n            });\n        });\n    }\n});\n",
+  "view": "Form"
+ }
+]
