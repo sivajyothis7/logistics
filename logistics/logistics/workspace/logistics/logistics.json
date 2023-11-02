@@ -47,11 +47,11 @@
    "link_count": 0,
    "link_to": "Daily",
    "link_type": "Report",
-   "onboard": 0,
+   "onboard": 1,
    "type": "Link"
   }
  ],
- "modified": "2023-11-02 10:54:44.053228",
+ "modified": "2023-11-02 15:37:18.960047",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Logistics",

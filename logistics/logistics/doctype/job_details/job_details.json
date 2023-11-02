@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:JOB-{customer}-{mode_of_transport}-{####}",
  "creation": "2023-09-26 12:55:55.014196",
  "default_view": "List",
  "doctype": "DocType",
@@ -95,11 +96,12 @@
    "link_fieldname": "custom_job_number"
   }
  ],
- "modified": "2023-11-02 08:17:22.944750",
+ "modified": "2023-11-02 15:36:07.302718",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Job Details",
  "name_case": "Title Case",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
