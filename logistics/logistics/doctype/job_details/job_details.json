@@ -76,6 +76,7 @@
    "label": "Driver Data"
   },
   {
+   "fetch_from": "daily_log.waybill_number",
    "fieldname": "awb_number",
    "fieldtype": "Data",
    "label": "AWB Number"
@@ -96,7 +97,7 @@
    "link_fieldname": "custom_job_number"
   }
  ],
- "modified": "2023-11-02 15:36:07.302718",
+ "modified": "2023-11-08 07:55:29.313688",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Job Details",

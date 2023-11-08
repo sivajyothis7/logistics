@@ -140,9 +140,14 @@
    "group": "Order Details",
    "link_doctype": "Sales Order",
    "link_fieldname": "custom_daily_log"
+  },
+  {
+   "group": "Order Details",
+   "link_doctype": "Job Details",
+   "link_fieldname": "daily_log"
   }
  ],
- "modified": "2023-11-08 07:36:37.593513",
+ "modified": "2023-11-08 08:05:52.664129",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Log",
