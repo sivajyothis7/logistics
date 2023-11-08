@@ -18,9 +18,11 @@
   "driver_name",
   "id_no",
   "vehicle_number",
+  "waybill_number",
   "logistics_section",
   "from",
   "company_rate",
+  "advanced_paid",
   "column_break_abpnp",
   "to",
   "driver_rate"
@@ -89,11 +91,13 @@
    "label": "To"
   },
   {
+   "depends_on": "eval: doc.advanced_paid == 1",
    "fieldname": "driver_rate",
    "fieldtype": "Data",
    "label": "Driver rate"
   },
   {
+   "depends_on": "eval: doc.advanced_paid == 1",
    "fieldname": "company_rate",
    "fieldtype": "Data",
    "label": "Company rate"
@@ -116,6 +120,17 @@
    "fieldtype": "Link",
    "label": "Vehicle",
    "options": "Vehicles"
+  },
+  {
+   "default": "0",
+   "fieldname": "advanced_paid",
+   "fieldtype": "Check",
+   "label": "Advanced Paid"
+  },
+  {
+   "fieldname": "waybill_number",
+   "fieldtype": "Data",
+   "label": "Waybill Number"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -127,7 +142,7 @@
    "link_fieldname": "custom_daily_log"
   }
  ],
- "modified": "2023-11-02 09:21:25.892747",
+ "modified": "2023-11-08 07:36:37.593513",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Log",
