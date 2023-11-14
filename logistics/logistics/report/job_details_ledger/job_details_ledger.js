@@ -46,8 +46,8 @@ frappe.query_reports["Job Details Ledger"] = {
 		},
 		{
 			"fieldname":"voucher_no",
-			"label": __("Sales Invoice"),
-			"fieldtype": "Link",
+			"label": __("Voucher No"),
+			"fieldtype": "Data",
 			"options": "Sales Invoice",
 			"get_query": function() {
 				return {
@@ -160,16 +160,16 @@ frappe.query_reports["Job Details Ledger"] = {
 				});
 			}
 		},
-		{
-			"fieldname":"project",
-			"label": __("Project"),
-			"fieldtype": "MultiSelectList",
-			get_data: function(txt) {
-				return frappe.db.get_link_options('Project', txt, {
-					company: frappe.query_report.get_filter_value("company")
-				});
-			}
-		},
+		// {
+		// 	"fieldname":"project",
+		// 	"label": __("Project"),
+		// 	"fieldtype": "MultiSelectList",
+		// 	get_data: function(txt) {
+		// 		return frappe.db.get_link_options('Project', txt, {
+		// 			company: frappe.query_report.get_filter_value("company")
+		// 		});
+		// 	}
+		// },
 		{
 			"fieldname":"custom_job_number",
 			"label": __("Job Details"),
