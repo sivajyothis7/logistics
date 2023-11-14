@@ -47,7 +47,15 @@ frappe.query_reports["Job Details Ledger"] = {
 		{
 			"fieldname":"voucher_no",
 			"label": __("Voucher No"),
-			"fieldtype": "Data",
+			"fieldtype": "Link",
+			"options": "Sales Invoice",
+			"get_query": function() {
+				return {
+					filters: {
+						"custom_job_number": frappe.query_report.get_filter_value("custom_job_number")
+					}
+				};
+			},
 			on_change: function() {
 				frappe.query_report.set_filter_value('group_by', "Group by Voucher (Consolidated)");
 			}
