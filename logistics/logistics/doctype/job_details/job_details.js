@@ -45,7 +45,7 @@ frappe.ui.form.on('Job Details', {
     }
 });
 
-
+//
 //     refresh: function(frm) {
 //         // Maintain a list of selected log names
 //         const selectedLogs = [];
@@ -95,19 +95,19 @@ frappe.ui.form.on('Job Details', {
 //                                         // Add the log name to the list of selected logs
 //                                         selectedLogs.push(logName);
 //                                         frappe.show_alert(__('<span style="color: green;">Daily Log "{0}" added successfully.</span>', [logName]),6);
-										
+
 //                                     }else {
 //                                         console.error('Error fetching Daily Log data.');
-// 										frappe.show_alert(__('<span style="color: red;">Daily Log "{0}" already Exists.</span>', [logName]),6);
+//                                      frappe.show_alert(__('<span style="color: red;">Daily Log "{0}" already Exists.</span>', [logName]),6);
 
 //                                     }
-									
+
 //                                 }
 //                             });
-                        
+
 //                     });
-//                     dialog.dialog.hide();				 
-// 				   }
+//                     dialog.dialog.hide();
+//                 }
 //             });
 //         });
 //     }
