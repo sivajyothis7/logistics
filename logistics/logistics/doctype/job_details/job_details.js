@@ -11,7 +11,7 @@ frappe.ui.form.on('Job Details', {
         // Add custom button for Accounting Ledger
         frm.add_custom_button(__('Accounting Ledger'), function () {
             frappe.set_route('query-report', 'Job Details Ledger',
-                { party_type: 'Customer', party: frm.doc.customer, party_name: frm.doc.customer,custom_job_number: frm.doc.name});
+                {company:frm.doc.company, party_type: 'Customer', party: frm.doc.customer, party_name: frm.doc.customer,custom_job_number: frm.doc.name});
         }, __('View'));
     },
 

@@ -46,7 +46,7 @@ frappe.query_reports["Job Details Ledger"] = {
 		},
 		{
 			"fieldname":"voucher_no",
-			"label": __("Voucher No"),
+			"label": __("Sales Invoice"),
 			"fieldtype": "Link",
 			"options": "Sales Invoice",
 			"get_query": function() {
