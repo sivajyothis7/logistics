@@ -1,8 +1,50 @@
 frappe.ui.form.on('Job Details', {
-    // refresh: function(frm) {
+    refresh: function (frm) {
+        if (frm.doc.__islocal) {
+            // If the Job Details is unsaved, do nothing
+            return;
+        }
 
-	// }
+        // Call the set_dashboard_indicators method when the form is refreshed
+        frm.events.set_dashboard_indicators(frm);
+
+        // Add custom button for Accounting Ledger
+        frm.add_custom_button(__('Accounting Ledger'), function () {
+            frappe.set_route('query-report', 'Job Details Ledger',
+                { party_type: 'Customer', party: frm.doc.customer, party_name: frm.doc.customer,custom_job_number: frm.doc.name});
+        }, __('View'));
+    },
+
+    set_dashboard_indicators: function (frm) {
+        // Fetch linked Sales Invoices related to the selected Job Details
+        frappe.call({
+            method: 'frappe.client.get_list',
+            args: {
+                doctype: 'Sales Invoice',
+                filters: {
+                    custom_job_number: frm.doc.name
+                },
+                fields: ['grand_total', 'outstanding_amount']
+            },
+            callback: function (response) {
+                var invoices = response.message;
+                var totalBilling = 0;
+                var totalUnpaid = 0;
+                if (invoices && invoices.length > 0) {
+                    invoices.forEach(function (invoice) {
+                        totalBilling += invoice.grand_total;
+                        totalUnpaid += invoice.outstanding_amount;
+                    });
+                }
+
+                // Add indicators using data from Sales Invoices related to the selected Job Details
+                frm.dashboard.add_indicator(__('Total Billing: {0}', [format_currency(totalBilling, frm.doc.currency)]), 'blue');
+                frm.dashboard.add_indicator(__('Total Unpaid: {0}', [format_currency(totalUnpaid, frm.doc.currency)]), totalUnpaid ? 'red' : 'green');
+            }
+        });
+    }
 });
+
 
 //     refresh: function(frm) {
 //         // Maintain a list of selected log names
