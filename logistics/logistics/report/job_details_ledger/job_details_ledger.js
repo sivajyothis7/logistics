@@ -64,6 +64,19 @@ frappe.query_reports["Job Details Ledger"] = {
 			"fieldtype": "Break",
 		},
 		{
+			"fieldname":"custom_job_number",
+			"label": __("Job Details"),
+			"fieldtype": "Link",
+			"options": "Job Details",
+			"get_query": function () {
+				return {
+					filters: {
+						"company": frappe.query_report.get_filter_value("company")
+					}
+				};
+			}
+		},
+		{
 			"fieldname":"party_type",
 			"label": __("Party Type"),
 			"fieldtype": "Autocomplete",
@@ -170,19 +183,7 @@ frappe.query_reports["Job Details Ledger"] = {
 		// 		});
 		// 	}
 		// },
-		{
-			"fieldname":"custom_job_number",
-			"label": __("Job Details"),
-			"fieldtype": "Link",
-			"options": "Job Details",
-			"get_query": function () {
-				return {
-					filters: {
-						"company": frappe.query_report.get_filter_value("company")
-					}
-				};
-			}
-		},
+		
 		{
 			"fieldname": "include_dimensions",
 			"label": __("Consider Accounting Dimensions"),
