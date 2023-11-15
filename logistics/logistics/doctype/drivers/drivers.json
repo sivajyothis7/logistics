@@ -20,6 +20,10 @@
   "issuing_date",
   "column_break_7lva8",
   "expiry_date",
+  "vehicle_details_section",
+  "vehicle_type",
+  "column_break_xdep",
+  "registration_number",
   "amended_from"
  ],
  "fields": [
@@ -88,17 +92,34 @@
   {
    "fieldname": "general_section",
    "fieldtype": "Section Break",
-   "label": "General"
+   "label": "General Details"
+  },
+  {
+   "fieldname": "vehicle_details_section",
+   "fieldtype": "Section Break",
+   "label": "Vehicle Details"
+  },
+  {
+   "fieldname": "vehicle_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Vehicle Type",
+   "options": "Vehicle Type"
+  },
+  {
+   "fieldname": "column_break_xdep",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "registration_number",
+   "fieldtype": "Data",
+   "label": "Registration Number"
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [
-  {
-   "link_doctype": "Vehicles",
-   "link_fieldname": "current_driver"
-  }
- ],
- "modified": "2023-11-02 07:54:04.373537",
+ "links": [],
+ "modified": "2023-11-15 14:09:47.739403",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Drivers",

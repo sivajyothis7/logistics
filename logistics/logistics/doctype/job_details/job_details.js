@@ -4,17 +4,14 @@ frappe.ui.form.on('Job Details', {
             // If the Job Details is unsaved, do nothing
             return;
         }
-
         // Call the set_dashboard_indicators method when the form is refreshed
         frm.events.set_dashboard_indicators(frm);
-
         // Add custom button for Accounting Ledger
         frm.add_custom_button(__('Accounting Ledger'), function () {
             frappe.set_route('query-report', 'Job Details Ledger',
                 {company:frm.doc.company, party_type: 'Customer', party: frm.doc.customer, party_name: frm.doc.customer,custom_job_number: frm.doc.name});
         }, __('View'));
     },
-
     set_dashboard_indicators: function (frm) {
         // Fetch linked Sales Invoices related to the selected Job Details
         frappe.call({
@@ -22,7 +19,8 @@ frappe.ui.form.on('Job Details', {
             args: {
                 doctype: 'Sales Invoice',
                 filters: {
-                    custom_job_number: frm.doc.name
+                    custom_job_number: frm.doc.name,
+                    docstatus: 1
                 },
                 fields: ['grand_total', 'outstanding_amount']
             },
@@ -36,7 +34,6 @@ frappe.ui.form.on('Job Details', {
                         totalUnpaid += invoice.outstanding_amount;
                     });
                 }
-
                 // Add indicators using data from Sales Invoices related to the selected Job Details
                 frm.dashboard.add_indicator(__('Total Billing: {0}', [format_currency(totalBilling, frm.doc.currency)]), 'blue');
                 frm.dashboard.add_indicator(__('Total Unpaid: {0}', [format_currency(totalUnpaid, frm.doc.currency)]), totalUnpaid ? 'red' : 'green');

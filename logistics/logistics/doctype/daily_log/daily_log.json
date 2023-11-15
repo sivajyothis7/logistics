@@ -11,14 +11,14 @@
   "date",
   "driver",
   "mobile_no",
-  "vehicle",
   "vehicle_type",
+  "way_bill_collected",
+  "waybill_number",
   "column_break_kkvfx",
   "company",
   "driver_name",
   "id_no",
   "vehicle_number",
-  "waybill_number",
   "logistics_section",
   "from",
   "company_rate",
@@ -36,6 +36,8 @@
   {
    "fieldname": "driver",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Driver ",
    "options": "Drivers"
   },
@@ -64,15 +66,16 @@
    "options": "Company"
   },
   {
-   "fetch_from": "vehicle.reg_number",
+   "fetch_from": "driver.registration_number",
    "fieldname": "vehicle_number",
    "fieldtype": "Data",
    "label": "Vehicle Number"
   },
   {
-   "fetch_from": "vehicle.type",
+   "fetch_from": "driver.vehicle_type",
    "fieldname": "vehicle_type",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Vehicle Type"
   },
   {
@@ -116,21 +119,22 @@
    "label": "Logistics Details"
   },
   {
-   "fieldname": "vehicle",
-   "fieldtype": "Link",
-   "label": "Vehicle",
-   "options": "Vehicles"
-  },
-  {
    "default": "0",
    "fieldname": "advanced_paid",
    "fieldtype": "Check",
    "label": "Advanced Paid"
   },
   {
+   "depends_on": "eval: doc.way_bill_collected == 1",
    "fieldname": "waybill_number",
    "fieldtype": "Data",
    "label": "Waybill Number"
+  },
+  {
+   "default": "0",
+   "fieldname": "way_bill_collected",
+   "fieldtype": "Check",
+   "label": "Way bill collected?"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -147,7 +151,7 @@
    "link_fieldname": "daily_log"
   }
  ],
- "modified": "2023-11-08 08:05:52.664129",
+ "modified": "2023-11-15 14:15:46.766303",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Log",
