@@ -34,7 +34,7 @@ frappe.query_reports["Daily"] = {
             "fieldname": "to",
             "label": __("To Location"),
             "fieldtype": "Data", 
-        }
-        
+        },
+    
     ],
 };
