@@ -23,6 +23,7 @@
   "from",
   "company_rate",
   "advanced_paid",
+  "driver_advance",
   "column_break_abpnp",
   "to",
   "driver_rate"
@@ -94,13 +95,11 @@
    "label": "To"
   },
   {
-   "depends_on": "eval: doc.advanced_paid == 1",
    "fieldname": "driver_rate",
    "fieldtype": "Data",
    "label": "Driver rate"
   },
   {
-   "depends_on": "eval: doc.advanced_paid == 1",
    "fieldname": "company_rate",
    "fieldtype": "Data",
    "label": "Company rate"
@@ -135,6 +134,12 @@
    "fieldname": "way_bill_collected",
    "fieldtype": "Check",
    "label": "Way bill collected?"
+  },
+  {
+   "depends_on": "eval: doc.advanced_paid == 1",
+   "fieldname": "driver_advance",
+   "fieldtype": "Data",
+   "label": "Driver Advance"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -151,7 +156,7 @@
    "link_fieldname": "daily_log"
   }
  ],
- "modified": "2023-11-15 14:15:46.766303",
+ "modified": "2023-11-17 07:10:02.112551",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Log",
