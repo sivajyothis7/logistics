@@ -5,12 +5,13 @@ import frappe
 from frappe.model.document import Document
 
 class DailyLog(Document):
-    def get_query(self, doc):
-        return f"""
-            SELECT
-                name
-            FROM
-                `tabVehicles`
-            WHERE
-                driver = '{doc.driver}'
-        """
+    pass
+    # def get_query(self, doc):
+    #     return f"""
+    #         SELECT
+    #             name
+    #         FROM
+    #             `tabVehicles`
+    #         WHERE
+    #             driver = '{doc.driver}'
+    #     """

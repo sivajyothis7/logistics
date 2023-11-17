@@ -24,6 +24,7 @@
   "company_rate",
   "advanced_paid",
   "driver_advance",
+  "pending_driver_rate",
   "column_break_abpnp",
   "to",
   "driver_rate"
@@ -140,6 +141,13 @@
    "fieldname": "driver_advance",
    "fieldtype": "Data",
    "label": "Driver Advance"
+  },
+  {
+   "depends_on": "eval: doc.advanced_paid == 1",
+   "fieldname": "pending_driver_rate",
+   "fieldtype": "Data",
+   "label": "Pending Driver Rate",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
@@ -156,7 +164,7 @@
    "link_fieldname": "daily_log"
   }
  ],
- "modified": "2023-11-17 07:10:02.112551",
+ "modified": "2023-11-17 12:30:17.024292",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Log",
