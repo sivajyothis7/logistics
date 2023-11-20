@@ -161,6 +161,8 @@
   {
    "fieldname": "customer",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Customer",
    "options": "Customer"
   },
@@ -188,7 +190,7 @@
    "link_fieldname": "daily_log"
   }
  ],
- "modified": "2023-11-20 09:46:36.523313",
+ "modified": "2023-11-20 15:52:09.841338",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Log",

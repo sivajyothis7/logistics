@@ -41,7 +41,7 @@
   {
    "fieldname": "vehicle",
    "fieldtype": "Table",
-   "label": "Driver",
+   "label": "Daily Log Data",
    "options": "Driver Data"
   },
   {
@@ -72,8 +72,7 @@
   {
    "fieldname": "driver_data_section",
    "fieldtype": "Section Break",
-   "hidden": 1,
-   "label": "Driver Data"
+   "label": "Daily Log Details"
   },
   {
    "fetch_from": "daily_log.waybill_number",
@@ -97,7 +96,7 @@
    "link_fieldname": "custom_job_number"
   }
  ],
- "modified": "2023-11-08 07:55:29.313688",
+ "modified": "2023-11-20 15:47:55.610925",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Job Details",
