@@ -7,7 +7,10 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "general_section",
+  "general_tab",
+  "section_break_uard",
+  "company",
+  "section_break_eog6",
   "date",
   "driver",
   "mobile_no",
@@ -15,10 +18,11 @@
   "way_bill_collected",
   "waybill_number",
   "column_break_kkvfx",
-  "company",
+  "customer",
   "driver_name",
   "id_no",
   "vehicle_number",
+  "tab_2_tab",
   "logistics_section",
   "from",
   "company_rate",
@@ -79,11 +83,6 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Vehicle Type"
-  },
-  {
-   "fieldname": "general_section",
-   "fieldtype": "Section Break",
-   "label": "General"
   },
   {
    "fieldname": "from",
@@ -148,6 +147,31 @@
    "fieldtype": "Data",
    "label": "Pending Driver Rate",
    "read_only": 1
+  },
+  {
+   "fieldname": "tab_2_tab",
+   "fieldtype": "Tab Break",
+   "label": "Logistics Details"
+  },
+  {
+   "fieldname": "general_tab",
+   "fieldtype": "Tab Break",
+   "label": "General"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "section_break_uard",
+   "fieldtype": "Section Break",
+   "label": "General"
+  },
+  {
+   "fieldname": "section_break_eog6",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -164,7 +188,7 @@
    "link_fieldname": "daily_log"
   }
  ],
- "modified": "2023-11-17 12:30:17.024292",
+ "modified": "2023-11-20 09:46:36.523313",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Log",
