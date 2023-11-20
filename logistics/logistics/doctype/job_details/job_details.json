@@ -83,6 +83,7 @@
   {
    "fieldname": "daily_log",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Daily Log",
    "options": "Daily Log"
   }
@@ -96,7 +97,7 @@
    "link_fieldname": "custom_job_number"
   }
  ],
- "modified": "2023-11-20 15:47:55.610925",
+ "modified": "2023-11-20 16:25:17.596358",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Job Details",
