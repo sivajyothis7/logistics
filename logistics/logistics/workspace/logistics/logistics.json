@@ -51,7 +51,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-11-15 15:17:12.205553",
+ "modified": "2023-11-21 07:30:38.744132",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Logistics",
@@ -64,17 +64,11 @@
  "sequence_id": 5.0,
  "shortcuts": [
   {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Job Details",
-   "link_to": "Job Details",
-   "type": "DocType"
-  },
-  {
    "color": "Yellow",
    "doc_view": "List",
    "label": "Daily Log",
    "link_to": "Daily Log",
+   "stats_filter": "[]",
    "type": "DocType"
   },
   {
@@ -82,7 +76,15 @@
    "doc_view": "List",
    "label": "Drivers",
    "link_to": "Drivers",
-   "stats_filter": "",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Job Details",
+   "link_to": "Job Details",
+   "stats_filter": "[]",
    "type": "DocType"
   }
  ],

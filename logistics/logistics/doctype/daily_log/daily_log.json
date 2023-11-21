@@ -1,6 +1,6 @@
 {
  "actions": [],
- "autoname": "format:WP-{company}-{driver_name}-{##}",
+ "autoname": "format:DL-{customer}-{driver_name}-{##}",
  "creation": "2023-09-29 09:28:50.317525",
  "default_view": "List",
  "doctype": "DocType",
@@ -190,7 +190,7 @@
    "link_fieldname": "daily_log"
   }
  ],
- "modified": "2023-11-20 15:52:09.841338",
+ "modified": "2023-11-21 07:28:50.215993",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Log",
