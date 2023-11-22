@@ -26,7 +26,7 @@ frappe.ui.form.on('Job Details', {
                 doctype: "Daily Log",
                 target: frm,
                 setters: {
-                    company: null,
+                    customer: frm.doc.customer,
                     date: null,
                 },
                 add_filters_group: 1,
