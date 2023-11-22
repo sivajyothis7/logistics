@@ -8,6 +8,12 @@ frappe.query_reports["Daily"] = {
             "default": frappe.defaults.get_user_default("company")
         },
         {
+            "fieldname": "customer",
+            "label": __("Customer"),
+            "fieldtype": "Link",
+            "options": "Customer",
+        },
+        {
             "fieldname": "driver",
             "label": __("Driver"),
             "fieldtype": "Link",
@@ -35,6 +41,7 @@ frappe.query_reports["Daily"] = {
             "label": __("To Location"),
             "fieldtype": "Data", 
         },
+        
     
     ],
 };

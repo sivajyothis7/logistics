@@ -11,15 +11,17 @@
  "button_label": "Save",
  "condition_json": "[]",
  "creation": "2023-11-21 15:55:26.818774",
+ "custom_css": "",
  "doc_type": "Customer",
  "docstatus": 0,
  "doctype": "Web Form",
  "idx": 0,
+ "introduction_text": "<div class=\"ql-editor read-mode\"><h2><em style=\"font-size: 14px;\">Kindly download &nbsp;</em><em style=\"font-size: 15px; color: rgb(204, 224, 245);\"><u><a href=\"https://drive.google.com/uc?id=15kGNKv3eBrUf-rBpNr5f4f_BrRrrXuEu&amp;export=download\" rel=\"noopener noreferrer\">KYC Form</a></u></em><em style=\"font-size: 14px;\"> &nbsp;from here.</em></h2></div>",
  "is_standard": 1,
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 10,
- "modified": "2023-11-21 16:37:17.946731",
+ "modified": "2023-11-22 11:44:15.472052",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "customer-form",
@@ -29,6 +31,7 @@
  "show_attachments": 0,
  "show_list": 0,
  "show_sidebar": 0,
+ "success_url": "",
  "title": "Customer Form",
  "web_form_fields": [
   {
@@ -155,7 +158,7 @@
    "max_length": 0,
    "max_value": 0,
    "read_only": 0,
-   "reqd": 0,
+   "reqd": 1,
    "show_in_filter": 0
   },
   {
