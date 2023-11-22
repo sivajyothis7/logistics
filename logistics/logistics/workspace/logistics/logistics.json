@@ -45,13 +45,13 @@
    "is_query_report": 1,
    "label": "Daily Log Reports",
    "link_count": 0,
-   "link_to": "Daily",
+   "link_to": "Daily Log Report",
    "link_type": "Report",
    "onboard": 1,
    "type": "Link"
   }
  ],
- "modified": "2023-11-21 07:30:38.744132",
+ "modified": "2023-11-22 12:03:15.290510",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Logistics",
