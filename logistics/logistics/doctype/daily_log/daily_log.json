@@ -1,6 +1,7 @@
 {
  "actions": [],
- "autoname": "format:DL-{customer}-{driver_name}-{##}",
+ "allow_rename": 1,
+ "autoname": "format:DL-{customer}-{from}-{to}-{##}",
  "creation": "2023-09-29 09:28:50.317525",
  "default_view": "List",
  "doctype": "DocType",
@@ -15,13 +16,16 @@
   "driver",
   "mobile_no",
   "vehicle_type",
+  "co",
   "way_bill_collected",
-  "waybill_number",
   "column_break_kkvfx",
   "customer",
   "driver_name",
   "id_no",
   "vehicle_number",
+  "waybill_number",
+  "section_break_kml0",
+  "notes",
   "tab_2_tab",
   "logistics_section",
   "from",
@@ -35,6 +39,7 @@
  ],
  "fields": [
   {
+   "default": "Today",
    "fieldname": "date",
    "fieldtype": "Date",
    "label": "Date"
@@ -174,6 +179,21 @@
   {
    "fieldname": "section_break_eog6",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "section_break_kml0",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "co",
+   "fieldtype": "Link",
+   "label": "C/O",
+   "options": "Sales Partner"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -190,7 +210,7 @@
    "link_fieldname": "daily_log"
   }
  ],
- "modified": "2023-11-21 07:28:50.215993",
+ "modified": "2023-11-22 15:28:54.398642",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Log",
