@@ -105,8 +105,8 @@ def get_conditions(filters):
     if filters.get('driver'):
         conditions['driver'] = filters.get('driver')
 
-    # if filters.get('customer'):
-    #     conditions['customer'] = filters.get('customer')
+    if filters.get('customer'):
+        conditions['customer'] = filters.get('customer')
 
     if filters.get('company'):
         conditions['company'] = filters.get('company')
