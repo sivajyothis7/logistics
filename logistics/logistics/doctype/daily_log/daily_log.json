@@ -85,9 +85,11 @@
   {
    "fetch_from": "driver.vehicle_type",
    "fieldname": "vehicle_type",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Vehicle Type"
+   "in_standard_filter": 1,
+   "label": "Vehicle Type",
+   "options": "Vehicle Type"
   },
   {
    "fieldname": "from",
@@ -210,7 +212,7 @@
    "link_fieldname": "daily_log"
   }
  ],
- "modified": "2023-11-22 15:28:54.398642",
+ "modified": "2023-11-26 17:22:20.085458",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Log",
