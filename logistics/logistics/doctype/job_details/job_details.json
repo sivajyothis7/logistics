@@ -80,9 +80,14 @@
    "group": "Invoice Details",
    "link_doctype": "Sales Invoice",
    "link_fieldname": "custom_job_number"
+  },
+  {
+   "group": "Expense Details",
+   "link_doctype": "Journal Entry",
+   "link_fieldname": "custom_job_details"
   }
  ],
- "modified": "2023-11-22 07:47:47.575846",
+ "modified": "2023-11-29 14:39:57.658241",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Job Details",

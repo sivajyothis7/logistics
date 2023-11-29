@@ -1,0 +1,156 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:WR-{customer}-{###}",
+ "creation": "2023-11-28 12:12:12.626861",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "general_section",
+  "date",
+  "job_details",
+  "column_break_msnj",
+  "company",
+  "customer",
+  "section_break_kpuv",
+  "warehouse_space_item",
+  "column_break_xuig",
+  "months_rented",
+  "section_break_ktfz",
+  "rent_start_date",
+  "rental_rate",
+  "status",
+  "column_break_acy5",
+  "rent_end_date",
+  "total_amount",
+  "invoice_number"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "column_break_msnj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rent_start_date",
+   "fieldtype": "Date",
+   "label": "Rent Start Date"
+  },
+  {
+   "fieldname": "rental_rate",
+   "fieldtype": "Currency",
+   "label": "Rental Rate"
+  },
+  {
+   "fieldname": "rent_end_date",
+   "fieldtype": "Date",
+   "label": "Rent End Date"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount"
+  },
+  {
+   "fieldname": "section_break_ktfz",
+   "fieldtype": "Section Break",
+   "label": "Rent Details"
+  },
+  {
+   "fieldname": "job_details",
+   "fieldtype": "Link",
+   "label": "Job Details",
+   "options": "Job Details"
+  },
+  {
+   "fieldname": "column_break_acy5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "general_section",
+   "fieldtype": "Section Break",
+   "label": "General"
+  },
+  {
+   "fetch_from": "job_details.customer",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "default": "Available",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "\nAvailable\nOccupied"
+  },
+  {
+   "fieldname": "invoice_number",
+   "fieldtype": "Link",
+   "label": "Invoice Number",
+   "options": "Sales Invoice"
+  },
+  {
+   "fieldname": "section_break_kpuv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "warehouse_space_item",
+   "fieldtype": "Link",
+   "label": "Warehouse Space Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "months_rented",
+   "fieldtype": "Float",
+   "label": "Months Rented",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_xuig",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-11-29 10:20:31.077847",
+ "modified_by": "Administrator",
+ "module": "Logistics",
+ "name": "Warehouse Rental",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_views": 1
+}
