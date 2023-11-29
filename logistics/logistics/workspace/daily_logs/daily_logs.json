@@ -23,7 +23,7 @@
   },
   {
    "hidden": 0,
-   "is_query_report": 0,
+   "is_query_report": 1,
    "label": "Daily Log Reports",
    "link_count": 0,
    "link_to": "Daily Log Reports",
@@ -32,7 +32,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-11-29 18:31:13.408095",
+ "modified": "2023-11-29 18:35:47.759616",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Logs",
