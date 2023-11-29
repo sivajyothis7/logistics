@@ -10,7 +10,7 @@
  "is_standard": "Yes",
  "letter_head": "Enfono Logistics",
  "letterhead": null,
- "modified": "2023-11-22 15:40:52.617136",
+ "modified": "2023-11-29 18:45:47.570235",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Log Reports",
@@ -21,5 +21,9 @@
  "report_name": "Daily Log Reports",
  "report_script": "",
  "report_type": "Script Report",
- "roles": []
+ "roles": [
+  {
+   "role": "All"
+  }
+ ]
 }
