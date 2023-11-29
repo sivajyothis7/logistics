@@ -1,0 +1,46 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"NISfT_b0hT\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">PEOPLE</span>\",\"col\":12}},{\"id\":\"9l_cVj1YE4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customer\",\"col\":3}},{\"id\":\"GLC3_gHt36\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Drivers\",\"col\":3}}]",
+ "creation": "2023-11-29 18:08:15.710293",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "share-people",
+ "idx": 0,
+ "indicator_color": "yellow",
+ "is_hidden": 0,
+ "label": "People",
+ "links": [],
+ "modified": "2023-11-29 18:29:47.771109",
+ "modified_by": "Administrator",
+ "module": "Logistics",
+ "name": "People",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "Logistics",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 5.1,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "label": "Drivers",
+   "link_to": "Drivers",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Customer",
+   "link_to": "Customer",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "People"
+}
