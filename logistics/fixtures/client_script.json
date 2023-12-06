@@ -26,10 +26,10 @@
   "doctype": "Client Script",
   "dt": "Sales Invoice",
   "enabled": 1,
-  "modified": "2023-11-02 09:29:13.317983",
+  "modified": "2023-11-23 10:36:10.320753",
   "module": "Logistics",
   "name": "invoice",
-  "script": "frappe.ui.form.on('Sales Invoice', {\n  refresh: function(frm) {\n    if (frm.doc.__islocal) {\n      frm.add_custom_button(__('Sales Order'), function() {\n        erpnext.utils.map_current_doc({\n          method: \"erpnext.selling.doctype.sales_order.sales_order.make_sales_invoice\",\n          source_doctype: \"Sales Order\",\n          target: frm,\n          setters: {\n            customer: frm.doc.customer ||\"\",\n            custom_daily_log: frm.doc.custom_daily_log || \"\",\n          },\n          get_query_filters: {\n            docstatus: 1,\n            status: [\"not in\", [\"Closed\", \"On Hold\"]],\n            per_billed: [\"<\", 99.99],\n            company: frm.doc.company,\n          }\n        });\n      }, __(\"Get Items From\"));\n    }\n  }\n});",
+  "script": "frappe.ui.form.on('Sales Invoice', {\n  refresh: function(frm) {\n    if (frm.doc.__islocal) {\n      frm.add_custom_button(__('Sales Order'), function() {\n        erpnext.utils.map_current_doc({\n          method: \"erpnext.selling.doctype.sales_order.sales_order.make_sales_invoice\",\n          source_doctype: \"Sales Order\",\n          target: frm,\n          setters: {\n            customer: frm.doc.customer || \"\",\n            custom_daily_log: frm.doc.custom_daily_log || \"\",\n          },\n          add_filters_group: 1,\n          get_query: function() {\n            return {\n              filters: {\n                customer: frm.doc.customer\n              }\n            };\n          },\n        });\n      }, __(\"Get Items From\"));\n    }\n  }\n});\n",
   "view": "Form"
  },
  {
@@ -42,5 +42,27 @@
   "name": "dummy",
   "script": "frappe.ui.form.on('Sales Invoice', {\n    refresh: function(frm) {\n        const selectedLogs = [];\n        frm.add_custom_button(__('Select Daily Log'), function() {\n            const dialog = new frappe.ui.form.MultiSelectDialog({\n                doctype: \"Daily Log\",\n                target: frm,\n                setters: {},\n                add_filters_group: 1,\n                date_field: \"transaction_date\",\n                columns: [\"vehicle\", \"driver\"],\n                get_query() {\n                    return {\n                        filters: { docstatus: ['!=', 2] }\n                    };\n                },\n                primary_action_label: 'Get Details',\n                action(selections, args) {\n                    selections.forEach(selectedItem => {\n                        const logName = selectedItem;\n                        if (!selectedLogs.includes(logName)) {\n                            frappe.call({\n                                method: 'frappe.client.get',\n                                args: {\n                                    doctype: 'Daily Log',\n                                    name: logName,\n                                },\n                                callback: function(response) {\n                                    if (response.message) {\n                                        const dailyLogData = response.message;\n                                        dailyLogData.items.forEach(dailyLogItem => {\n                                            const newRow = frm.add_child('items');\n                                            newRow.item_code = dailyLogItem.item_code;\n                                            newRow.qty = dailyLogItem.qty;\n                                        });\n                                        frm.refresh_field('items');\n                                        selectedLogs.push(logName);\n                                        frappe.show_alert(__('<span style=\"color: green;\">Daily Log \"{0}\" items added successfully.</span>', [logName]), 6);\n                                    } else {\n                                        console.error('Error fetching Daily Log data.');\n                                        frappe.show_alert(__('<span style=\"color: red;\">Error fetching Daily Log data for \"{0}\".</span>', [logName]), 6);\n                                    }\n                                }\n                            });\n                        } else {\n                            frappe.show_alert(__('<span style=\"color: red;\">Daily Log \"{0}\" items already exist in the Sales Invoice.</span>', [logName]), 6);\n                        }\n                    });\n                }\n            });\n        });\n    }\n});\n",
   "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Job Details",
+  "enabled": 0,
+  "modified": "2023-11-13 07:01:50.243615",
+  "module": null,
+  "name": "Summary",
+  "script": "frappe.ui.form.on('Job Details', {\n    refresh: function(frm) {\n        if (frm.doc.__islocal) {\n            // If the Job Details is unsaved, do nothing\n            return;\n        }\n        // Call the set_dashboard_indicators method when the form is refreshed\n        frm.events.set_dashboard_indicators(frm);\n    },\n    set_dashboard_indicators: function(frm) {\n        // Fetch linked Sales Invoices related to the selected Job Details\n        frappe.call({\n            method: 'frappe.client.get_list',\n            args: {\n                doctype: 'Sales Invoice',\n                filters: {\n                    custom_job_number: frm.doc.name\n                },\n                fields: ['grand_total', 'outstanding_amount']\n            },\n            callback: function(response) {\n                var invoices = response.message;\n                var totalBilling = 0;\n                var totalUnpaid = 0;\n                if (invoices && invoices.length > 0) {\n                    invoices.forEach(function(invoice) {\n                        totalBilling += invoice.grand_total;\n                        totalUnpaid += invoice.outstanding_amount;\n                    });\n                }\n                // Add indicators using data from Sales Invoices related to the selected Job Details\n                frm.dashboard.add_indicator(__('Total Billing: {0}', [format_currency(totalBilling, frm.doc.currency)]), 'blue');\n                frm.dashboard.add_indicator(__('Total Unpaid: {0}', [format_currency(totalUnpaid, frm.doc.currency)]), totalUnpaid ? 'red' : 'green');\n            }\n        });\n    }\n});",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Way Bill",
+  "enabled": 1,
+  "modified": "2023-12-06 14:48:27.586578",
+  "module": "Logistics",
+  "name": "Pdf",
+  "script": "frappe.listview_settings['Way Bill'] = {\n        button: {\n    \t\tshow: function(doc) {\n    \t\t\treturn true;\n    \t\t},\n    \t\tget_label: function() {\n    \t\t\treturn __('Generate E-Way Bill');\n    \t\t},\n    \t\tget_description: function(doc) {\n    \t\t\treturn __('Open {0}', [`${doc.name}`])\n    \t\t},\n    \t\taction: function(doc) {\n    // \t\t\tfrappe.set_route(\"/app/print/Way Bill/\"+doc.name);\n                var objWindowOpenResult = window.open(frappe.urllib.get_full_url(\"/printview?\"\n                  + \"doctype=\" + encodeURIComponent(\"Way Bill\")\n                  + \"&name=\" + encodeURIComponent(doc.name)\n                  + \"&trigger_print=0\"\n                  + \"&format=Waybill\"\n                  + \"&no_letterhead=0\"\n                  + \"&_lang=en\"\n                 ));\n\n                if(!objWindowOpenResult) {\n                  msgprint(__(\"Please set permission for pop-up windows in your browser!\")); return;\n                }\n    \t\t}\n    \t}\n    }",
+  "view": "List"
  }
 ]
