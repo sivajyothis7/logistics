@@ -4,6 +4,34 @@ from frappe.utils import cint
 
 class JobDetails(Document):
     pass
+
+def calculate_and_display_total_revenue(doc, method):
+    sales_invoices = frappe.get_all('Sales Invoice', filters={'custom_job_number': doc.name}, fields=['grand_total'])
+
+    total_revenue = sum(row['grand_total'] for row in sales_invoices)
+
+    frappe.db.set_value('Job Details', doc.name, 'total_revenue', total_revenue)
+
+def update_total_expense(doc, method):
+    journal_entry = frappe.get_all('Journal Entry', filters={'custom_job_details': doc.name}, fields=['total_debit'])
+
+        # Get the total expenses from the linked Journal Entry
+    total_expense = sum(row['total_debit'] for row in journal_entry)
+
+        # Update the 'total_expense' field in Job Details
+    frappe.db.set_value('Job Details', doc.name, 'total_expense', total_expense)
+        
+
+@frappe.whitelist()
+def calculate_and_get_total_revenue(docname):
+    doc = frappe.get_doc('Job Details', docname)
+    calculate_and_display_total_revenue(doc, method=None)
+    
+    # Call the function to update total_expense
+    update_total_expense(doc, method=None)
+
+    return {'total_revenue': doc.total_revenue, 'total_expense': doc.total_expense}
+
     # def before_save(self):
     #     if self.is_new():
     #         self.set_name_for_new_document()

@@ -11,9 +11,11 @@
   "job_details_section",
   "company",
   "mode_of_transport",
+  "total_revenue",
   "column_break_bdrsj",
   "date",
   "customer",
+  "total_expense",
   "driver_data_section",
   "vehicle",
   "amended_from"
@@ -71,6 +73,19 @@
    "fieldname": "driver_data_section",
    "fieldtype": "Section Break",
    "label": "Daily Log Details"
+  },
+  {
+   "bold": 1,
+   "fieldname": "total_revenue",
+   "fieldtype": "Currency",
+   "label": "Total Revenue",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_expense",
+   "fieldtype": "Data",
+   "label": "Total Expense",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
@@ -87,7 +102,7 @@
    "link_fieldname": "custom_job_details"
   }
  ],
- "modified": "2023-11-29 14:39:57.658241",
+ "modified": "2023-12-06 13:59:17.184587",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Job Details",

@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"NISfT_b0hT\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Logistics</span>\",\"col\":12}},{\"id\":\"WcV8JY7EDe\",\"type\":\"onboarding\",\"data\":{\"onboarding_name\":\"Logistics\",\"col\":12}},{\"id\":\"vSL_ieE7uW\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters</b></span>\",\"col\":12}},{\"id\":\"9l_cVj1YE4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Details\",\"col\":3}},{\"id\":\"2Z8WqbQpJb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Daily Log\",\"col\":3}},{\"id\":\"GLC3_gHt36\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Drivers\",\"col\":3}},{\"id\":\"EzdlCQI83x\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"sBiwIt1hdd\",\"type\":\"card\",\"data\":{\"card_name\":\"Shortcuts\",\"col\":4}},{\"id\":\"hsOqg6uq7o\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
+ "content": "[{\"id\":\"NISfT_b0hT\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Logistics</span>\",\"col\":12}},{\"id\":\"WcV8JY7EDe\",\"type\":\"onboarding\",\"data\":{\"onboarding_name\":\"Logistics\",\"col\":12}},{\"id\":\"vSL_ieE7uW\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters</b></span>\",\"col\":12}},{\"id\":\"9l_cVj1YE4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Details\",\"col\":3}},{\"id\":\"2Z8WqbQpJb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Daily Log\",\"col\":3}},{\"id\":\"GLC3_gHt36\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Drivers\",\"col\":3}},{\"id\":\"glGaLNyXma\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Way Bill\",\"col\":3}},{\"id\":\"EzdlCQI83x\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"sBiwIt1hdd\",\"type\":\"card\",\"data\":{\"card_name\":\"Shortcuts\",\"col\":4}},{\"id\":\"hsOqg6uq7o\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
  "creation": "2023-09-26 12:26:21.243756",
  "custom_blocks": [],
  "docstatus": 0,
@@ -59,7 +59,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-11-29 18:44:46.118612",
+ "modified": "2023-12-06 09:05:40.389335",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Logistics",
@@ -72,10 +72,18 @@
  "sequence_id": 5.0,
  "shortcuts": [
   {
-   "color": "Yellow",
-   "doc_view": "List",
+   "color": "Grey",
+   "doc_view": "New",
    "label": "Daily Log",
    "link_to": "Daily Log",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "New",
+   "label": "Way Bill",
+   "link_to": "Way Bill",
    "stats_filter": "[]",
    "type": "DocType"
   },

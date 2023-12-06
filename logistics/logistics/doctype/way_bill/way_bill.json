@@ -1,0 +1,204 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:WB-{waybill}-{##}",
+ "creation": "2023-12-06 08:32:12.533519",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "column_break_xlmv",
+  "waybill",
+  "delivery_information_section",
+  "on_board_from",
+  "destination",
+  "truck_plate_no",
+  "driver_name",
+  "dispatched_on",
+  "section_break_lsxb",
+  "shipper",
+  "column_break_hag2",
+  "consignee",
+  "section_break_pcrb",
+  "column_break_mvdd",
+  "wb_table",
+  "section_break_8mkk",
+  "column_break_rful",
+  "contact_person",
+  "section_break_vk4w",
+  "goods_received_on",
+  "i_received_the_goods_stated_above_in_good_order_and_condition",
+  "column_break_4ke7",
+  "truck_released_on",
+  "seal_of_the_receiver_company"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "column_break_xlmv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "waybill",
+   "fieldtype": "Data",
+   "label": "Waybill"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "delivery_information_section",
+   "fieldtype": "Section Break",
+   "label": "DELIVERY INFORMATION"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "on_board_from",
+   "fieldtype": "Data",
+   "label": "ON BOARD FROM"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "destination",
+   "fieldtype": "Data",
+   "label": "DESTINATION"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "truck_plate_no",
+   "fieldtype": "Data",
+   "label": "TRUCK PLATE NO"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "driver_name",
+   "fieldtype": "Data",
+   "label": "DRIVER NAME"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "dispatched_on",
+   "fieldtype": "Date",
+   "label": "DISPATCHED ON"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "section_break_lsxb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "shipper",
+   "fieldtype": "Small Text",
+   "label": "SHIPPER"
+  },
+  {
+   "fieldname": "column_break_hag2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "consignee",
+   "fieldtype": "Small Text",
+   "label": "CONSIGNEE"
+  },
+  {
+   "fieldname": "section_break_pcrb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "contact_person",
+   "fieldtype": "Phone",
+   "label": "CONTACT PERSON"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "goods_received_on",
+   "fieldtype": "Date",
+   "label": "GOODS RECEIVED ON"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "i_received_the_goods_stated_above_in_good_order_and_condition",
+   "fieldtype": "Small Text",
+   "label": "I RECEIVED THE GOODS STATED ABOVE IN GOOD ORDER AND CONDITION"
+  },
+  {
+   "fieldname": "column_break_4ke7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "truck_released_on",
+   "fieldtype": "Date",
+   "label": "TRUCK RELEASED ON"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "seal_of_the_receiver_company",
+   "fieldtype": "Small Text",
+   "label": "SEAL OF THE RECEIVER COMPANY"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "section_break_vk4w",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "wb_table",
+   "fieldtype": "Table",
+   "label": "WB Table",
+   "options": "Waybill Table"
+  },
+  {
+   "fieldname": "section_break_8mkk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "column_break_mvdd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "column_break_rful",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-12-06 10:01:06.489990",
+ "modified_by": "Administrator",
+ "module": "Logistics",
+ "name": "Way Bill",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1
+}
