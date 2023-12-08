@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"NISfT_b0hT\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Logistics</span>\",\"col\":12}},{\"id\":\"WcV8JY7EDe\",\"type\":\"onboarding\",\"data\":{\"onboarding_name\":\"Logistics\",\"col\":12}},{\"id\":\"vSL_ieE7uW\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters</b></span>\",\"col\":12}},{\"id\":\"9l_cVj1YE4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Details\",\"col\":3}},{\"id\":\"2Z8WqbQpJb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Daily Log\",\"col\":3}},{\"id\":\"GLC3_gHt36\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Drivers\",\"col\":3}},{\"id\":\"glGaLNyXma\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Way Bill\",\"col\":3}},{\"id\":\"EzdlCQI83x\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"sBiwIt1hdd\",\"type\":\"card\",\"data\":{\"card_name\":\"Shortcuts\",\"col\":4}},{\"id\":\"hsOqg6uq7o\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
+ "content": "[{\"id\":\"NISfT_b0hT\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Logistics</span>\",\"col\":12}},{\"id\":\"WcV8JY7EDe\",\"type\":\"onboarding\",\"data\":{\"onboarding_name\":\"Logistics\",\"col\":12}},{\"id\":\"vSL_ieE7uW\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters</b></span>\",\"col\":12}},{\"id\":\"9l_cVj1YE4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Details\",\"col\":3}},{\"id\":\"2Z8WqbQpJb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Daily Log\",\"col\":3}},{\"id\":\"GLC3_gHt36\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Drivers\",\"col\":3}},{\"id\":\"glGaLNyXma\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Way Bill\",\"col\":3}},{\"id\":\"EzdlCQI83x\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"sBiwIt1hdd\",\"type\":\"card\",\"data\":{\"card_name\":\"Shortcuts\",\"col\":4}},{\"id\":\"hsOqg6uq7o\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
  "creation": "2023-09-26 12:26:21.243756",
  "custom_blocks": [],
  "docstatus": 0,
@@ -44,7 +44,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Reports",
-   "link_count": 1,
+   "link_count": 2,
    "onboard": 0,
    "type": "Card Break"
   },
@@ -57,9 +57,19 @@
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Way Bill Data",
+   "link_count": 0,
+   "link_to": "Way Bill",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2023-12-06 09:05:40.389335",
+ "modified": "2023-12-07 07:29:04.385814",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Logistics",
@@ -82,7 +92,7 @@
   {
    "color": "Green",
    "doc_view": "New",
-   "label": "Way Bill",
+   "label": "New Way Bill",
    "link_to": "Way Bill",
    "stats_filter": "[]",
    "type": "DocType"

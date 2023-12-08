@@ -82,42 +82,42 @@ frappe.ui.form.on('Job Details', {
             });
         });
 
-        frm.add_custom_button(__('Update Total Revenue and Expense'), function() {
-            frappe.call({
-                method: 'logistics.logistics.doctype.job_details.job_details.calculate_and_get_total_revenue',
-                args: {
-                    docname: frm.doc.name,
-                    filters: {
-                        docstatus: 1
-                    }
-                },
-                callback: function(response) {
-                    if (response.message) {
-                        const updatedTotalRevenue = response.message.total_revenue;
-                        const updatedTotalExpense = response.message.total_expense;
-        
-                        frm.set_value('total_revenue', updatedTotalRevenue);
-                        frm.set_value('total_expense', updatedTotalExpense);
-        
-                        frm.refresh_field('total_revenue');
-                        frm.refresh_field('total_expense');
-        
-                        frappe.msgprint(
-                            __('Total Revenue and Expense Updated Successfully.\nNew Total Revenue: {0}\nNew Total Expense: {1}', [
-                                format_currency(updatedTotalRevenue, frm.doc.currency),
-                                format_currency(updatedTotalExpense, frm.doc.currency)
-                            ])
-                        );
-                    } else {
-                        console.error('Error updating total revenue and expense.');
-                        frappe.msgprint(__('Error updating total revenue and expense.'));
-                    }
+        // Update Total Revenue and Expense logic
+        frappe.call({
+            method: 'logistics.logistics.doctype.job_details.job_details.calculate_and_get_total_revenue',
+            args: {
+                docname: frm.doc.name,
+                filters: {
+                    docstatus: 1
                 }
-            });
-        });
-        
-    },
+            },
+            callback: function(response) {
+                if (response.message) {
+                    const updatedTotalRevenue = response.message.total_revenue;
+                    const updatedTotalExpense = response.message.total_expense;
 
+                    frm.set_value('total_revenue', updatedTotalRevenue);
+                    frm.set_value('total_expense', updatedTotalExpense);
+
+                    frm.refresh_field('total_revenue');
+                    frm.refresh_field('total_expense');
+
+                    frappe.msgprint(
+                        __('Total Revenue and Expense Updated Successfully.\nNew Total Revenue: {0}\nNew Total Expense: {1}', [
+                            format_currency(updatedTotalRevenue, frm.doc.currency),
+                            format_currency(updatedTotalExpense, frm.doc.currency)
+                        ])
+                    );
+                } else {
+                    console.error('Error updating total revenue and expense.');
+                    frappe.msgprint(__('Error updating total revenue and expense.'));
+                }
+            }
+        });
+
+        // Rest of the code...
+    },
+    
     set_dashboard_indicators: function (frm) {
         frappe.call({
             method: 'frappe.client.get_list',
