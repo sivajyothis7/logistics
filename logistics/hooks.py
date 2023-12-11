@@ -216,4 +216,4 @@ app_license = "MIT"
 #	"logistics.auth.validate"
 # ]
 
-fixtures= ["Client Script"]
+fixtures= ["Client Script","Print Format"]
