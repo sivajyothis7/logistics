@@ -20,7 +20,8 @@ class DailyLog(Document):
                     "company_rate": self.company_rate,
                     "driver_rate": self.driver_rate,
                     "driver_advance": self.driver_advance,
-                    "pending_driver_rate": self.pending_driver_rate,
+                    "pending_driver_rate": 0 if self.payment_status == "Cleared" else self.pending_driver_rate,
+                    "payment_status": "Cleared" if self.payment_status == "Cleared" else "Not Cleared",
                 })
             else:
                 payment_data = {
@@ -28,16 +29,21 @@ class DailyLog(Document):
                     "company_rate": self.company_rate,
                     "driver_rate": self.driver_rate,
                     "driver_advance": self.driver_advance,
-                    "pending_driver_rate": self.pending_driver_rate,
+                    "pending_driver_rate": 0 if self.payment_status == "Cleared" else self.pending_driver_rate,
+                    "payment_status": "Cleared" if self.payment_status == "Cleared" else "Not Cleared",
                 }
                 driver_doc.append("payment_data", payment_data)
 
             driver_doc.save(ignore_permissions=True)
-            frappe.msgprint("Driver Payment Data updated successfully for driver: {}".format(self.driver))
+
+            driver_link = frappe.utils.get_link_to_form(driver_doc.doctype, self.driver)
+            
+            frappe.msgprint("Driver Payment Data updated successfully for Driver: {}".format(driver_link))
         except frappe.DoesNotExistError:
             frappe.msgprint("Error: Could not find Driver with name {}".format(self.driver))
         except Exception as e:
             frappe.msgprint("Error: {}".format(str(e)))
+
 
 
     # def get_query(self, doc):

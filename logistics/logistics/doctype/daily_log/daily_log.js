@@ -10,6 +10,15 @@ frappe.ui.form.on('Daily Log', {
         calculateDriverPendingRate(frm);
     },
 
+    payment_status: function(frm) {
+        if (frm.doc.payment_status === 'Cleared') {
+            frm.set_value('pending_driver_rate', 0);
+            frm.set_df_property('pending_driver_rate', 'read_only', false);
+        } else {
+            calculateDriverPendingRate(frm);
+        }
+    },
+
     before_save: function(frm) {
         if (frm.doc.pending_driver_rate < 0) {
             frappe.msgprint(__('Driver Pending Rate cannot be a negative value.'));

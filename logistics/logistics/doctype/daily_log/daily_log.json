@@ -33,6 +33,7 @@
   "advanced_paid",
   "driver_advance",
   "pending_driver_rate",
+  "payment_status",
   "column_break_abpnp",
   "to",
   "driver_rate"
@@ -196,6 +197,13 @@
    "fieldtype": "Link",
    "label": "C/O",
    "options": "Sales Partner"
+  },
+  {
+   "default": "Not Cleared",
+   "fieldname": "payment_status",
+   "fieldtype": "Select",
+   "label": "Payment Status",
+   "options": "Not Cleared\nCleared"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -212,7 +220,7 @@
    "link_fieldname": "daily_log"
   }
  ],
- "modified": "2023-11-26 17:22:20.085458",
+ "modified": "2023-12-11 14:30:53.450857",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Log",
