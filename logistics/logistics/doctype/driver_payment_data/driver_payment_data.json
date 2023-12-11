@@ -1,0 +1,57 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "hash",
+ "creation": "2023-12-11 12:03:00.220411",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "daily_log",
+  "company_rate",
+  "driver_rate",
+  "driver_advance",
+  "pending_driver_rate"
+ ],
+ "fields": [
+  {
+   "fieldname": "company_rate",
+   "fieldtype": "Data",
+   "label": "Company Rate"
+  },
+  {
+   "fieldname": "driver_rate",
+   "fieldtype": "Data",
+   "label": "Driver Rate"
+  },
+  {
+   "fieldname": "driver_advance",
+   "fieldtype": "Data",
+   "label": "Driver Advance"
+  },
+  {
+   "fieldname": "pending_driver_rate",
+   "fieldtype": "Data",
+   "label": "Pending Driver Rate"
+  },
+  {
+   "fieldname": "daily_log",
+   "fieldtype": "Link",
+   "label": "Daily Log",
+   "options": "Daily Log"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-12-11 12:06:25.354349",
+ "modified_by": "Administrator",
+ "module": "Logistics",
+ "name": "Driver Payment Data",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -10,7 +10,8 @@ class WarehouseRental(Document):
         months_rented = frappe.utils.date_diff(self.rent_end_date, self.rent_start_date) / 30.0
 
         self.months_rented = months_rented
-        self.total_amount = self.rental_rate * months_rented
+ 
+        self.total_amount = self.rental_rate * self.rent_space * months_rented
 
     def validate(self):
         self.calculate_total_amount()
@@ -32,6 +33,7 @@ def generate_invoice(docname):
             invoice = frappe.get_doc({
                 "doctype": "Sales Invoice",
                 "customer": doc.customer,
+                "custom_job_number": doc.job_details,
                 "posting_date": frappe.utils.today(),
                 "due_date": frappe.utils.add_days(frappe.utils.today(), 30),
                 "items": [

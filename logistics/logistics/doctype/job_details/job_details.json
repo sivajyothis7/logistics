@@ -100,9 +100,14 @@
    "group": "Expense Details",
    "link_doctype": "Journal Entry",
    "link_fieldname": "custom_job_details"
+  },
+  {
+   "group": "Warehouse Rental",
+   "link_doctype": "Warehouse Rental",
+   "link_fieldname": "job_details"
   }
  ],
- "modified": "2023-12-06 13:59:17.184587",
+ "modified": "2023-12-11 08:56:41.487375",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Job Details",

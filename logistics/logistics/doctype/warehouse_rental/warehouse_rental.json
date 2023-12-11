@@ -16,8 +16,9 @@
   "customer",
   "section_break_kpuv",
   "warehouse_space_item",
-  "column_break_xuig",
   "months_rented",
+  "column_break_xuig",
+  "rent_space",
   "section_break_ktfz",
   "rent_start_date",
   "rental_rate",
@@ -110,6 +111,7 @@
    "fieldtype": "Section Break"
   },
   {
+   "default": "Warehouse Rent",
    "fieldname": "warehouse_space_item",
    "fieldtype": "Link",
    "label": "Warehouse Space Item",
@@ -124,11 +126,16 @@
   {
    "fieldname": "column_break_xuig",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rent_space",
+   "fieldtype": "Float",
+   "label": "Rent Space"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-11-29 10:20:31.077847",
+ "modified": "2023-12-11 10:36:08.611286",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Warehouse Rental",

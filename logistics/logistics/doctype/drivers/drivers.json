@@ -24,6 +24,8 @@
   "vehicle_type",
   "column_break_xdep",
   "registration_number",
+  "section_break_tlpc",
+  "payment_data",
   "amended_from"
  ],
  "fields": [
@@ -115,11 +117,21 @@
    "fieldname": "registration_number",
    "fieldtype": "Data",
    "label": "Registration Number"
+  },
+  {
+   "fieldname": "section_break_tlpc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "payment_data",
+   "fieldtype": "Table",
+   "label": "Payment Data",
+   "options": "Driver Payment Data"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-11-15 14:09:47.739403",
+ "modified": "2023-12-11 12:05:03.775624",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Drivers",
