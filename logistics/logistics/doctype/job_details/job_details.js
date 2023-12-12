@@ -1,8 +1,39 @@
 frappe.ui.form.on('Job Details', {
     refresh: function(frm) {
         // Call the set_dashboard_indicators method when the form is refreshed
+        if (!frm.doc.__islocal) {
+        frappe.call({
+            method: 'logistics.logistics.doctype.job_details.job_details.calculate_and_get_total_revenue',
+            args: {
+                docname: frm.doc.name,
+                filters: {
+                    docstatus: 1
+                }
+            },
+            callback: function(response) {
+                if (response.message) {
+                    const updatedTotalRevenue = response.message.total_revenue;
+                    const updatedTotalExpense = response.message.total_expense;
+                    frm.set_value('total_revenue', updatedTotalRevenue);
+                    frm.set_value('total_expense', updatedTotalExpense);
+                    frm.refresh_field('total_revenue');
+                    frm.refresh_field('total_expense');
+                    frappe.msgprint(
+                        __('Total Revenue and Expense Updated Successfully.\n New Total Revenue: {0}\nNew Total Expense: {1}', [
+                            format_currency(updatedTotalRevenue, frm.doc.currency),
+                            format_currency(updatedTotalExpense, frm.doc.currency)
+                        ])
+                    );
+                } else {
+                    console.error('Error updating total revenue and expense.');
+                    frappe.msgprint(__('Error updating total revenue and expense.'));
+                }
+            }
+        });
         frm.events.set_dashboard_indicators(frm);
-
+    }else{
+        console.log("not saved")
+    }
         // Add custom button for Accounting Ledger
         frm.add_custom_button(__('Accounting Ledger'), function() {
             frappe.set_route('query-report', 'Job Details Ledger', {
@@ -13,7 +44,6 @@ frappe.ui.form.on('Job Details', {
                 custom_job_number: frm.doc.name
             });
         }, __('View'));
-
         // Add custom button to select Daily Logs without ADD
         frm.add_custom_button(__('Select Daily Logs'), function() {
             // MultiSelectDialog for individual child selection
@@ -37,12 +67,10 @@ frappe.ui.form.on('Job Details', {
                     // Iterate through selected items
                     selections.forEach(selectedItem => {
                         const logName = selectedItem;
-
                         // Check if the vehicle field is defined in the form
                         if (!frm.doc.vehicle) {
                             frm.doc.vehicle = [];
                         }
-
                         // Check if the log name is already in the list of selected logs
                         if (!frm.doc.vehicle.some(vehicle => vehicle.daily_log === logName)) {
                             frappe.call({
@@ -58,12 +86,10 @@ frappe.ui.form.on('Job Details', {
                                         const daily_log = driverData.name;
                                         const driver = driverData.driver;
                                         const vehicle = driverData.vehicle_type;
-
                                         const newRow = frappe.model.add_child(frm.doc, 'Vehicle', 'vehicle');
                                         newRow.daily_log = daily_log;
                                         newRow.driver = driver;
                                         newRow.vehicle_name = vehicle;
-
                                         frm.refresh_field('vehicle');
                                         frappe.show_alert(__('<span style="color: green;">Daily Log "{0}" added successfully.</span>', [logName]), 6);
                                     } else {
@@ -76,48 +102,11 @@ frappe.ui.form.on('Job Details', {
                             frappe.show_alert(__('<span style="color: red;">Daily Log "{0}" already exists in the list.</span>', [logName]), 6);
                         }
                     });
-
                     dialog.dialog.hide();
                 }
             });
         });
-
-        // Update Total Revenue and Expense logic
-        frappe.call({
-            method: 'logistics.logistics.doctype.job_details.job_details.calculate_and_get_total_revenue',
-            args: {
-                docname: frm.doc.name,
-                filters: {
-                    docstatus: 1
-                }
-            },
-            callback: function(response) {
-                if (response.message) {
-                    const updatedTotalRevenue = response.message.total_revenue;
-                    const updatedTotalExpense = response.message.total_expense;
-
-                    frm.set_value('total_revenue', updatedTotalRevenue);
-                    frm.set_value('total_expense', updatedTotalExpense);
-
-                    frm.refresh_field('total_revenue');
-                    frm.refresh_field('total_expense');
-
-                    frappe.msgprint(
-                        __('Total Revenue and Expense Updated Successfully.\nNew Total Revenue: {0}\nNew Total Expense: {1}', [
-                            format_currency(updatedTotalRevenue, frm.doc.currency),
-                            format_currency(updatedTotalExpense, frm.doc.currency)
-                        ])
-                    );
-                } else {
-                    console.error('Error updating total revenue and expense.');
-                    frappe.msgprint(__('Error updating total revenue and expense.'));
-                }
-            }
-        });
-
-        // Rest of the code...
     },
-    
     set_dashboard_indicators: function (frm) {
         frappe.call({
             method: 'frappe.client.get_list',
@@ -139,7 +128,6 @@ frappe.ui.form.on('Job Details', {
                         totalUnpaid += invoice.outstanding_amount;
                     });
                 }
-
                 frappe.call({
                     method: 'frappe.client.get',
                     args: {
@@ -148,11 +136,9 @@ frappe.ui.form.on('Job Details', {
                     },
                     callback: function (jobDetailsResponse) {
                         var jobDetails = jobDetailsResponse.message;
-    
                         var totalRevenue = jobDetails ? jobDetails.total_revenue : 0;
                         var totalExpense = jobDetails ? jobDetails.total_expense : 0;
                         var profitAndLoss = totalRevenue - totalExpense;
-    
                         frm.dashboard.add_indicator(__('Total Billing: {0}', [format_currency(totalBilling, frm.doc.currency)]), 'blue');
                         frm.dashboard.add_indicator(__('Total Unpaid: {0}', [format_currency(totalUnpaid, frm.doc.currency)]), totalUnpaid ? 'red' : 'green');
                         frm.dashboard.add_indicator(__('Profit & Loss: {0}', [format_currency(profitAndLoss, frm.doc.currency)]), profitAndLoss >= 0 ? 'green' : 'red');

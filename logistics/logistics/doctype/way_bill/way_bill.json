@@ -13,10 +13,13 @@
   "waybill",
   "delivery_information_section",
   "on_board_from",
+  "dispatched_on",
+  "driver_name",
+  "driver_mobile_no",
+  "column_break_xqgh",
   "destination",
   "truck_plate_no",
-  "driver_name",
-  "dispatched_on",
+  "driver_iqama_no",
   "section_break_lsxb",
   "shipper",
   "column_break_hag2",
@@ -171,11 +174,25 @@
    "allow_in_quick_entry": 1,
    "fieldname": "column_break_rful",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_xqgh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "driver_mobile_no",
+   "fieldtype": "Phone",
+   "label": "DRIVER MOBILE NO"
+  },
+  {
+   "fieldname": "driver_iqama_no",
+   "fieldtype": "Data",
+   "label": "DRIVER IQAMA NO"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-12-06 10:01:06.489990",
+ "modified": "2023-12-12 12:20:05.814958",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Way Bill",

@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:JOB-{customer}-{mode_of_transport}-{####}",
+ "autoname": "format:JOB-{customer}-{mode_of_transport}-{###}",
  "creation": "2023-09-26 12:55:55.014196",
  "default_view": "List",
  "doctype": "DocType",
@@ -107,7 +107,7 @@
    "link_fieldname": "job_details"
   }
  ],
- "modified": "2023-12-11 08:56:41.487375",
+ "modified": "2023-12-12 11:32:23.600231",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Job Details",
