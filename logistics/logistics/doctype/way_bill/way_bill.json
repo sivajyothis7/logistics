@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:WB-{waybill}-{##}",
+ "autoname": "naming_series:naming_series",
  "creation": "2023-12-06 08:32:12.533519",
  "default_view": "List",
  "doctype": "DocType",
@@ -35,7 +35,8 @@
   "i_received_the_goods_stated_above_in_good_order_and_condition",
   "column_break_4ke7",
   "truck_released_on",
-  "seal_of_the_receiver_company"
+  "seal_of_the_receiver_company",
+  "naming_series"
  ],
  "fields": [
   {
@@ -188,15 +189,21 @@
    "fieldname": "driver_iqama_no",
    "fieldtype": "Data",
    "label": "DRIVER IQAMA NO"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "WB-"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-12-12 12:20:05.814958",
+ "modified": "2023-12-12 13:26:56.971361",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Way Bill",
- "naming_rule": "Expression",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {
