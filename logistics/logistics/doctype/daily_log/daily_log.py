@@ -6,7 +6,7 @@ from frappe.model.document import Document
 
 class DailyLog(Document):
     
-    def before_save(self):
+    def validate(self):
         self.validate_payment()
 
     def validate_payment(self):
