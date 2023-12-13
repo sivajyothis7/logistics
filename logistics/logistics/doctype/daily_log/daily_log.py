@@ -1,6 +1,3 @@
-# Copyright (c) 2023, siva and contributors
-# For license information, please see license.txt
-
 import frappe
 from frappe.model.document import Document
 
@@ -35,6 +32,9 @@ class DailyLog(Document):
                 driver_doc.append("payment_data", payment_data)
 
             driver_doc.save(ignore_permissions=True)
+            
+            # Commit changes to the database immediately
+            frappe.db.commit()
 
             driver_link = frappe.utils.get_link_to_form(driver_doc.doctype, self.driver)
             
@@ -43,15 +43,3 @@ class DailyLog(Document):
             frappe.msgprint("Error: Could not find Driver with name {}".format(self.driver))
         except Exception as e:
             frappe.msgprint("Error: {}".format(str(e)))
-
-
-
-    # def get_query(self, doc):
-    #     return f"""
-    #         SELECT
-    #             name
-    #         FROM
-    #             `tabVehicles`
-    #         WHERE
-    #             driver = '{doc.driver}'
-    #     """
