@@ -19,9 +19,9 @@ def update_total_expense(doc, method):
 def calculate_and_get_total_revenue(docname):
     doc = frappe.get_doc('Job Details', docname)
     calculate_and_display_total_revenue(doc, method=None)
-    # Call the function to update total_expense
     update_total_expense(doc, method=None)
     return {'total_revenue': doc.total_revenue, 'total_expense': doc.total_expense}
+
 
 
     # def before_save(self):
