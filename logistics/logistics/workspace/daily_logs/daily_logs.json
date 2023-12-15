@@ -32,7 +32,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-11-29 18:45:25.749851",
+ "modified": "2023-12-14 07:28:29.409891",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Logs",
@@ -46,7 +46,7 @@
    "role": "All"
   }
  ],
- "sequence_id": 5.2,
+ "sequence_id": 7.0,
  "shortcuts": [
   {
    "color": "Green",

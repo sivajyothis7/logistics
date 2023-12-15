@@ -150,7 +150,6 @@
    "label": "Driver Advance"
   },
   {
-   "depends_on": "eval: doc.advanced_paid == 1",
    "fieldname": "pending_driver_rate",
    "fieldtype": "Data",
    "label": "Pending Driver Rate",
@@ -220,7 +219,7 @@
    "link_fieldname": "daily_log"
   }
  ],
- "modified": "2023-12-11 14:30:53.450857",
+ "modified": "2023-12-15 06:55:04.922177",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Log",

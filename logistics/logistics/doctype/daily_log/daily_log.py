@@ -33,7 +33,6 @@ class DailyLog(Document):
 
             driver_doc.save(ignore_permissions=True)
             
-            # Commit changes to the database immediately
             frappe.db.commit()
 
             driver_link = frappe.utils.get_link_to_form(driver_doc.doctype, self.driver)
