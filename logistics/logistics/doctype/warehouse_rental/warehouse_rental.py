@@ -50,7 +50,8 @@ def generate_invoice(docname):
             frappe.msgprint("Sales Invoice generated successfully: {}".format(invoice.name))
 
             doc.invoice_number = invoice.name
-            doc.save(ignore_permissions=True)
+            doc.insert(ignore_permissions=True)
+            
 
             return doc.invoice_number
     else:
