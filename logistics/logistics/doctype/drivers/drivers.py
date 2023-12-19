@@ -1,8 +1,49 @@
-# Copyright (c) 2023, siva and contributors
-# For license information, please see license.txt
-
+from __future__ import unicode_literals
 import frappe
 from frappe.model.document import Document
 
 class Drivers(Document):
-	pass
+    def calculate_totals(self):
+        total_driver_rate = sum(self.get_numeric_value(row.driver_rate) for row in self.get("payment_data"))
+        total_pending_rate = sum(self.get_numeric_value(row.pending_driver_rate) for row in self.get("payment_data"))
+        
+        self.total_driver_rate = total_driver_rate
+        self.total_pending_rate = total_pending_rate
+        self.save()
+
+    def get_numeric_value(self, value):
+        try:
+            return float(value)
+        except (ValueError, TypeError):
+            return 0.0
+
+    def validate(self):
+        pass
+
+@frappe.whitelist()
+def get_totals(docname):
+    doc = frappe.get_doc("Drivers", docname)
+    doc.calculate_totals()
+    return {
+        "total_driver_rate": doc.total_driver_rate,
+        "total_pending_rate": doc.total_pending_rate
+    }
+
+@frappe.whitelist()
+def create_supplier(docname):
+    doc = frappe.get_doc("Drivers", docname)
+    existing_supplier = frappe.db.get_value("Supplier", {"supplier_name": doc.name1})
+    if existing_supplier:
+        frappe.throw(f"Supplier already exists with the name: {doc.name1}", frappe.DuplicateEntryError)
+
+    supplier = frappe.get_doc({
+        "doctype": "Supplier",
+        "supplier_name": doc.name1,
+        "custom_driver_reference": doc.name1,
+    })
+
+    supplier.flags.ignore_permissions = True
+    supplier.save()
+    supplier_link = frappe.utils.get_link_to_form(supplier.doctype, supplier.name)
+
+    frappe.msgprint("Supplier generated successfully: {}".format(supplier_link))

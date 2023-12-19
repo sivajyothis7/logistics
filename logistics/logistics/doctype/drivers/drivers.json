@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:name1",
+ "autoname": "format:{name1}",
  "creation": "2023-09-26 22:01:49.840288",
  "default_view": "List",
  "doctype": "DocType",
@@ -26,6 +26,10 @@
   "registration_number",
   "section_break_tlpc",
   "payment_data",
+  "section_break_nz1k",
+  "total_driver_rate",
+  "column_break_prqa",
+  "total_pending_rate",
   "amended_from"
  ],
  "fields": [
@@ -127,15 +131,40 @@
    "fieldtype": "Table",
    "label": "Payment Data",
    "options": "Driver Payment Data"
+  },
+  {
+   "fieldname": "section_break_nz1k",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_driver_rate",
+   "fieldtype": "Data",
+   "label": "Total Driver Rate"
+  },
+  {
+   "fieldname": "column_break_prqa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_pending_rate",
+   "fieldtype": "Data",
+   "label": "Total Pending Rate"
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2023-12-11 12:05:03.775624",
+ "links": [
+  {
+   "group": "Driver Slip",
+   "link_doctype": "Purchase Invoice",
+   "link_fieldname": "custom_driver_name",
+   "table_fieldname": "Driver Slip"
+  }
+ ],
+ "modified": "2023-12-19 14:51:18.257658",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Drivers",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
