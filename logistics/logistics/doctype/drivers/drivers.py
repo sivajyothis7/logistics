@@ -4,21 +4,12 @@ from frappe.model.document import Document
 
 class Drivers(Document):
     def calculate_totals(self):
-        total_driver_rate = sum(self.get_numeric_value(row.driver_rate) for row in self.get("payment_data"))
-        total_pending_rate = sum(self.get_numeric_value(row.pending_driver_rate) for row in self.get("payment_data"))
-        
-        self.total_driver_rate = total_driver_rate
-        self.total_pending_rate = total_pending_rate
+        self.total_driver_rate = sum(self.get_numeric_value(row.driver_rate) for row in self.get("payment_data"))
+        self.total_pending_rate = sum(self.get_numeric_value(row.pending_driver_rate) for row in self.get("payment_data"))
         self.save()
 
     def get_numeric_value(self, value):
-        try:
-            return float(value)
-        except (ValueError, TypeError):
-            return 0.0
-
-    def validate(self):
-        pass
+        return float(value) if value else 0.0
 
 @frappe.whitelist()
 def get_totals(docname):

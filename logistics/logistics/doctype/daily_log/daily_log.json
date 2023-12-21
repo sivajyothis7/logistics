@@ -36,7 +36,8 @@
   "payment_status",
   "column_break_abpnp",
   "to",
-  "driver_rate"
+  "driver_rate",
+  "amended_from"
  ],
  "fields": [
   {
@@ -203,6 +204,15 @@
    "fieldtype": "Select",
    "label": "Payment Status",
    "options": "Not Cleared\nCleared"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Daily Log",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
@@ -219,7 +229,7 @@
    "link_fieldname": "daily_log"
   }
  ],
- "modified": "2023-12-15 06:55:04.922177",
+ "modified": "2023-12-21 14:40:53.944897",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Log",
