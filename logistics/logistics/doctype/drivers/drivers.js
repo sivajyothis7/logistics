@@ -3,8 +3,10 @@ frappe.ui.form.on('Drivers', {
         if (!frm.doc.__islocal && !frm.__is_reloaded) {
             calculate_totals(frm);
         }
+        if(!frm.doc.__islocal){
+            frm.events.set_dashboard_indicators(frm);
+        }
         add_custom_button(frm);
-        frm.events.set_dashboard_indicators(frm);
     },
     set_dashboard_indicators: function (frm) {
         frappe.call({
@@ -52,7 +54,7 @@ function calculate_totals(frm) {
     frappe.call({
         method: 'logistics.logistics.doctype.drivers.drivers.get_totals',
         args: {
-            docname: frm.doc.name
+            docname: frm.doc.name,
         },
         callback: function(response) {
             if (response.message) {
@@ -81,14 +83,6 @@ function add_custom_button(frm) {
         });
     });
 }
-
-
-
-
-
-
-
-
 
 
 
