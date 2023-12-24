@@ -13,6 +13,6 @@ class WayBill(Document):
 
             next_way_bill_number = int(last_way_bill_value) + 1 if last_way_bill_value is not None else 1
 
-            next_way_bill_number_formatted = '{:04}'.format(next_way_bill_number)
+            next_way_bill_number_formatted = '{:06}'.format(next_way_bill_number)
 
             self.waybill = str(next_way_bill_number_formatted)
