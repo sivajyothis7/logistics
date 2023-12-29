@@ -200,7 +200,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-12-21 08:34:04.049712",
+ "modified": "2023-12-29 16:05:28.808226",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Way Bill",
@@ -218,6 +218,15 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1
   }
  ],
  "quick_entry": 1,
