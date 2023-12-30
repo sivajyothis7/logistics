@@ -26,7 +26,7 @@
   "doctype": "Client Script",
   "dt": "Sales Invoice",
   "enabled": 1,
-  "modified": "2023-11-23 10:36:10.320753",
+  "modified": "2023-12-29 11:41:46.907390",
   "module": "Logistics",
   "name": "invoice",
   "script": "frappe.ui.form.on('Sales Invoice', {\n  refresh: function(frm) {\n    if (frm.doc.__islocal) {\n      frm.add_custom_button(__('Sales Order'), function() {\n        erpnext.utils.map_current_doc({\n          method: \"erpnext.selling.doctype.sales_order.sales_order.make_sales_invoice\",\n          source_doctype: \"Sales Order\",\n          target: frm,\n          setters: {\n            customer: frm.doc.customer || \"\",\n            custom_daily_log: frm.doc.custom_daily_log || \"\",\n          },\n          add_filters_group: 1,\n          get_query: function() {\n            return {\n              filters: {\n                customer: frm.doc.customer\n              }\n            };\n          },\n        });\n      }, __(\"Get Items From\"));\n    }\n  }\n});\n",
