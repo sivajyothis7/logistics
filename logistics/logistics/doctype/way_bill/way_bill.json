@@ -26,15 +26,11 @@
   "consignee",
   "section_break_pcrb",
   "column_break_mvdd",
-  "wb_table",
-  "section_break_8mkk",
-  "column_break_rful",
-  "contact_person",
+  "description",
+  "remarks",
   "section_break_vk4w",
-  "goods_received_on",
   "i_received_the_goods_stated_above_in_good_order_and_condition",
   "column_break_4ke7",
-  "truck_released_on",
   "seal_of_the_receiver_company",
   "naming_series"
  ],
@@ -119,20 +115,8 @@
   },
   {
    "allow_in_quick_entry": 1,
-   "fieldname": "contact_person",
-   "fieldtype": "Phone",
-   "label": "CONTACT PERSON"
-  },
-  {
-   "allow_in_quick_entry": 1,
-   "fieldname": "goods_received_on",
-   "fieldtype": "Date",
-   "label": "GOODS RECEIVED ON"
-  },
-  {
-   "allow_in_quick_entry": 1,
    "fieldname": "i_received_the_goods_stated_above_in_good_order_and_condition",
-   "fieldtype": "Small Text",
+   "fieldtype": "Data",
    "label": "I RECEIVED THE GOODS STATED ABOVE IN GOOD ORDER AND CONDITION"
   },
   {
@@ -141,14 +125,8 @@
   },
   {
    "allow_in_quick_entry": 1,
-   "fieldname": "truck_released_on",
-   "fieldtype": "Date",
-   "label": "TRUCK RELEASED ON"
-  },
-  {
-   "allow_in_quick_entry": 1,
    "fieldname": "seal_of_the_receiver_company",
-   "fieldtype": "Small Text",
+   "fieldtype": "Data",
    "label": "SEAL OF THE RECEIVER COMPANY"
   },
   {
@@ -158,23 +136,7 @@
   },
   {
    "allow_in_quick_entry": 1,
-   "fieldname": "wb_table",
-   "fieldtype": "Table",
-   "label": "WB Table",
-   "options": "Waybill Table"
-  },
-  {
-   "fieldname": "section_break_8mkk",
-   "fieldtype": "Section Break"
-  },
-  {
-   "allow_in_quick_entry": 1,
    "fieldname": "column_break_mvdd",
-   "fieldtype": "Column Break"
-  },
-  {
-   "allow_in_quick_entry": 1,
-   "fieldname": "column_break_rful",
    "fieldtype": "Column Break"
   },
   {
@@ -196,11 +158,23 @@
    "fieldtype": "Select",
    "label": "Naming Series",
    "options": "WB-"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "hidden": 1,
+   "label": "Description"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Table",
+   "label": "Remarks",
+   "options": "Waybill Table"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-12-29 16:05:28.808226",
+ "modified": "2023-12-31 14:55:40.997487",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Way Bill",
@@ -229,7 +203,6 @@
    "share": 1
   }
  ],
- "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
