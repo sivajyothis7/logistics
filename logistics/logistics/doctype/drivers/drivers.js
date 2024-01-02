@@ -40,7 +40,7 @@ frappe.ui.form.on('Drivers', {
                         var jobDetails = jobDetailsResponse.message;
                         var totalRevenue = jobDetails ? jobDetails.custom_billing : 0;
                         var totalExpense = jobDetails ? jobDetails.total_pending_rate : 0;
-                        var profitAndLoss = totalExpense - totalBilling;
+                        var profitAndLoss = totalExpense - totalRevenue;
                         frm.dashboard.add_indicator(__('Total Billing: {0}', [format_currency(totalBilling, frm.doc.currency)]), 'blue');
                         frm.dashboard.add_indicator(__('Total Unpaid: {0}', [format_currency(totalUnpaid, frm.doc.currency)]), totalUnpaid ? 'red' : 'green');
                         frm.dashboard.add_indicator(__('Remaining: {0}', [format_currency(profitAndLoss, frm.doc.currency)]), profitAndLoss >= 0 ? 'green' : 'red');

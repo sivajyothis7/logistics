@@ -30,6 +30,7 @@
   "total_driver_rate",
   "column_break_prqa",
   "total_pending_rate",
+  "custom_billing",
   "amended_from"
  ],
  "fields": [
@@ -149,6 +150,12 @@
    "fieldname": "total_pending_rate",
    "fieldtype": "Data",
    "label": "Total Pending Rate"
+  },
+  {
+   "fieldname": "custom_billing",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Custom Billing"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -160,7 +167,7 @@
    "table_fieldname": "Driver Slip"
   }
  ],
- "modified": "2023-12-29 16:05:15.072530",
+ "modified": "2024-01-02 15:55:45.479055",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Drivers",
