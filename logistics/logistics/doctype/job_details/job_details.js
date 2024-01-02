@@ -18,12 +18,12 @@ frappe.ui.form.on('Job Details', {
                     frm.set_value('total_expense', updatedTotalExpense);
                     frm.refresh_field('total_revenue');
                     frm.refresh_field('total_expense');
-                    frappe.msgprint(
-                        __('Total Revenue and Expense Updated Successfully.\n New Total Revenue: {0}\nNew Total Expense: {1}', [
-                            format_currency(updatedTotalRevenue, frm.doc.currency),
-                            format_currency(updatedTotalExpense, frm.doc.currency)
-                        ])
-                    );
+                    // frappe.msgprint(
+                    //     __('Total Revenue and Expense Updated Successfully.\n New Total Revenue: {0}\nNew Total Expense: {1}', [
+                    //         format_currency(updatedTotalRevenue, frm.doc.currency),
+                    //         format_currency(updatedTotalExpense, frm.doc.currency)
+                    //     ])
+                    // );
                 } else {
                     console.error('Error updating total revenue and expense.');
                     frappe.msgprint(__('Error updating total revenue and expense.'));
