@@ -1,4 +1,4 @@
-frappe.query_reports["Daily Log Reports"] = {
+frappe.query_reports["Daily Log Report"] = {
     "filters": [
         
         {
