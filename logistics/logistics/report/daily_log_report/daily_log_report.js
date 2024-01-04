@@ -1,4 +1,4 @@
-frappe.query_reports["Daily Log Report"] = {
+frappe.query_reports["Daily Log Reports"] = {
     "filters": [
         
         {
@@ -13,6 +13,7 @@ frappe.query_reports["Daily Log Report"] = {
             "fieldtype": "Link",
             "options": "Drivers",
         },
+       
         {
             "fieldname": "from_date",
             "label": __("From Date"),
@@ -41,6 +42,11 @@ frappe.query_reports["Daily Log Report"] = {
             "fieldtype": "Link",
             "options": "Company",
             "default": frappe.defaults.get_user_default("company")
+        },
+        {
+            "fieldname": "way_bill_collected",
+            "label": __("Way bill collected?"),
+            "fieldtype": "Check",
         },
         
     
