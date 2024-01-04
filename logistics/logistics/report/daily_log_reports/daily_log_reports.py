@@ -45,6 +45,11 @@ def get_columns():
             'width': '125'
         },
         {
+            "fieldname": "waybill_number",
+            "label": ("Way Bill"),
+            "fieldtype": "Data",
+        },
+        {
             'fieldname': 'date',
             'label': _('Date'),
             'fieldtype': 'Data',
@@ -80,13 +85,14 @@ def get_columns():
             'fieldtype': 'Data',  
             'width': '125'
         },
+        
     ]
 
 def get_cs_data(filters):
     conditions = get_conditions(filters)
     data = frappe.get_all(
         doctype='Daily Log',
-        fields=['name', 'company','customer','driver', 'date', 'from', 'to', 'company_rate', 'driver_rate','vehicle_type'],
+        fields=['name', 'company','customer','driver','waybill_number', 'date', 'from', 'to', 'company_rate', 'driver_rate','vehicle_type'],
         filters=conditions,
         order_by='date desc'
     )
@@ -105,6 +111,10 @@ def get_conditions(filters):
 
     if filters.get('driver'):
         conditions['driver'] = filters.get('driver')
+
+    if filters.get('way_bill_collected'):
+        conditions['way_bill_collected'] = filters.get('way_bill_collected')
+
 
     if filters.get('customer'):
         conditions['customer'] = filters.get('customer')
