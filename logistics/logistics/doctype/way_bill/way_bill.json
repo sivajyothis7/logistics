@@ -30,6 +30,7 @@
   "remarks",
   "section_break_vk4w",
   "i_received_the_goods_stated_above_in_good_order_and_condition",
+  "letter_head",
   "column_break_4ke7",
   "seal_of_the_receiver_company",
   "naming_series"
@@ -170,11 +171,17 @@
    "fieldtype": "Table",
    "label": "Remarks",
    "options": "Waybill Table"
+  },
+  {
+   "fieldname": "letter_head",
+   "fieldtype": "Link",
+   "label": "Letter Head",
+   "options": "Letter Head"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-12-31 14:55:40.997487",
+ "modified": "2024-01-08 12:02:15.792237",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Way Bill",
