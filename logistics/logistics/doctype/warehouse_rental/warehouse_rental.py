@@ -8,9 +8,7 @@ from frappe.model.document import Document
 class WarehouseRental(Document):
     def calculate_total_amount(self):
         months_rented = frappe.utils.date_diff(self.rent_end_date, self.rent_start_date) / 30.0
-
         self.months_rented = months_rented
- 
         self.total_amount = self.rental_rate * self.rent_space * months_rented
 
     def validate(self):
@@ -26,7 +24,7 @@ def generate_invoice(docname):
 
     if doc.status == "Occupied":
         if doc.invoice_number:
-            return {"error": "Sales Invoice already exists for this Warehouse Rental: {}".format(doc.invoice_number)}
+            return {"error": f"Sales Invoice already exists for this Warehouse Rental: {doc.invoice_number}"}
         else:
             doc.calculate_total_amount()
 
@@ -47,11 +45,11 @@ def generate_invoice(docname):
             })
 
             invoice.insert(ignore_permissions=True)
-            frappe.msgprint("Sales Invoice generated successfully: {}".format(invoice.name))
+            frappe.msgprint(f"Sales Invoice generated successfully: {invoice.name}")
 
+            # Update the existing Warehouse Rental document with the sales invoice number
             doc.invoice_number = invoice.name
-            doc.insert(ignore_permissions=True)
-            
+            doc.save(ignore_permissions=True)
 
             return doc.invoice_number
     else:
