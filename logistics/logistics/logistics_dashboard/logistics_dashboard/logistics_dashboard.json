@@ -1,0 +1,43 @@
+{
+ "cards": [
+  {
+   "card": "Way Bill"
+  },
+  {
+   "card": "Drivers"
+  },
+  {
+   "card": "Active Customers"
+  }
+ ],
+ "charts": [
+  {
+   "chart": "Daily Log",
+   "width": "Half"
+  },
+  {
+   "chart": "Job Details",
+   "width": "Half"
+  },
+  {
+   "chart": "Way Bill",
+   "width": "Half"
+  },
+  {
+   "chart": "Warehouse Rental",
+   "width": "Half"
+  }
+ ],
+ "creation": "2024-01-22 07:19:37.197532",
+ "dashboard_name": "Logistics Dashboard",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 1,
+ "is_standard": 1,
+ "modified": "2024-01-22 08:44:22.637056",
+ "modified_by": "Administrator",
+ "module": "Logistics",
+ "name": "Logistics Dashboard",
+ "owner": "Administrator"
+}

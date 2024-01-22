@@ -1,0 +1,36 @@
+{
+ "based_on": "creation",
+ "chart_name": "Daily Log",
+ "chart_type": "Count",
+ "creation": "2024-01-22 07:22:02.310050",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "document_type": "Daily Log",
+ "dynamic_filters_json": "[]",
+ "filters_json": "[]",
+ "group_by_type": "Count",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "last_synced_on": "2024-01-22 08:34:55.993870",
+ "modified": "2024-01-22 08:36:05.546083",
+ "modified_by": "Administrator",
+ "module": "Logistics",
+ "name": "Daily Log",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "parent_document_type": "",
+ "roles": [
+  {
+   "role": "All"
+  }
+ ],
+ "source": "",
+ "time_interval": "Weekly",
+ "timeseries": 1,
+ "timespan": "Last Month",
+ "type": "Line",
+ "use_report_chart": 0,
+ "value_based_on": "",
+ "y_axis": []
+}
