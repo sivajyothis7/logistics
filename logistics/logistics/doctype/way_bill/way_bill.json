@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "naming_series:naming_series",
+ "autoname": "naming_series:[waybill]",
  "creation": "2023-12-06 08:32:12.533519",
  "default_view": "List",
  "doctype": "DocType",
@@ -20,6 +20,7 @@
   "destination",
   "truck_plate_no",
   "driver_iqama_no",
+  "daily_log",
   "section_break_lsxb",
   "shipper",
   "column_break_hag2",
@@ -61,12 +62,14 @@
   },
   {
    "allow_in_quick_entry": 1,
+   "fetch_from": "daily_log.from",
    "fieldname": "on_board_from",
    "fieldtype": "Data",
    "label": "ON BOARD FROM"
   },
   {
    "allow_in_quick_entry": 1,
+   "fetch_from": "daily_log.to",
    "fieldname": "destination",
    "fieldtype": "Data",
    "label": "DESTINATION"
@@ -177,11 +180,18 @@
    "fieldtype": "Link",
    "label": "Letter Head",
    "options": "Letter Head"
+  },
+  {
+   "fieldname": "daily_log",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Daily Log",
+   "options": "Daily Log"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-01-08 12:02:15.792237",
+ "modified": "2024-01-24 12:20:38.974481",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Way Bill",
