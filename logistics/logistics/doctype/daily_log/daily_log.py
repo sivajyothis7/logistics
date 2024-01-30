@@ -3,7 +3,7 @@ from frappe.model.document import Document
 
 class DailyLog(Document):
 
-    def on_update(self):
+    def validate(self):
         driver_doc = frappe.get_doc("Drivers", self.pay_to)
 
         existing_payment_data = next((data for data in driver_doc.payment_data if data.daily_log == self.name), None)
