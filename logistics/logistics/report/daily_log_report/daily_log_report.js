@@ -24,8 +24,13 @@ frappe.query_reports["Daily Log Report"] = {
             "label": __("To Date"),
             "fieldtype": "Date",
         },
+          
+        {
+            "fieldname": "vehicle_type",
+            "label": __("Vehicle Type"),
+            "fieldtype": "Data", 
+        },
        
-        
         {
             "fieldname": "from",
             "label": __("From Location"),

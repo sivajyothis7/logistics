@@ -15,7 +15,21 @@ def execute(filters=None):
         msgprint(_('No records found'))
         return columns, cs_data
 
+    total_company_rate = sum([float(row.get('company_rate') or 0) for row in cs_data])
+    total_driver_rate = sum([float(row.get('driver_rate') or 0) for row in cs_data])
+    total_vehicle_type = len([row['vehicle_type'] for row in cs_data if row.get('vehicle_type')])
+
+    cs_data.append({
+        'name': 'TOTAL',
+        'company_rate': total_company_rate,
+        'driver_rate': total_driver_rate,
+        'vehicle_type': total_vehicle_type
+    })
+
     return columns, cs_data, None
+
+
+
 
 def get_columns():
     return [
@@ -24,7 +38,8 @@ def get_columns():
             'label': _('Name'),
             'fieldtype': 'Link',
             'options': 'Daily Log',
-            'width': '225'
+            'width': '225',
+            
         },
         # {
         #     'fieldname': 'company',
@@ -92,7 +107,7 @@ def get_cs_data(filters):
     conditions = get_conditions(filters)
     data = frappe.get_all(
         doctype='Daily Log',
-        fields=['name', 'company','customer','driver','waybill_number', 'date', 'from', 'to', 'company_rate', 'driver_rate','vehicle_type'],
+        fields=['name', 'company','customer','driver','waybill_number', 'date','vehicle_type', 'from', 'to', 'company_rate', 'driver_rate','vehicle_type'],
         filters=conditions,
         order_by='date desc'
     )
@@ -111,6 +126,9 @@ def get_conditions(filters):
 
     if filters.get('driver'):
         conditions['driver'] = filters.get('driver')
+
+    if filters.get('vehicle_type'):
+        conditions['vehicle_type'] = filters.get('vehicle_type')
 
     if filters.get('way_bill_collected'):
         conditions['way_bill_collected'] = filters.get('way_bill_collected')
