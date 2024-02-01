@@ -5,6 +5,9 @@ class DailyLog(Document):
 
     def on_update(self):
         try:
+            frappe.msgprint("Updating Daily Log: {}".format(self.name))
+
+            # Use the self.pay_to consistently to avoid confusion
             driver_doc = frappe.get_doc("Drivers", self.pay_to)
 
             existing_payment_data = next(
@@ -30,7 +33,6 @@ class DailyLog(Document):
                 driver_doc.append("payment_data", payment_data)
 
             driver_doc.save(ignore_permissions=True)
-            frappe.db.commit()
 
             driver_link = frappe.utils.get_link_to_form(driver_doc.doctype, self.pay_to)
             frappe.msgprint("Driver Payment Data updated successfully for Driver: {}".format(driver_link))
@@ -38,7 +40,9 @@ class DailyLog(Document):
             self.generate_way_bill()
 
         except Exception as e:
-            frappe.msgprint(f"Error updating Driver Payment Data: {str(e)}")
+            frappe.msgprint(f"Error updating Daily Log: {str(e)}")
+
+
 
     def generate_way_bill(self):
         if self.way_bill_collected:
