@@ -62,6 +62,6 @@ class DailyLog(Document):
             frappe.msgprint("Way Bill generation is only allowed if Way bill collected is Checked.")
 
 @frappe.whitelist()
-def generate_way_bill(docname):
+def generate_wayy_bill(docname):
     doc = frappe.get_doc("Daily Log", docname)
     doc.generate_way_bill()
