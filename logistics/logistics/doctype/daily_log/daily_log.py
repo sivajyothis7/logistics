@@ -33,7 +33,7 @@ class DailyLog(Document):
         driver_link = frappe.utils.get_link_to_form(driver_doc.doctype, self.pay_to)
         frappe.msgprint("Driver Payment Data updated successfully for Driver: {}".format(driver_link))
 
-        # self.generate_or_update_way_bill()
+        self.generate_way_bill()
 
     def generate_way_bill(self):
         if self.way_bill_collected:
@@ -61,7 +61,7 @@ class DailyLog(Document):
         else:
             frappe.msgprint("Way Bill generation is only allowed if Way bill collected is Checked.")
 
-@frappe.whitelist()
-def generate_wayy_bill(docname):
-    doc = frappe.get_doc("Daily Log", docname)
-    doc.generate_way_bill()
+# @frappe.whitelist()
+# def generate_wayy_bill(docname):
+#     doc = frappe.get_doc("Daily Log", docname)
+#     doc.generate_way_bill()
