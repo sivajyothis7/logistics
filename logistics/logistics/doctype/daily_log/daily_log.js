@@ -1,19 +1,19 @@
 frappe.ui.form.on('Daily Log', {
     refresh: function(frm) {
-        // frm.add_custom_button(__('Generate Way Bill'), function() {
-        //     frappe.call({
-        //         method:'logistics.logistics.doctype.daily_log.daily_log.generate_wayy_bill',
-        //         args: { 'docname': frm.doc.name },
-        //         callback: function(response) {
-        //             if (!response.exc) {
-        //                 frappe.msgprint(__('Way Bill generated successfully.'));
-        //                 frm.refresh();
-        //             } else {
-        //                 frappe.msgprint(__('Error generating Way Bill: ') + response.exc);
-        //             }
-        //         }
-        //     });
-        // });
+        frm.add_custom_button(__('Generate Way Bill'), function() {
+            frappe.call({
+                method:'logistics.logistics.doctype.daily_log.daily_log.generate_wayy_bill',
+                args: { 'docname': frm.doc.name },
+                callback: function(response) {
+                    if (!response.exc) {
+                        frappe.msgprint(__('Way Bill generated successfully.'));
+                        frm.refresh();
+                    } else {
+                        frappe.msgprint(__('Error generating Way Bill: ') + response.exc);
+                    }
+                }
+            });
+        });
     },
 
     driver_rate: function(frm) {

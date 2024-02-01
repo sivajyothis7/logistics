@@ -3,11 +3,11 @@ from frappe.model.document import Document
 
 class DailyLog(Document):
 
-    def on_update(self):
+    def before_save(self):
         try:
-            frappe.msgprint("Updating Daily Log: {}".format(self.name))
+            frappe.msgprint("Processing Daily Log: {}".format(self.name))
 
-            # Use the self.pay_to consistently to avoid confusion
+            # Use self.pay_to consistently to avoid confusion
             driver_doc = frappe.get_doc("Drivers", self.pay_to)
 
             existing_payment_data = next(
@@ -40,9 +40,7 @@ class DailyLog(Document):
             self.generate_way_bill()
 
         except Exception as e:
-            frappe.msgprint(f"Error updating Daily Log: {str(e)}")
-
-
+            frappe.msgprint(f"Error processing Daily Log: {str(e)}")
 
     def generate_way_bill(self):
         if self.way_bill_collected:
@@ -58,7 +56,8 @@ class DailyLog(Document):
                     frappe.msgprint(f"Way Bill generated successfully: {way_bill.name}")
 
                     self.waybill_number = way_bill.name
-                    self.save(ignore_permissions=True)
+                    # No need to call self.save() in before_save
+
                 else:
                     way_bill = frappe.get_doc("Way Bill", self.waybill_number)
                     way_bill.update({
@@ -76,7 +75,7 @@ class DailyLog(Document):
             frappe.msgprint("Way Bill generation is only allowed if Way bill collected is Checked.")
 
 
-# @frappe.whitelist()
-# def generate_wayy_bill(docname):
-#     doc = frappe.get_doc("Daily Log", docname)
-#     doc.generate_way_bill()
+@frappe.whitelist()
+def generate_wayy_bill(docname):
+    doc = frappe.get_doc("Daily Log", docname)
+    doc.generate_way_bill()
