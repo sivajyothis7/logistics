@@ -2,7 +2,7 @@ frappe.ui.form.on('Daily Log', {
     refresh: function(frm) {
         frm.add_custom_button(__('Generate Way Bill'), function() {
             frappe.call({
-                method:'logistics.logistics.doctype.daily_log.daily_log.generate_way_bill',
+                method:'logistics.logistics.doctype.daily_log.daily_log.generate_wayy_bill',
                 args: { 'docname': frm.doc.name },
                 callback: function(response) {
                     if (!response.exc) {
