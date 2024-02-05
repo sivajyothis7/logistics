@@ -220,6 +220,7 @@
   {
    "fieldname": "pay_to",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Pay To",
    "options": "Drivers"
   },
@@ -247,7 +248,7 @@
    "link_fieldname": "daily_log"
   }
  ],
- "modified": "2024-01-23 12:03:44.715165",
+ "modified": "2024-02-05 07:58:19.526636",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Log",
