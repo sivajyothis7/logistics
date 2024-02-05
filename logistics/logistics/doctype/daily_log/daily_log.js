@@ -36,3 +36,5 @@ function calculateDriverPendingRate(frm) {
 
     frm.set_value('pending_driver_rate', driverPendingRate);
 }
+
+// 
