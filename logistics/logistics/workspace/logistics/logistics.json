@@ -44,7 +44,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Reports",
-   "link_count": 2,
+   "link_count": 3,
    "onboard": 0,
    "type": "Card Break"
   },
@@ -67,9 +67,19 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Sales Report",
+   "link_count": 0,
+   "link_to": "Sales Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-01-22 11:50:31.853281",
+ "modified": "2024-02-16 09:48:33.977044",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Logistics",

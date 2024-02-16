@@ -26,6 +26,10 @@
   {
    "chart": "Warehouse Rental",
    "width": "Half"
+  },
+  {
+   "chart": "Sales Reports",
+   "width": "Full"
   }
  ],
  "creation": "2024-01-22 07:19:37.197532",
@@ -35,7 +39,7 @@
  "idx": 0,
  "is_default": 1,
  "is_standard": 1,
- "modified": "2024-01-22 08:44:22.637056",
+ "modified": "2024-02-16 09:47:27.966130",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Logistics Dashboard",
