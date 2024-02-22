@@ -4,7 +4,7 @@
   "doctype": "Client Script",
   "dt": "Job Details",
   "enabled": 0,
-  "modified": "2023-11-02 09:52:54.778966",
+  "modified": "2024-01-24 14:36:58.023637",
   "module": "",
   "name": "test",
   "script": "frappe.ui.form.on('Job Details', {\n    refresh: function(frm) {\n        if (frm.doc.__islocal) {\n            // New unsaved document, don't remove the \"Not Saved\" badge\n        } else {\n            frm.page.clear_indicator('Not Saved');\n        }\n    }\n});\n",
