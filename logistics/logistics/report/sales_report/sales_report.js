@@ -1,18 +1,18 @@
 frappe.query_reports["Sales Report"] = {
     "filters": [
         
-        {
-            "fieldname": "customer",
-            "label": __("Customer"),
-            "fieldtype": "Link",
-            "options": "Customer",
-        },
-        {
-            "fieldname": "driver",
-            "label": __("Driver"),
-            "fieldtype": "Link",
-            "options": "Drivers",
-        },
+        // {
+        //     "fieldname": "customer",
+        //     "label": __("Customer"),
+        //     "fieldtype": "Link",
+        //     "options": "Customer",
+        // },
+        // {
+        //     "fieldname": "driver",
+        //     "label": __("Driver"),
+        //     "fieldtype": "Link",
+        //     "options": "Drivers",
+        // },
        
         {
             "fieldname": "from_date",
@@ -25,11 +25,11 @@ frappe.query_reports["Sales Report"] = {
             "fieldtype": "Date",
         },
           
-        {
-            "fieldname": "vehicle_type",
-            "label": __("Vehicle Type"),
-            "fieldtype": "Data", 
-        },
+        // {
+        //     "fieldname": "vehicle_type",
+        //     "label": __("Vehicle Type"),
+        //     "fieldtype": "Data", 
+        // },
        
 		{
             "fieldname": "company",
