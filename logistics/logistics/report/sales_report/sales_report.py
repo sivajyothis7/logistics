@@ -21,9 +21,11 @@ def execute(filters=None):
     total_vehicle_type = len(set([row['vehicle_type'] for row in cs_data if row.get('vehicle_type')]))
 
     for row in cs_data:
-        row['profit_loss'] = float(row.get('company_rate') or 0) - float(row.get('driver_rate') or 0)
+        company_rate = float(row.get('company_rate') or 0)
+        driver_rate = float(row.get('driver_rate') or 0)
+        row['profit_loss'] = company_rate - driver_rate
 
-    # Calculate total profit/loss
+
     total_profit_loss = sum([row['profit_loss'] for row in cs_data])
 
     cs_data.append({
