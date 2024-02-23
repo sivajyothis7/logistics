@@ -10,20 +10,20 @@ def execute(filters=None):
 
     columns = get_columns()
     cs_data = get_cs_data(filters)
+    # chart = get_chart(cs_data)
 
     if not cs_data:
         msgprint(_('No records found'))
-        return columns, cs_data, None
+        return columns, cs_data,None
 
     total_company_rate = sum([float(row.get('company_rate') or 0) for row in cs_data])
     total_driver_rate = sum([float(row.get('driver_rate') or 0) for row in cs_data])
     total_vehicle_type = len(set([row['vehicle_type'] for row in cs_data if row.get('vehicle_type')]))
 
     for row in cs_data:
-        company_rate = float(row.get('company_rate') or 0)
-        driver_rate = float(row.get('driver_rate') or 0)
-        row['profit_loss'] = company_rate - driver_rate
+        row['profit_loss'] = float(row.get('company_rate') or 0) - float(row.get('driver_rate') or 0)
 
+    # Calculate total profit/loss
     total_profit_loss = sum([row['profit_loss'] for row in cs_data])
 
     cs_data.append({
@@ -99,6 +99,24 @@ def get_cs_data(filters):
     )
 
     return data
+
+# def get_chart(data):
+#     labels = []
+#     values = []
+#     for row in data:
+#         if row['company_rate'] is not None:
+#             labels.append(row['name'])
+#             values.append(float(row['company_rate']))
+#     return {
+#         "data": {
+#             "labels": labels,
+#             "datasets": [{
+#                 "name": "Company Rate",
+#                 "values": values
+#             }]
+#         },
+#         "type": "pie"
+#     }
 
 def get_conditions(filters):
     conditions = {}
