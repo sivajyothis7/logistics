@@ -31,27 +31,12 @@ frappe.query_reports["Sales Report"] = {
             "fieldtype": "Data", 
         },
        
-        {
-            "fieldname": "from",
-            "label": __("From Location"),
-            "fieldtype": "Data", 
-        },
-        {
-            "fieldname": "to",
-            "label": __("To Location"),
-            "fieldtype": "Data", 
-        },
 		{
             "fieldname": "company",
             "label": __("Company"),
             "fieldtype": "Link",
             "options": "Company",
             "default": frappe.defaults.get_user_default("company")
-        },
-        {
-            "fieldname": "way_bill_collected",
-            "label": __("Way bill collected?"),
-            "fieldtype": "Check",
         },
         
     
