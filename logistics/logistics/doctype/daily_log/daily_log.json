@@ -234,6 +234,7 @@
    "options": "Workflow State"
   },
   {
+   "default": "Not Paid",
    "fieldname": "invoice_status",
    "fieldtype": "Select",
    "label": "Invoice Status",
@@ -254,7 +255,7 @@
    "link_fieldname": "daily_log"
   }
  ],
- "modified": "2024-02-27 08:39:20.739260",
+ "modified": "2024-02-27 08:44:05.296993",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Log",
