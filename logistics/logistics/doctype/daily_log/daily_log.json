@@ -26,6 +26,7 @@
   "id_no",
   "vehicle_number",
   "waybill_number",
+  "invoice_status",
   "section_break_kml0",
   "notes",
   "tab_2_tab",
@@ -135,7 +136,6 @@
    "label": "Advanced Paid"
   },
   {
-   "depends_on": "eval: doc.way_bill_collected == 1",
    "fieldname": "waybill_number",
    "fieldtype": "Link",
    "label": "Waybill Number",
@@ -145,7 +145,7 @@
    "default": "0",
    "fieldname": "way_bill_collected",
    "fieldtype": "Check",
-   "label": "Way bill collected?"
+   "label": "PO collected?"
   },
   {
    "depends_on": "eval: doc.advanced_paid == 1",
@@ -232,6 +232,12 @@
    "label": "Workflow State",
    "no_copy": 1,
    "options": "Workflow State"
+  },
+  {
+   "fieldname": "invoice_status",
+   "fieldtype": "Select",
+   "label": "Invoice Status",
+   "options": "Paid\nNot Paid"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -248,7 +254,7 @@
    "link_fieldname": "daily_log"
   }
  ],
- "modified": "2024-02-05 07:58:19.526636",
+ "modified": "2024-02-27 08:39:20.739260",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Log",
