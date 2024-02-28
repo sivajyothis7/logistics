@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "naming_series:[waybill]",
+ "autoname": "format:WB-{date}-{#}",
  "creation": "2023-12-06 08:32:12.533519",
  "default_view": "List",
  "doctype": "DocType",
@@ -34,7 +34,8 @@
   "letter_head",
   "column_break_4ke7",
   "seal_of_the_receiver_company",
-  "naming_series"
+  "naming_series",
+  "amended_from"
  ],
  "fields": [
   {
@@ -187,15 +188,24 @@
    "hidden": 1,
    "label": "Daily Log",
    "options": "Daily Log"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Way Bill",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-01-24 12:20:38.974481",
+ "modified": "2024-02-28 15:53:34.603245",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Way Bill",
- "naming_rule": "By \"Naming Series\" field",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
