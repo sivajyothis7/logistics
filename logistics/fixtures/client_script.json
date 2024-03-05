@@ -64,5 +64,16 @@
   "name": "Pdf",
   "script": "frappe.listview_settings['Way Bill'] = {\n        button: {\n    \t\tshow: function(doc) {\n    \t\t\treturn true;\n    \t\t},\n    \t\tget_label: function() {\n    \t\t\treturn __('Generate E-Way Bill');\n    \t\t},\n    \t\tget_description: function(doc) {\n    \t\t\treturn __('Open {0}', [`${doc.name}`])\n    \t\t},\n    \t\taction: function(doc) {\n    // \t\t\tfrappe.set_route(\"/app/print/Way Bill/\"+doc.name);\n                var objWindowOpenResult = window.open(frappe.urllib.get_full_url(\"/printview?\"\n                  + \"doctype=\" + encodeURIComponent(\"Way Bill\")\n                  + \"&name=\" + encodeURIComponent(doc.name)\n                  + \"&trigger_print=0\"\n                  + \"&format=Waybill\"\n                  + \"&no_letterhead=0\"\n                  + \"&_lang=en\"\n                 ));\n\n                if(!objWindowOpenResult) {\n                  msgprint(__(\"Please set permission for pop-up windows in your browser!\")); return;\n                }\n    \t\t}\n    \t}\n    }",
   "view": "List"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Daily Log",
+  "enabled": 1,
+  "modified": "2024-03-05 07:43:23.825512",
+  "module": "Logistics",
+  "name": "Color",
+  "script": "frappe.listview_settings['Daily Log'] = {\n   formatters: {\n        invoice_status(val) {\n            if (val==\"Paid\"){\n          return \"<span class='indicator-pill green'>\"+__(val)+\"</span>\"\n          }else{\n           return \"<span class='indicator-pill red'>\"+__(val)+\"</span>\"\n             }\n        }\n    }\n\n\n}",
+  "view": "List"
  }
 ]

@@ -237,8 +237,10 @@
    "default": "Not Paid",
    "fieldname": "invoice_status",
    "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Invoice Status",
-   "options": "Paid\nNot Paid"
+   "options": "Not Paid\nPaid"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -255,7 +257,7 @@
    "link_fieldname": "daily_log"
   }
  ],
- "modified": "2024-02-27 08:44:05.296993",
+ "modified": "2024-03-05 07:43:01.538579",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Log",
