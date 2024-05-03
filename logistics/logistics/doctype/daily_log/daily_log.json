@@ -27,6 +27,7 @@
   "vehicle_number",
   "waybill_number",
   "invoice_status",
+  "way_bill_data",
   "section_break_kml0",
   "notes",
   "tab_2_tab",
@@ -241,6 +242,13 @@
    "in_standard_filter": 1,
    "label": "Invoice Status",
    "options": "Not Created\nCreated"
+  },
+  {
+   "fetch_from": "waybill_number.waybill",
+   "fieldname": "way_bill_data",
+   "fieldtype": "Data",
+   "label": "Way Bill Data",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
@@ -257,7 +265,7 @@
    "link_fieldname": "daily_log"
   }
  ],
- "modified": "2024-03-07 11:37:36.468283",
+ "modified": "2024-05-02 16:31:12.541155",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Log",

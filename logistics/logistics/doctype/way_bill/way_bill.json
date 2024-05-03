@@ -40,6 +40,7 @@
  "fields": [
   {
    "allow_in_quick_entry": 1,
+   "default": "Today",
    "fieldname": "date",
    "fieldtype": "Date",
    "label": "Date"
@@ -83,6 +84,7 @@
   },
   {
    "allow_in_quick_entry": 1,
+   "fetch_from": "daily_log.driver_name",
    "fieldname": "driver_name",
    "fieldtype": "Data",
    "label": "DRIVER NAME"
@@ -149,6 +151,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "daily_log.mobile_no",
    "fieldname": "driver_mobile_no",
    "fieldtype": "Phone",
    "label": "DRIVER MOBILE NO"
@@ -185,9 +188,9 @@
   {
    "fieldname": "daily_log",
    "fieldtype": "Link",
-   "hidden": 1,
    "label": "Daily Log",
-   "options": "Daily Log"
+   "options": "Daily Log",
+   "read_only": 1
   },
   {
    "fieldname": "amended_from",
@@ -201,7 +204,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-18 08:57:34.611934",
+ "modified": "2024-05-02 18:56:10.951776",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Way Bill",
