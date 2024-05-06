@@ -75,5 +75,38 @@
   "name": "Color",
   "script": "frappe.listview_settings['Daily Log'] = {\n   formatters: {\n        invoice_status(val) {\n            if (val==\"Created\"){\n          return \"<span class='indicator-pill green'>\"+__(val)+\"</span>\"\n          }else{\n           return \"<span class='indicator-pill red'>\"+__(val)+\"</span>\"\n             }\n        }\n    }\n\n\n}",
   "view": "List"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Sales Order",
+  "enabled": 0,
+  "modified": "2024-05-05 07:49:14.503647",
+  "module": null,
+  "name": "tomorrow",
+  "script": "// frappe.ui.form.on('Sales Order', {\n//     refresh: function(frm) {\n//         if (frm.is_new()) update_due_date(frm);\n//     },\n//     transaction_date: function(frm) {\n//         update_due_date(frm);\n//     },\n// });\n// function update_due_date(frm) {\n//     let transaction_date = frm.doc.transaction_date;\n//     if (!transaction_date) {\n//         frm.set_value('delivery_date', '');\n//         return;\n//     }\n//     let date_obj = new Date(transaction_date);\n//     date_obj.setDate(date_obj.getDate() + 1);\n//     frm.set_value('delivery_date', frappe.datetime.obj_to_str(date_obj));\n// }\n\n// frappe.ui.form.on('Sales Order', {\n//     refresh: function(frm) {\n//         if (frm.is_new()) {\n//             update_due_date(frm);\n//         }\n//     },\n//     transaction_date: function(frm) {\n//         update_due_date(frm);\n//     },\n// });\n\n// function update_due_date(frm) {\n//     if (frm.doc.profile != 'Manufacturing') {\n//         let transaction_date = frm.doc.transaction_date;\n//         if (!transaction_date) {\n//             frm.set_value('delivery_date', '');\n//             return;\n//         }\n//         let date_obj = new Date(transaction_date);\n//         date_obj.setDate(date_obj.getDate() + 1);\n//         frm.set_value('delivery_date', frappe.datetime.obj_to_str(date_obj));\n//     }\n// }\n\n\nfrappe.ui.form.on('Sales Order', {\n    refresh: function(frm) {\n        if (frm.is_new()) {\n            update_due_date(frm);\n        }\n    },\n    transaction_date: function(frm) {\n        update_due_date(frm);\n    },\n});\n\nfunction update_due_date(frm) {\n    let transaction_date = frm.doc.transaction_date;\n    if (!transaction_date) {\n        frm.set_value('delivery_date', '');\n        return;\n    }\n\n    let date_obj = new Date(transaction_date);\n\n    if (frm.doc.profile != 'Manufacturing') {\n        date_obj.setDate(date_obj.getDate() + 1);\n        frm.set_value('delivery_date', frappe.datetime.obj_to_str(date_obj));\n    }\n    \n    if (frm.doc.profile != 'Sales') {\n        frm.set_value('custom_invoice_date', frappe.datetime.now_date());\n    }\n}\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Sales Order",
+  "enabled": 0,
+  "modified": "2024-05-05 07:42:53.575735",
+  "module": null,
+  "name": "SO hide",
+  "script": "// frappe.ui.form.on('Sales Order', {\n//     refresh: function(frm) {\n//         if (frm.doc.profile != 'Manufacturing') {\n//             frm.fields_dict['custom_logistics_details'].wrapper.hide();\n//         }\n//     }\n// });\nfrappe.ui.form.on('Sales Order', {\n    onload: function(frm) {\n        if (frm.doc.__islocal && frm.doc.profile != 'Sales') {\n            frm.toggle_display('set_warehouse', false);\n        }\n    }\n});\n\n\n// frappe.ui.form.on('Sales Order', {\n//     refresh: function(frm) {\n//         if (frm.doc.profile != 'Manufacturing') {\n//             frm.toggle_display('set_warehouse', false);\n//         } else {\n//             frm.toggle_display('set_warehouse', true);\n//         }\n//     }\n// });\n\n\n// frappe.ui.form.on('Sales Order', {\n//     refresh:function(frm, cdt, cdn) {\n//         cur_frm.fields_dict['items'].grid.wrapper.find('.btn-open-row').hide();\n//     }\n// });",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Sales Order",
+  "enabled": 0,
+  "modified": "2024-05-06 12:09:48.397058",
+  "module": null,
+  "name": "table hide",
+  "script": "// frappe.ui.form.on(\"Sales Order\",{\n//     before_load: function(frm) {\n//         var df = frappe.meta.get_docfield(\"Sales Order Item\", 'rate',frm.doc.name);\n//         if (frappe.user.has_role('Sales User') == 1) {\n//             df.read_only = 1;\n//         }\n//         frm.refresh_fields();\n//     }\n// });\n\nfrappe.ui.form.on(\"Sales Order\", {\n    before_load: function(frm) {\n        var df = frappe.meta.get_docfield(\"Sales Order Item\", 'rate', frm.doc.name);\n        df.read_only = 1;\n        frm.refresh_fields();\n    }\n});\n",
+  "view": "Form"
  }
 ]
