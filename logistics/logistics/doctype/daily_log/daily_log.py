@@ -41,26 +41,23 @@ class DailyLog(Document):
     
 @frappe.whitelist()
 def generate_waybilll(docname):
-        if not docname:
-            frappe.msgprint("Document name is required to generate the waybill.")
-            return
+    if not docname:
+        frappe.msgprint("Document name is required to generate the waybill.")
+        return
 
-        doc = frappe.get_doc("Daily Log", docname)
+    doc = frappe.get_doc("Daily Log", docname)
 
-        # doc = frappe.get_doc("Waybill")
-        if doc.invoice_status == "Created":
-            if doc.waybill_number:
-                frappe.throw(f"Way Bill already exists for this Daily Log: {doc.waybill_number}")
-            else:
-                data = frappe.get_doc({
-                    "doctype": "Way Bill",
-                    "daily_log": doc.name,
-                })
-                data.insert(ignore_permissions=True)
-                frappe.msgprint(f"Way Bill generated successfully: {data.name}")
+    if doc.waybill_number:
+        frappe.throw(f"Way Bill already exists for this Daily Log: {doc.waybill_number}")
+    else:
+        data = frappe.get_doc({
+            "doctype": "Way Bill",
+            "daily_log": doc.name,
+        })
+        data.insert(ignore_permissions=True)
+        frappe.msgprint(f"Way Bill generated successfully: {data.name}")
 
-                doc.waybill_number = data.name
-                doc.save(ignore_permissions=True)
+        doc.waybill_number = data.name
+        doc.save(ignore_permissions=True)
 
-                return doc.waybill_number
-    
+        return doc.waybill_number
