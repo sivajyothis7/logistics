@@ -42,10 +42,9 @@ function calculateDriverPendingRate(frm) {
 
 
 function add_custom_button(frm) {
-    
     frm.add_custom_button(__('Generate Waybill'), function() {
         frappe.call({
-            method: 'logistics.logistics.doctype.daily_log.daily_log.generate_waybilll',
+            method: 'logistics.logistics.doctype.daily_log.daily_log.generate_waybill',
             args: {
                 docname: frm.docname
             },
@@ -53,8 +52,6 @@ function add_custom_button(frm) {
                 if (response.message) {
                     frm.reload_doc();
                     // frappe.msgprint('Waybill generated successfully.');
-                } else {
-                    frappe.msgprint('Failed to generate waybill.Please Make sure Invoice Status is "Created"');
                 }
             }
         });
