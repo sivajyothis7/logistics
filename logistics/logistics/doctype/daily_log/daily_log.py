@@ -61,3 +61,5 @@ def generate_waybilll(docname):
         doc.save(ignore_permissions=True)
 
         return doc.waybill_number
+
+# waybill
