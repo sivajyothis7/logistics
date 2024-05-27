@@ -40,7 +40,7 @@ class DailyLog(Document):
 
     
 @frappe.whitelist()
-def generate_waybilll(docname):
+def generate_waybill(docname):
     if not docname:
         frappe.msgprint("Document name is required to generate the waybill.")
         return
