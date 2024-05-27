@@ -1,6 +1,6 @@
 frappe.ui.form.on('Daily Log', {
     refresh: function(frm) {
-        // add_custom_button(frm);
+        add_custom_button(frm);
 
         
     },
