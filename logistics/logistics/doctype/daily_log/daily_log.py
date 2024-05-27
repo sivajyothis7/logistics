@@ -62,4 +62,4 @@ def generate_waybilll(docname):
 
         return doc.waybill_number
 
-# waybill
+# waybilll
