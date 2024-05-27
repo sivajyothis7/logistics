@@ -1,8 +1,8 @@
 frappe.ui.form.on('Daily Log', {
     refresh: function(frm) {
-        // add_custom_button(frm);
-
-        
+        if (!frm.is_new()) {
+            add_custom_button(frm);
+        }
     },
 
     driver_rate: function(frm) {
@@ -34,12 +34,11 @@ frappe.ui.form.on('Daily Log', {
 function calculateDriverPendingRate(frm) {
     var driverRate = frm.doc.driver_rate || 0;
     var driverAdvance = frm.doc.driver_advance || 0;
-    
+
     var driverPendingRate = driverRate - driverAdvance;
 
     frm.set_value('pending_driver_rate', driverPendingRate);
 }
-
 
 function add_custom_button(frm) {
     frm.add_custom_button(__('Generate Waybill'), function() {
@@ -50,8 +49,9 @@ function add_custom_button(frm) {
             },
             callback: function(response) {
                 if (response.message) {
+                    frm.set_value('waybill_number', response.message);
                     frm.reload_doc();
-                    // frappe.msgprint('Waybill generated successfully.');
+                    frappe.msgprint(__('Waybill generated successfully.'));
                 }
             }
         });
