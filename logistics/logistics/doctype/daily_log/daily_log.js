@@ -46,7 +46,7 @@ function add_custom_button(frm) {
         frappe.call({
             method: 'logistics.logistics.doctype.daily_log.daily_log.generate_waybill',
             args: {
-                docname: frm.docname
+                daily_log: frm.doc.name
             },
             callback: function(response) {
                 if (response.message) {
