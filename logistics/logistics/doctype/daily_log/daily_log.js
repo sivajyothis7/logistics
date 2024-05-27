@@ -1,8 +1,8 @@
 frappe.ui.form.on('Daily Log', {
     refresh: function(frm) {
-        add_custom_button(frm);
-
-        
+        if (!frm.is_new()) {
+            add_custom_button(frm);
+        }
     },
 
     driver_rate: function(frm) {
@@ -40,18 +40,18 @@ function calculateDriverPendingRate(frm) {
     frm.set_value('pending_driver_rate', driverPendingRate);
 }
 
-
 function add_custom_button(frm) {
     frm.add_custom_button(__('Generate Waybill'), function() {
         frappe.call({
             method: 'logistics.logistics.doctype.daily_log.daily_log.generate_waybill',
             args: {
-                docname: frm.docname
+                daily_log: frm.doc.name
             },
             callback: function(response) {
                 if (response.message) {
                     frm.reload_doc();
-                    // frappe.msgprint('Waybill generated successfully.');
+                    // Optionally, you can also display a success message
+                    frappe.msgprint(__('Waybill generated successfully.'));
                 }
             }
         });
