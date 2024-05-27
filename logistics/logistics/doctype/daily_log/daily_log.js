@@ -1,8 +1,8 @@
 frappe.ui.form.on('Daily Log', {
     refresh: function(frm) {
-        if (!frm.is_new()) {
-            add_custom_button(frm);
-        }
+        // if (!frm.is_new()) {
+        //     add_custom_button(frm);
+        // }
     },
 
     driver_rate: function(frm) {
