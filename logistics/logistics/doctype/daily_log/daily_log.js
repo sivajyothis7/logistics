@@ -1,8 +1,8 @@
 frappe.ui.form.on('Daily Log', {
     refresh: function(frm) {
-        if (!frm.doc.__islocal) {
-            add_custom_button(frm);
-        }
+        // add_custom_button(frm);
+
+        
     },
 
     driver_rate: function(frm) {
@@ -39,6 +39,7 @@ function calculateDriverPendingRate(frm) {
 
     frm.set_value('pending_driver_rate', driverPendingRate);
 }
+
 
 function add_custom_button(frm) {
     frm.add_custom_button(__('Generate Waybill'), function() {
