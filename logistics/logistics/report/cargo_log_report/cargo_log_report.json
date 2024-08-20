@@ -1,0 +1,30 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2024-08-20 15:34:05.761358",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "javascript": "frappe.query_reports[\"Cargo Lpg Report\"] = {\n    \"filters\": [\n        {\n            \"fieldname\": \"mode_of_transport\",\n            \"label\": __(\"Mode of Transport\"),\n            \"fieldtype\": \"Select\",\n            \"options\": \"\\nAir\\nSea\\\",\n            \"default\": \"Road\"\n        },\n        \n        \n    ],\n\n    \"onload\": function(report) {\n        report.page.add_inner_button(__(\"Refresh\"), function() {\n            report.refresh();\n        });\n    },\n\n    \"formatter\": function(value, row, column, data, default_formatter) {\n        value = default_formatter(value, row, column, data);\n\n        if (column.fieldname == \"total_profit\") {\n            if (data.total_profit < 0) {\n                value = `<span style=\"color:red;\">${value}</span>`;\n            } else {\n                value = `<span style=\"color:green;\">${value}</span>`;\n            }\n        }\n\n        return value;\n    },\n\n    \"get_data\": function(filters) {\n        return frappe.call({\n            method: \"frappe.client.get_list\",\n            args: {\n                doctype: \"Cargo Log\",\n                fields: [\n                    \"mode_of_transport\",\n                    \"SUM(cost_price) as total_cost\",\n                    \"SUM(profit) as total_profit\"\n                ],\n                filters: {\n                    \"mode_of_transport\": filters.mode_of_transport,\n                },\n                group_by: \"mode_of_transport\",\n                as_list: 1\n            }\n        }).then(function(response) {\n            return response.message;\n        });\n    }\n};\n",
+ "letter_head": "",
+ "letterhead": null,
+ "modified": "2024-08-20 15:34:05.761358",
+ "modified_by": "Administrator",
+ "module": "Logistics",
+ "name": "Cargo Log Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "def execute(filters=None):\n    columns = [\n        {\"label\": \"Mode of Transport\", \"fieldname\": \"mode_of_transport\", \"fieldtype\": \"Data\", \"width\": 200},\n        {\"label\": \"Total Cost\", \"fieldname\": \"total_cost\", \"fieldtype\": \"Currency\", \"width\": 150},\n        {\"label\": \"Total Profit\", \"fieldname\": \"total_profit\", \"fieldtype\": \"Currency\", \"width\": 150},\n    ]\n    \n    data = frappe.db.sql(\"\"\"\n        SELECT\n            mode_of_transport,\n            SUM(cost_price) as total_cost,\n            SUM(profit) as total_profit\n        FROM\n            `tabCargo Log`\n        GROUP BY\n            mode_of_transport\n    \"\"\", as_dict=1)\n    \n    return columns, data\n",
+ "ref_doctype": "Cargo Log",
+ "report_name": "Cargo Log Report",
+ "report_script": "def execute(filters=None):\n    columns = [\n        {\"label\": \"Mode of Transport\", \"fieldname\": \"mode_of_transport\", \"fieldtype\": \"Data\", \"width\": 200},\n        {\"label\": \"Total Cost\", \"fieldname\": \"total_cost\", \"fieldtype\": \"Currency\", \"width\": 150},\n        {\"label\": \"Total Profit\", \"fieldname\": \"total_profit\", \"fieldtype\": \"Currency\", \"width\": 150},\n    ]\n    \n    data = frappe.db.sql(\"\"\"\n        SELECT\n            mode_of_transport,\n            SUM(cost_price) as total_cost,\n            SUM(profit) as total_profit\n        FROM\n            `tabCargo Log`\n        GROUP BY\n            mode_of_transport\n    \"\"\", as_dict=1)\n    \n    return columns, data\n",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}
