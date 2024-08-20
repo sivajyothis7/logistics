@@ -40,6 +40,7 @@ def execute(filters=None):
         filters=conditions,
         group_by='mode_of_transport',
         # as_dict=True
+        ##
     )
 
     if not data:
