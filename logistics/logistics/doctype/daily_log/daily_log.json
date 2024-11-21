@@ -263,9 +263,14 @@
    "group": "Order Details",
    "link_doctype": "Job Details",
    "link_fieldname": "daily_log"
+  },
+  {
+   "group": "Order Details",
+   "link_doctype": "Payment Entry",
+   "link_fieldname": "custom_daily_log"
   }
  ],
- "modified": "2024-05-02 16:31:12.541155",
+ "modified": "2024-11-21 10:27:28.306582",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Log",
