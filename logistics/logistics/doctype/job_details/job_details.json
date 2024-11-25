@@ -12,6 +12,7 @@
   "company",
   "mode_of_transport",
   "total_revenue",
+  "status",
   "column_break_bdrsj",
   "date",
   "customer",
@@ -78,14 +79,22 @@
    "bold": 1,
    "fieldname": "total_revenue",
    "fieldtype": "Currency",
+   "hidden": 1,
    "label": "Total Revenue",
    "read_only": 1
   },
   {
    "fieldname": "total_expense",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Total Expense",
    "read_only": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nOpen\nQuoted\nIn progress\nClosed"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -105,9 +114,14 @@
    "group": "Warehouse Rental",
    "link_doctype": "Warehouse Rental",
    "link_fieldname": "job_details"
+  },
+  {
+   "group": "Quotation",
+   "link_doctype": "Quotation",
+   "link_fieldname": "custom_job_details"
   }
  ],
- "modified": "2023-12-29 16:01:03.370151",
+ "modified": "2024-11-25 13:10:00.751100",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Job Details",
@@ -139,7 +153,24 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
+ "states": [
+  {
+   "color": "Green",
+   "title": "Open"
+  },
+  {
+   "color": "Yellow",
+   "title": "Quoted"
+  },
+  {
+   "color": "Blue",
+   "title": "In progress"
+  },
+  {
+   "color": "Red",
+   "title": "Closed"
+  }
+ ],
  "track_changes": 1,
  "track_seen": 1,
  "track_views": 1
