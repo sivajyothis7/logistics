@@ -1,0 +1,140 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:NMCE-CAN-{##}",
+ "creation": "2024-11-28 20:51:41.728662",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "job_details",
+  "consignee",
+  "shipper",
+  "vessel",
+  "port_of_load",
+  "final_destn",
+  "line",
+  "column_break_qeyh",
+  "date",
+  "notify",
+  "bill_of_lading_no",
+  "arrivaleta_date",
+  "port_of_disch",
+  "voyage",
+  "section_break_pzsr",
+  "table_uxbi"
+ ],
+ "fields": [
+  {
+   "fieldname": "job_details",
+   "fieldtype": "Link",
+   "label": "Job Details",
+   "options": "Job Details"
+  },
+  {
+   "fetch_from": "job_details.job_id",
+   "fieldname": "consignee",
+   "fieldtype": "Link",
+   "label": "Consignee",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "shipper",
+   "fieldtype": "Data",
+   "label": "Shipper"
+  },
+  {
+   "fetch_from": "job_details.vessel_name",
+   "fieldname": "vessel",
+   "fieldtype": "Data",
+   "label": "Vessel"
+  },
+  {
+   "fetch_from": "job_details.pol",
+   "fieldname": "port_of_load",
+   "fieldtype": "Data",
+   "label": "Port of Load."
+  },
+  {
+   "fetch_from": "job_details.delivery_location",
+   "fieldname": "final_destn",
+   "fieldtype": "Data",
+   "label": "Final Destn."
+  },
+  {
+   "fieldname": "line",
+   "fieldtype": "Data",
+   "label": "Line"
+  },
+  {
+   "fieldname": "column_break_qeyh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fetch_from": "job_details.job_id",
+   "fieldname": "notify",
+   "fieldtype": "Data",
+   "label": "Notify"
+  },
+  {
+   "fieldname": "bill_of_lading_no",
+   "fieldtype": "Data",
+   "label": "Bill of Lading No."
+  },
+  {
+   "fieldname": "arrivaleta_date",
+   "fieldtype": "Date",
+   "label": "Arrival/ETA Date"
+  },
+  {
+   "fetch_from": "job_details.pod",
+   "fieldname": "port_of_disch",
+   "fieldtype": "Data",
+   "label": "Port of Disch."
+  },
+  {
+   "fieldname": "voyage",
+   "fieldtype": "Data",
+   "label": "Voyage"
+  },
+  {
+   "fieldname": "section_break_pzsr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "table_uxbi",
+   "fieldtype": "Table",
+   "options": "CAN"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-28 20:51:41.728662",
+ "modified_by": "Administrator",
+ "module": "Logistics",
+ "name": "Cargo Arrival Notification",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

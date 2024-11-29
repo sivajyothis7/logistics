@@ -1,0 +1,263 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "POD.####",
+ "creation": "2024-11-28 20:58:17.935180",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "general_details_section",
+  "job_details",
+  "customer_name",
+  "hawbl_number",
+  "hbl_number",
+  "contact_person",
+  "delivery_location",
+  "net_weight",
+  "sales_person",
+  "company",
+  "column_break_xewu",
+  "date",
+  "mode_of_transport",
+  "mawbl_number",
+  "mbl_number",
+  "container_no",
+  "contact_number",
+  "date_generated",
+  "gross_weight",
+  "section_break_wobf",
+  "description_of_goods",
+  "number_of_packages",
+  "assigned_driver_name",
+  "job_end_date",
+  "assigned_vehicle_no",
+  "loading_location",
+  "column_break_neyp",
+  "shipper_name",
+  "bayan_no",
+  "contact_no",
+  "job_end_time",
+  "trailler_no",
+  "offloading_location"
+ ],
+ "fields": [
+  {
+   "fieldname": "general_details_section",
+   "fieldtype": "Section Break",
+   "label": "General Details"
+  },
+  {
+   "fieldname": "job_details",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Job Details",
+   "options": "Job Details",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "job_details.job_id",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "fetch_from": "job_details.hawbl_number",
+   "fieldname": "hawbl_number",
+   "fieldtype": "Data",
+   "label": "HAWBL Number"
+  },
+  {
+   "fetch_from": "job_details.hbl_number",
+   "fieldname": "hbl_number",
+   "fieldtype": "Data",
+   "label": "HBL Number "
+  },
+  {
+   "fetch_from": ".sales_person",
+   "fieldname": "contact_person",
+   "fieldtype": "Data",
+   "label": "Contact Person"
+  },
+  {
+   "fetch_from": "job_details.delivery_location",
+   "fieldname": "delivery_location",
+   "fieldtype": "Data",
+   "label": "Delivery Location"
+  },
+  {
+   "fetch_from": "job_details.net_weight",
+   "fieldname": "net_weight",
+   "fieldtype": "Data",
+   "label": "Net Weight"
+  },
+  {
+   "fetch_from": "job_details.sales_person",
+   "fieldname": "sales_person",
+   "fieldtype": "Data",
+   "label": "Sales Person"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_xewu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fetch_from": "job_details.mode_of_transport",
+   "fieldname": "mode_of_transport",
+   "fieldtype": "Data",
+   "label": "Mode of Transport"
+  },
+  {
+   "fetch_from": "job_details.mawbl_number",
+   "fieldname": "mawbl_number",
+   "fieldtype": "Data",
+   "label": "MAWBL Number"
+  },
+  {
+   "fetch_from": "job_details.mbl_number",
+   "fieldname": "mbl_number",
+   "fieldtype": "Data",
+   "label": "MBL Number"
+  },
+  {
+   "fetch_from": "job_details.container_no",
+   "fieldname": "container_no",
+   "fieldtype": "Data",
+   "label": "Container No"
+  },
+  {
+   "fetch_from": ".contact_number",
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number"
+  },
+  {
+   "fetch_from": "job_details.date_generated",
+   "fieldname": "date_generated",
+   "fieldtype": "Data",
+   "label": "Delivery Date & Time"
+  },
+  {
+   "fetch_from": "job_details.gross_weight",
+   "fieldname": "gross_weight",
+   "fieldtype": "Data",
+   "label": "Gross Weight"
+  },
+  {
+   "fieldname": "section_break_wobf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "job_details.cargo_description",
+   "fieldname": "description_of_goods",
+   "fieldtype": "Data",
+   "label": "Description of Goods"
+  },
+  {
+   "fetch_from": "job_details.number_of_packages",
+   "fieldname": "number_of_packages",
+   "fieldtype": "Data",
+   "label": "Number of Packages"
+  },
+  {
+   "fieldname": "assigned_driver_name",
+   "fieldtype": "Data",
+   "label": "Assigned Driver Name"
+  },
+  {
+   "fetch_from": ".job_end_date",
+   "fieldname": "job_end_date",
+   "fieldtype": "Date",
+   "label": "Job End Date"
+  },
+  {
+   "fieldname": "assigned_vehicle_no",
+   "fieldtype": "Data",
+   "label": "Assigned Vehicle No"
+  },
+  {
+   "fetch_from": "job_details.pickup_location",
+   "fieldname": "loading_location",
+   "fieldtype": "Data",
+   "label": "Loading Location"
+  },
+  {
+   "fieldname": "column_break_neyp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "job_details.shipper_name",
+   "fieldname": "shipper_name",
+   "fieldtype": "Data",
+   "label": "Shipper Name"
+  },
+  {
+   "fetch_from": "job_details.bayan_number",
+   "fieldname": "bayan_no",
+   "fieldtype": "Data",
+   "label": "Bayan No"
+  },
+  {
+   "fieldname": "contact_no",
+   "fieldtype": "Phone",
+   "label": "Contact No"
+  },
+  {
+   "fetch_from": "job_details.job_end_time",
+   "fieldname": "job_end_time",
+   "fieldtype": "Time",
+   "label": "Job End Time"
+  },
+  {
+   "fieldname": "trailler_no",
+   "fieldtype": "Data",
+   "label": "Trailler No"
+  },
+  {
+   "fetch_from": "job_details.delivery_location",
+   "fieldname": "offloading_location",
+   "fieldtype": "Data",
+   "label": "Offloading Location"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-28 20:58:17.935180",
+ "modified_by": "Administrator",
+ "module": "Logistics",
+ "name": "POD",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

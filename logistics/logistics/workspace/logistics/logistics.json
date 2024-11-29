@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"NISfT_b0hT\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Logistics</span>\",\"col\":12}},{\"id\":\"WcV8JY7EDe\",\"type\":\"onboarding\",\"data\":{\"onboarding_name\":\"Logistics\",\"col\":12}},{\"id\":\"6v2pA-Vq2M\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"vSL_ieE7uW\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters</b></span>\",\"col\":12}},{\"id\":\"9l_cVj1YE4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Details\",\"col\":3}},{\"id\":\"2Z8WqbQpJb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Daily Log\",\"col\":3}},{\"id\":\"GLC3_gHt36\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Drivers\",\"col\":3}},{\"id\":\"glGaLNyXma\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Way Bill\",\"col\":3}},{\"id\":\"oPbCScO_jv\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Warehouse Rental\",\"col\":3}},{\"id\":\"OEwILcbv_E\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Logistics Dashboard\",\"col\":3}},{\"id\":\"OjWEioMvI1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Cargo Log\",\"col\":3}},{\"id\":\"EzdlCQI83x\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"sBiwIt1hdd\",\"type\":\"card\",\"data\":{\"card_name\":\"Shortcuts\",\"col\":4}},{\"id\":\"hsOqg6uq7o\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
+ "content": "[{\"id\":\"NISfT_b0hT\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Logistics</span>\",\"col\":12}},{\"id\":\"WcV8JY7EDe\",\"type\":\"onboarding\",\"data\":{\"onboarding_name\":\"Logistics\",\"col\":12}},{\"id\":\"6v2pA-Vq2M\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"vSL_ieE7uW\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters</b></span>\",\"col\":12}},{\"id\":\"9l_cVj1YE4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Details\",\"col\":3}},{\"id\":\"2Z8WqbQpJb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Daily Log\",\"col\":3}},{\"id\":\"GLC3_gHt36\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Drivers\",\"col\":3}},{\"id\":\"glGaLNyXma\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Way Bill\",\"col\":3}},{\"id\":\"oPbCScO_jv\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Warehouse Rental\",\"col\":3}},{\"id\":\"OEwILcbv_E\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Logistics Dashboard\",\"col\":3}},{\"id\":\"OjWEioMvI1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Cargo Log\",\"col\":3}},{\"id\":\"EzdlCQI83x\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"ZpSKEhFsMc\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"BL Creation\",\"col\":3}},{\"id\":\"dH24Dz6DTC\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"AWB Creation\",\"col\":3}},{\"id\":\"hT5WzPZUEx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Cargo Arrival Notification\",\"col\":3}},{\"id\":\"nE0RJqidKM\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Delivery Order-AIR\",\"col\":3}},{\"id\":\"EVhp12pCBE\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Delivery Order-Sea\",\"col\":3}},{\"id\":\"cxYkYVFlc9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bill of Ladding\",\"col\":3}},{\"id\":\"eXPcE5S6ih\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"POD\",\"col\":3}},{\"id\":\"ga8nW0N6WA\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Container Release Order\",\"col\":3}},{\"id\":\"xZDf9fNQqX\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Request Entry\",\"col\":3}},{\"id\":\"y9VVSV8gbs\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"sBiwIt1hdd\",\"type\":\"card\",\"data\":{\"card_name\":\"Shortcuts\",\"col\":4}},{\"id\":\"hsOqg6uq7o\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
  "creation": "2023-09-26 12:26:21.243756",
  "custom_blocks": [],
  "docstatus": 0,
@@ -89,7 +89,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-08-20 16:08:41.194616",
+ "modified": "2024-11-29 16:01:17.087781",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Logistics",
@@ -102,10 +102,42 @@
  "sequence_id": 5.0,
  "shortcuts": [
   {
+   "color": "Cyan",
+   "doc_view": "List",
+   "label": "Container Release Order",
+   "link_to": "Container Release Order",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
    "color": "Red",
    "doc_view": "List",
    "label": "Cargo Log",
    "link_to": "Cargo Log",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "label": "AWB Creation",
+   "link_to": "AWB Creation",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Payment Request Entry",
+   "link_to": "Payment Request Entry",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "BL Creation",
+   "link_to": "BL Creation",
    "stats_filter": "[]",
    "type": "DocType"
   },
@@ -118,11 +150,35 @@
    "type": "DocType"
   },
   {
+   "color": "Pink",
+   "doc_view": "List",
+   "label": "Cargo Arrival Notification",
+   "link_to": "Cargo Arrival Notification",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Orange",
+   "doc_view": "List",
+   "label": "Delivery Order-AIR",
+   "link_to": "Delivery Order-AIR",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
    "color": "Grey",
    "doc_view": "List",
    "label": "Logistics Dashboard",
    "link_to": "Logistics Dashboard",
    "type": "Dashboard"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "label": "Delivery Order-Sea",
+   "link_to": "Delivery Order-Sea",
+   "stats_filter": "[]",
+   "type": "DocType"
   },
   {
    "color": "Grey",
@@ -137,6 +193,22 @@
    "doc_view": "New",
    "label": "New Way Bill",
    "link_to": "Way Bill",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Bill of Ladding",
+   "link_to": "Bill of Ladding",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "POD",
+   "link_to": "POD",
    "stats_filter": "[]",
    "type": "DocType"
   },
