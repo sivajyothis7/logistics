@@ -13,7 +13,6 @@
   "shippers_account_no",
   "shipper",
   "company",
-  "column_break_fdry",
   "hawb_no",
   "consignee_ac_no",
   "consignee",
@@ -37,10 +36,6 @@
    "fieldtype": "Link",
    "label": "Job Details",
    "options": "Job Details"
-  },
-  {
-   "fieldname": "column_break_fdry",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "hawb_no",
@@ -144,7 +139,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-28 20:15:53.622808",
+ "modified": "2024-11-29 16:06:43.607946",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "AWB Creation",
