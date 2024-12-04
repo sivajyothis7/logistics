@@ -19,6 +19,7 @@
   "months_rented",
   "column_break_xuig",
   "rent_space",
+  "warehouse",
   "section_break_ktfz",
   "rent_start_date",
   "rental_rate",
@@ -131,11 +132,17 @@
    "fieldname": "rent_space",
    "fieldtype": "Float",
    "label": "Rent Space"
+  },
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse",
+   "options": "Warehouse Management"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-12-29 16:05:54.104534",
+ "modified": "2024-12-03 14:51:50.538827",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Warehouse Rental",

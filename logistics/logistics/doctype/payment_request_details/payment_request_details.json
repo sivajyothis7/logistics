@@ -7,6 +7,8 @@
  "engine": "InnoDB",
  "field_order": [
   "waybill_number",
+  "mode",
+  "sales_person",
   "party_type",
   "party_name",
   "amount"
@@ -36,12 +38,24 @@
    "fieldname": "amount",
    "fieldtype": "Currency",
    "label": "Amount"
+  },
+  {
+   "fieldname": "mode",
+   "fieldtype": "Select",
+   "label": "Mode",
+   "options": "Cash\nTransfer"
+  },
+  {
+   "fieldname": "sales_person",
+   "fieldtype": "Link",
+   "label": "Sales Person",
+   "options": "Employee"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-11-29 15:51:02.840254",
+ "modified": "2024-12-03 09:45:18.117960",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Payment Request Details",

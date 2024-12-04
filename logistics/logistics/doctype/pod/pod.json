@@ -57,19 +57,19 @@
    "reqd": 1
   },
   {
-   "fetch_from": "job_details.job_id",
+   "fetch_from": "job_details.customer",
    "fieldname": "customer_name",
    "fieldtype": "Data",
    "label": "Customer Name"
   },
   {
-   "fetch_from": "job_details.hawbl_number",
+   "fetch_from": ".hawbl_number",
    "fieldname": "hawbl_number",
    "fieldtype": "Data",
    "label": "HAWBL Number"
   },
   {
-   "fetch_from": "job_details.hbl_number",
+   "fetch_from": ".",
    "fieldname": "hbl_number",
    "fieldtype": "Data",
    "label": "HBL Number "
@@ -81,19 +81,19 @@
    "label": "Contact Person"
   },
   {
-   "fetch_from": "job_details.delivery_location",
+   "fetch_from": ".delivery_location",
    "fieldname": "delivery_location",
    "fieldtype": "Data",
    "label": "Delivery Location"
   },
   {
-   "fetch_from": "job_details.net_weight",
+   "fetch_from": ".net_weight",
    "fieldname": "net_weight",
    "fieldtype": "Data",
    "label": "Net Weight"
   },
   {
-   "fetch_from": "job_details.sales_person",
+   "fetch_from": ".sales_person",
    "fieldname": "sales_person",
    "fieldtype": "Data",
    "label": "Sales Person"
@@ -117,25 +117,25 @@
    "label": "Date"
   },
   {
-   "fetch_from": "job_details.mode_of_transport",
+   "fetch_from": ".mode_of_transport",
    "fieldname": "mode_of_transport",
    "fieldtype": "Data",
    "label": "Mode of Transport"
   },
   {
-   "fetch_from": "job_details.mawbl_number",
+   "fetch_from": ".mawbl_number",
    "fieldname": "mawbl_number",
    "fieldtype": "Data",
    "label": "MAWBL Number"
   },
   {
-   "fetch_from": "job_details.mbl_number",
+   "fetch_from": ".mbl_number",
    "fieldname": "mbl_number",
    "fieldtype": "Data",
    "label": "MBL Number"
   },
   {
-   "fetch_from": "job_details.container_no",
+   "fetch_from": ".container_no",
    "fieldname": "container_no",
    "fieldtype": "Data",
    "label": "Container No"
@@ -147,13 +147,13 @@
    "label": "Contact Number"
   },
   {
-   "fetch_from": "job_details.date_generated",
+   "fetch_from": ".date_generated",
    "fieldname": "date_generated",
    "fieldtype": "Data",
    "label": "Delivery Date & Time"
   },
   {
-   "fetch_from": "job_details.gross_weight",
+   "fetch_from": ".gross_weight",
    "fieldname": "gross_weight",
    "fieldtype": "Data",
    "label": "Gross Weight"
@@ -163,13 +163,13 @@
    "fieldtype": "Section Break"
   },
   {
-   "fetch_from": "job_details.cargo_description",
+   "fetch_from": ".cargo_description",
    "fieldname": "description_of_goods",
    "fieldtype": "Data",
    "label": "Description of Goods"
   },
   {
-   "fetch_from": "job_details.number_of_packages",
+   "fetch_from": ".number_of_packages",
    "fieldname": "number_of_packages",
    "fieldtype": "Data",
    "label": "Number of Packages"
@@ -191,7 +191,7 @@
    "label": "Assigned Vehicle No"
   },
   {
-   "fetch_from": "job_details.pickup_location",
+   "fetch_from": ".pickup_location",
    "fieldname": "loading_location",
    "fieldtype": "Data",
    "label": "Loading Location"
@@ -201,13 +201,13 @@
    "fieldtype": "Column Break"
   },
   {
-   "fetch_from": "job_details.shipper_name",
+   "fetch_from": ".shipper_name",
    "fieldname": "shipper_name",
    "fieldtype": "Data",
    "label": "Shipper Name"
   },
   {
-   "fetch_from": "job_details.bayan_number",
+   "fetch_from": ".bayan_number",
    "fieldname": "bayan_no",
    "fieldtype": "Data",
    "label": "Bayan No"
@@ -218,7 +218,7 @@
    "label": "Contact No"
   },
   {
-   "fetch_from": "job_details.job_end_time",
+   "fetch_from": ".job_end_time",
    "fieldname": "job_end_time",
    "fieldtype": "Time",
    "label": "Job End Time"
@@ -229,7 +229,7 @@
    "label": "Trailler No"
   },
   {
-   "fetch_from": "job_details.delivery_location",
+   "fetch_from": ".delivery_location",
    "fieldname": "offloading_location",
    "fieldtype": "Data",
    "label": "Offloading Location"
@@ -237,7 +237,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-28 20:58:17.935180",
+ "modified": "2024-12-04 10:53:04.877571",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "POD",

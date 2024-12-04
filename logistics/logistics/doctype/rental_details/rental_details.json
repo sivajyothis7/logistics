@@ -1,0 +1,44 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-12-03 16:14:40.028409",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "warehouse_rental",
+  "total_amount",
+  "invoice_number"
+ ],
+ "fields": [
+  {
+   "fieldname": "warehouse_rental",
+   "fieldtype": "Link",
+   "label": "Warehouse Rental",
+   "options": "Warehouse Rental"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount"
+  },
+  {
+   "fieldname": "invoice_number",
+   "fieldtype": "Link",
+   "label": "Invoice Number",
+   "options": "Sales Invoice"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-12-03 16:14:40.028409",
+ "modified_by": "Administrator",
+ "module": "Logistics",
+ "name": "Rental Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

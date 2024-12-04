@@ -1,0 +1,111 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:WH-{warehouse_name}-{####}",
+ "creation": "2024-12-03 14:17:07.334533",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "warehouse_name",
+  "warehouse_type",
+  "total_space",
+  "contact_person",
+  "column_break_q9lt",
+  "warehouse_id",
+  "status",
+  "total_rent",
+  "contact_number",
+  "section_break_jhsj",
+  "rental_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "warehouse_name",
+   "fieldtype": "Data",
+   "label": "Warehouse Name"
+  },
+  {
+   "fieldname": "warehouse_id",
+   "fieldtype": "Select",
+   "label": "Warehouse ID"
+  },
+  {
+   "fieldname": "warehouse_type",
+   "fieldtype": "Select",
+   "label": "Warehouse Type",
+   "options": "Owned\n3rd Party"
+  },
+  {
+   "fieldname": "total_space",
+   "fieldtype": "Float",
+   "label": "Total Space"
+  },
+  {
+   "fieldname": "total_rent",
+   "fieldtype": "Currency",
+   "label": "Total Rent"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Available\nPartially Occupied\nFully Occupied"
+  },
+  {
+   "fieldname": "column_break_q9lt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contact_person",
+   "fieldtype": "Data",
+   "label": "Contact Person"
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number"
+  },
+  {
+   "fieldname": "section_break_jhsj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "rental_details",
+   "fieldtype": "Table",
+   "options": "Rental Details"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "group": "Rental",
+   "link_doctype": "Warehouse Rental",
+   "link_fieldname": "warehouse"
+  }
+ ],
+ "modified": "2024-12-03 16:16:36.879689",
+ "modified_by": "Administrator",
+ "module": "Logistics",
+ "name": "Warehouse Management",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
