@@ -1,3 +1,6 @@
+# Copyright (c) 2023, siva and contributors
+# For license information, please see license.txt
+
 import frappe
 from frappe.utils import date_diff
 from frappe.model.document import Document
@@ -25,7 +28,6 @@ def generate_invoice(docname):
         else:
             doc.calculate_total_amount()
 
-            # Generate the Sales Invoice
             invoice = frappe.get_doc({
                 "doctype": "Sales Invoice",
                 "customer": doc.customer,
@@ -45,25 +47,8 @@ def generate_invoice(docname):
             invoice.insert(ignore_permissions=True)
             frappe.msgprint(f"Sales Invoice generated successfully: {invoice.name}")
 
-            # Update the Warehouse Rental document with the invoice number
             doc.invoice_number = invoice.name
             doc.save(ignore_permissions=True)
-
-            # Now, append the total_amount, warehouse_rental docname, and invoice_number to the child table in Warehouse Management
-            if doc.warehouse:
-                warehouse_mgmt = frappe.get_doc('Warehouse Management', doc.warehouse)
-
-                if warehouse_mgmt:
-                    # Append to the child table in Warehouse Management
-                    warehouse_mgmt.append('rental_details', {
-                        'warehouse_rental': doc.name,  # Link to Warehouse Rental document
-                        'total_amount': doc.total_amount,  # Total rent from the Warehouse Rental
-                        'invoice_number': invoice.name  # Invoice number generated
-                    })
-
-                    warehouse_mgmt.save()
-
-                    frappe.msgprint(f"Rental details added to Warehouse Management. Total Rent: {doc.total_amount}, Invoice: {invoice.name}")
 
             return doc.invoice_number
     else:
