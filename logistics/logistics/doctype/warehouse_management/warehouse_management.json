@@ -12,11 +12,13 @@
   "warehouse_type",
   "total_space",
   "contact_person",
+  "occupied_space",
   "column_break_q9lt",
   "warehouse_id",
   "status",
   "total_rent",
   "contact_number",
+  "remaining_space",
   "section_break_jhsj",
   "rental_details"
  ],
@@ -75,6 +77,16 @@
    "fieldname": "rental_details",
    "fieldtype": "Table",
    "options": "Rental Details"
+  },
+  {
+   "fieldname": "occupied_space",
+   "fieldtype": "Float",
+   "label": "Occupied Space"
+  },
+  {
+   "fieldname": "remaining_space",
+   "fieldtype": "Float",
+   "label": "Remaining Space"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -85,7 +97,7 @@
    "link_fieldname": "warehouse"
   }
  ],
- "modified": "2024-12-03 16:16:36.879689",
+ "modified": "2024-12-05 15:10:38.838677",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Warehouse Management",
