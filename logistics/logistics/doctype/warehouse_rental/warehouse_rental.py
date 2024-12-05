@@ -1,3 +1,6 @@
+# Copyright (c) 2023, siva and contributors
+# For license information, please see license.txt
+
 import frappe
 from frappe.utils import date_diff
 from frappe.model.document import Document
@@ -9,12 +12,6 @@ class WarehouseRental(Document):
         self.total_amount = self.rental_rate * self.rent_space * months_rented
 
     def validate(self):
-        if self.warehouse:
-            warehouse_mgmt = frappe.get_doc('Warehouse Management', self.warehouse)
-            if warehouse_mgmt:
-                if self.rent_space > warehouse_mgmt.remaining_space:
-                    frappe.throw(f"The rent space {self.rent_space} exceeds the available space in Warehouse Management ({warehouse_mgmt.remaining_space}). Please adjust the rent space.")
-
         self.calculate_total_amount()
 
 @frappe.whitelist()
@@ -52,22 +49,6 @@ def generate_invoice(docname):
 
             doc.invoice_number = invoice.name
             doc.save(ignore_permissions=True)
-
-            if doc.warehouse:
-                warehouse_mgmt = frappe.get_doc('Warehouse Management', doc.warehouse)
-
-                if warehouse_mgmt:
-                    warehouse_mgmt.append('rental_details', {
-                        'warehouse_rental': doc.name,  
-                        'total_amount': doc.total_amount,  
-                        'invoice_number': invoice.name,
-                        'rent_space': doc.rent_space,
-                        'current_status': doc.status, 
-                    })
-
-                    warehouse_mgmt.save()
-
-                    frappe.msgprint(f"Rental details added to Warehouse Management. Total Rent: {doc.total_amount}, Invoice: {invoice.name}")
 
             return doc.invoice_number
     else:
