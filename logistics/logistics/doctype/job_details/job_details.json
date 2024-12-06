@@ -17,6 +17,25 @@
   "date",
   "customer",
   "total_expense",
+  "job_information_section",
+  "hbl",
+  "awb_no",
+  "container_no",
+  "chargeable_weight",
+  "origin",
+  "shipper",
+  "vessel",
+  "agent",
+  "column_break_vulm",
+  "mbl",
+  "carrier",
+  "container_type",
+  "item_description",
+  "destination",
+  "consignee",
+  "bayan_no",
+  "arrival_date",
+  "departure_date",
   "driver_data_section",
   "vehicle",
   "amended_from"
@@ -95,6 +114,106 @@
    "fieldtype": "Select",
    "label": "Status",
    "options": "\nOpen\nQuoted\nIn progress\nClosed"
+  },
+  {
+   "fieldname": "job_information_section",
+   "fieldtype": "Section Break",
+   "label": "Job Information"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_transport=='Sea'",
+   "fieldname": "hbl",
+   "fieldtype": "Data",
+   "label": "HBL"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_transport=='Air'",
+   "fieldname": "awb_no",
+   "fieldtype": "Data",
+   "label": "AWB No"
+  },
+  {
+   "fieldname": "container_no",
+   "fieldtype": "Data",
+   "label": "Container No"
+  },
+  {
+   "fieldname": "chargeable_weight",
+   "fieldtype": "Data",
+   "label": "Chargeable Weight"
+  },
+  {
+   "fieldname": "origin",
+   "fieldtype": "Data",
+   "label": "Origin"
+  },
+  {
+   "fieldname": "shipper",
+   "fieldtype": "Data",
+   "label": "Shipper"
+  },
+  {
+   "fieldname": "vessel",
+   "fieldtype": "Data",
+   "label": "Vessel"
+  },
+  {
+   "fieldname": "departure_date",
+   "fieldtype": "Date",
+   "label": "Departure Date"
+  },
+  {
+   "fieldname": "agent",
+   "fieldtype": "Data",
+   "label": "Agent"
+  },
+  {
+   "fieldname": "column_break_vulm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_transport=='Sea'",
+   "fieldname": "mbl",
+   "fieldtype": "Data",
+   "label": "MBL"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_transport=='Air'",
+   "fieldname": "carrier",
+   "fieldtype": "Data",
+   "label": "Carrier"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_transport=='Sea'",
+   "fieldname": "container_type",
+   "fieldtype": "Data",
+   "label": "Container Type"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_transport=='Air'",
+   "fieldname": "item_description",
+   "fieldtype": "Data",
+   "label": "Item Description"
+  },
+  {
+   "fieldname": "destination",
+   "fieldtype": "Data",
+   "label": "Destination"
+  },
+  {
+   "fieldname": "consignee",
+   "fieldtype": "Data",
+   "label": "Consignee"
+  },
+  {
+   "fieldname": "bayan_no",
+   "fieldtype": "Data",
+   "label": "Bayan No"
+  },
+  {
+   "fieldname": "arrival_date",
+   "fieldtype": "Date",
+   "label": "Arrival Date"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -121,7 +240,7 @@
    "link_fieldname": "custom_job_details"
   }
  ],
- "modified": "2024-11-25 13:10:00.751100",
+ "modified": "2024-12-06 14:08:27.825138",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Job Details",

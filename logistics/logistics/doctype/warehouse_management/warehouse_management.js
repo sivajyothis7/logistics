@@ -1,30 +1,28 @@
 frappe.ui.form.on('Warehouse Management', {
-    // refresh: function(frm) {
-    //     frm.trigger('calculate_total_rent');
-    //     frm.trigger('calculate_occupied_space');
-    //     // frm.save();
-    // },
-
-    validate: function(frm) {
+    refresh: function (frm) {
         frm.trigger('calculate_total_rent');
         frm.trigger('calculate_occupied_space');
-e
     },
 
-    calculate_total_rent: function(frm) {
+    validate: function (frm) {
+        frm.trigger('calculate_total_rent');
+        frm.trigger('calculate_occupied_space');
+    },
+
+    calculate_total_rent: function (frm) {
         let total_rent = 0;
 
-        frm.doc.rental_details.forEach(function(row) {
+        (frm.doc.rental_details || []).forEach(function (row) {
             total_rent += row.total_amount || 0;
         });
 
         frm.set_value('total_rent', total_rent);
     },
 
-    calculate_occupied_space: function(frm) {
+    calculate_occupied_space: function (frm) {
         let total_occupied_space = 0;
 
-        frm.doc.rental_details.forEach(function(row) {
+        (frm.doc.rental_details || []).forEach(function (row) {
             if (row.current_status === 'Occupied') {
                 total_occupied_space += row.rent_space || 0;
             }
