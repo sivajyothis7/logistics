@@ -108,5 +108,16 @@
   "name": "table hide",
   "script": "// frappe.ui.form.on(\"Sales Order\",{\n//     before_load: function(frm) {\n//         var df = frappe.meta.get_docfield(\"Sales Order Item\", 'rate',frm.doc.name);\n//         if (frappe.user.has_role('Sales User') == 1) {\n//             df.read_only = 1;\n//         }\n//         frm.refresh_fields();\n//     }\n// });\n\nfrappe.ui.form.on(\"Sales Order\", {\n    before_load: function(frm) {\n        var df = frappe.meta.get_docfield(\"Sales Order Item\", 'rate', frm.doc.name);\n        df.read_only = 1;\n        frm.refresh_fields();\n    }\n});\n",
   "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Job Details",
+  "enabled": 1,
+  "modified": "2024-12-10 13:19:46.710701",
+  "module": "Logistics",
+  "name": "Land Mode",
+  "script": "frappe.ui.form.on('Job Details', {\n    mode_of_transport: function (frm) {\n        const fields_to_toggle = [\n            'hbl',\n            'mbl',\n            'awb_no',\n            'carrier',\n            'container_no',\n            'container_type',\n            'chargeable_weight',\n            'item_description',\n            'shipper',\n            'vessel'\n        ];\n\n        if (frm.doc.mode_of_transport === 'Road') {\n            fields_to_toggle.forEach(field => {\n                frm.set_df_property(field, 'hidden', true);\n            });\n        } else {\n            fields_to_toggle.forEach(field => {\n                frm.set_df_property(field, 'hidden', false);\n            });\n        }\n    }\n});\n",
+  "view": "Form"
  }
 ]

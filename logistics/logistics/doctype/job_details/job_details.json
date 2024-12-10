@@ -25,7 +25,8 @@
   "origin",
   "shipper",
   "vessel",
-  "agent",
+  "arrival_date",
+  "departure_date",
   "column_break_vulm",
   "mbl",
   "carrier",
@@ -34,8 +35,7 @@
   "destination",
   "consignee",
   "bayan_no",
-  "arrival_date",
-  "departure_date",
+  "agent",
   "driver_data_section",
   "vehicle",
   "amended_from"
@@ -133,11 +133,13 @@
    "label": "AWB No"
   },
   {
+   "depends_on": "eval:doc.mode_of_transport=='Sea'",
    "fieldname": "container_no",
    "fieldtype": "Data",
    "label": "Container No"
   },
   {
+   "depends_on": "eval:doc.mode_of_transport=='Air'",
    "fieldname": "chargeable_weight",
    "fieldtype": "Data",
    "label": "Chargeable Weight"
@@ -153,6 +155,7 @@
    "label": "Shipper"
   },
   {
+   "depends_on": "eval:doc.mode_of_transport=='Sea'",
    "fieldname": "vessel",
    "fieldtype": "Data",
    "label": "Vessel"
@@ -238,9 +241,14 @@
    "group": "Quotation",
    "link_doctype": "Quotation",
    "link_fieldname": "custom_job_details"
+  },
+  {
+   "group": "Invoice Details",
+   "link_doctype": "Purchase Invoice",
+   "link_fieldname": "custom_job_number"
   }
  ],
- "modified": "2024-12-06 14:08:27.825138",
+ "modified": "2024-12-10 13:18:46.504082",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Job Details",
