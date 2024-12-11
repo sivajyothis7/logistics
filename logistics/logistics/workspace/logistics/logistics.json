@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"NISfT_b0hT\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Logistics</span>\",\"col\":12}},{\"id\":\"WcV8JY7EDe\",\"type\":\"onboarding\",\"data\":{\"onboarding_name\":\"Logistics\",\"col\":12}},{\"id\":\"6v2pA-Vq2M\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"vSL_ieE7uW\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters</b></span>\",\"col\":12}},{\"id\":\"9l_cVj1YE4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Details\",\"col\":3}},{\"id\":\"2Z8WqbQpJb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Daily Log\",\"col\":3}},{\"id\":\"GLC3_gHt36\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Drivers\",\"col\":3}},{\"id\":\"glGaLNyXma\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Way Bill\",\"col\":3}},{\"id\":\"oPbCScO_jv\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Warehouse Rental\",\"col\":3}},{\"id\":\"OEwILcbv_E\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Logistics Dashboard\",\"col\":3}},{\"id\":\"OjWEioMvI1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Cargo Log\",\"col\":3}},{\"id\":\"EzdlCQI83x\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"ZpSKEhFsMc\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"BL Creation\",\"col\":3}},{\"id\":\"dH24Dz6DTC\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"AWB Creation\",\"col\":3}},{\"id\":\"hT5WzPZUEx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Cargo Arrival Notification\",\"col\":3}},{\"id\":\"nE0RJqidKM\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Delivery Order-AIR\",\"col\":3}},{\"id\":\"EVhp12pCBE\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Delivery Order-Sea\",\"col\":3}},{\"id\":\"cxYkYVFlc9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bill of Ladding\",\"col\":3}},{\"id\":\"eXPcE5S6ih\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"POD\",\"col\":3}},{\"id\":\"ga8nW0N6WA\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Container Release Order\",\"col\":3}},{\"id\":\"xZDf9fNQqX\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Request Entry\",\"col\":3}},{\"id\":\"y9VVSV8gbs\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"sBiwIt1hdd\",\"type\":\"card\",\"data\":{\"card_name\":\"Shortcuts\",\"col\":4}},{\"id\":\"hsOqg6uq7o\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
+ "content": "[{\"id\":\"NISfT_b0hT\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Logistics</span>\",\"col\":12}},{\"id\":\"WcV8JY7EDe\",\"type\":\"onboarding\",\"data\":{\"onboarding_name\":\"Logistics\",\"col\":12}},{\"id\":\"6v2pA-Vq2M\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"vSL_ieE7uW\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters</b></span>\",\"col\":12}},{\"id\":\"9l_cVj1YE4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Details\",\"col\":3}},{\"id\":\"2Z8WqbQpJb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Daily Log\",\"col\":3}},{\"id\":\"GLC3_gHt36\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Drivers\",\"col\":3}},{\"id\":\"glGaLNyXma\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Way Bill\",\"col\":3}},{\"id\":\"oPbCScO_jv\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Warehouse Rental\",\"col\":3}},{\"id\":\"OEwILcbv_E\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Logistics Dashboard\",\"col\":3}},{\"id\":\"OjWEioMvI1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Cargo Log\",\"col\":3}},{\"id\":\"EzdlCQI83x\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"ZpSKEhFsMc\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"BL Creation\",\"col\":3}},{\"id\":\"dH24Dz6DTC\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"AWB Creation\",\"col\":3}},{\"id\":\"hT5WzPZUEx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Cargo Arrival Notification\",\"col\":3}},{\"id\":\"nE0RJqidKM\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Delivery Order-AIR\",\"col\":3}},{\"id\":\"EVhp12pCBE\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Delivery Order-Sea\",\"col\":3}},{\"id\":\"cxYkYVFlc9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bill of Ladding\",\"col\":3}},{\"id\":\"eXPcE5S6ih\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"POD\",\"col\":3}},{\"id\":\"ga8nW0N6WA\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Container Release Order\",\"col\":3}},{\"id\":\"xZDf9fNQqX\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Request Entry\",\"col\":3}},{\"id\":\"y9VVSV8gbs\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"sBiwIt1hdd\",\"type\":\"card\",\"data\":{\"card_name\":\"Shortcuts\",\"col\":4}}]",
  "creation": "2023-09-26 12:26:21.243756",
  "custom_blocks": [],
  "docstatus": 0,
@@ -12,42 +12,6 @@
  "is_hidden": 0,
  "label": "Logistics",
  "links": [
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Shortcuts",
-   "link_count": 3,
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Sales Invoice",
-   "link_count": 0,
-   "link_to": "Sales Invoice",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Sales Order",
-   "link_count": 0,
-   "link_to": "Sales Order",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Reports",
-   "link_count": 4,
-   "onboard": 0,
-   "type": "Card Break"
-  },
   {
    "hidden": 0,
    "is_query_report": 1,
@@ -87,9 +51,47 @@
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Shortcuts",
+   "link_count": 3,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sales Invoice",
+   "link_count": 0,
+   "link_to": "Sales Invoice",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sales Order",
+   "link_count": 0,
+   "link_to": "Sales Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Job Details Metrics",
+   "link_count": 0,
+   "link_to": "Job Details Metrics",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-12-06 14:31:35.541794",
+ "modified": "2024-12-10 15:14:06.659187",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Logistics",

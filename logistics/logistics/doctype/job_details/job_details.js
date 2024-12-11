@@ -110,10 +110,10 @@ frappe.ui.form.on("Job Details", {
 
     status: function (frm) {
         if (frm.profit_and_loss !== undefined && frm.total_sales_invoice !== undefined) {
-            let threshold = 0.3 * frm.total_sales_invoice;
+            let threshold = 0.2 * frm.total_sales_invoice;
 
             if (frm.profit_and_loss < threshold && frm.doc.status === "Closed") {
-                frappe.msgprint(__('Profit & Loss is less than 30% of the total sales. Cannot mark the job as Closed.'));
+                frappe.msgprint(__('Profit & Loss is less than 20% of the total sales. Cannot mark the job as Closed.'));
                 frm.set_value('status', 'In progress');
                 setTimeout(function () {
                     frm.save();
