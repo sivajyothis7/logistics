@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"kuX2KQIpK6\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Ware House</span>\",\"col\":12}},{\"id\":\"KbgbAkr1cX\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Warehouse Management\",\"col\":3}},{\"id\":\"la70l7S-tH\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Warehouse Rental\",\"col\":3}}]",
+ "content": "[{\"id\":\"kuX2KQIpK6\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Ware House</span>\",\"col\":12}},{\"id\":\"KbgbAkr1cX\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Warehouse Management\",\"col\":3}},{\"id\":\"la70l7S-tH\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Warehouse Rental\",\"col\":3}},{\"id\":\"n3OW2jQiYx\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"rwstG_Vs9l\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Warehouse Register\",\"col\":3}},{\"id\":\"JrS4kB7wZO\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Warehouse Register Report\",\"col\":3}}]",
  "creation": "2024-12-06 14:31:22.466627",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Ware House",
  "links": [],
- "modified": "2024-12-06 14:33:44.309345",
+ "modified": "2024-12-17 18:38:45.977528",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Ware House",
@@ -25,6 +25,21 @@
  "roles": [],
  "sequence_id": 8.0,
  "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Warehouse Register Report",
+   "link_to": "Warehouse Register Report",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Warehouse Register",
+   "link_to": "Warehouse Register",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
   {
    "color": "Green",
    "doc_view": "List",

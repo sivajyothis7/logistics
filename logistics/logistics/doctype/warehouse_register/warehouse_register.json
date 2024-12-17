@@ -1,0 +1,99 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{warehouse_name}-{posting_date}-{###}",
+ "creation": "2024-12-11 14:53:55.363525",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "warehouse_name",
+  "customer",
+  "column_break_pkkl",
+  "posting_date",
+  "section_break_zhst",
+  "total_billing_space_used",
+  "column_break_xgpf",
+  "sales_person",
+  "section_break_kwxd",
+  "activities"
+ ],
+ "fields": [
+  {
+   "fieldname": "warehouse_name",
+   "fieldtype": "Link",
+   "label": "Warehouse Name",
+   "options": "Warehouse Management"
+  },
+  {
+   "fieldname": "column_break_pkkl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "section_break_zhst",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_billing_space_used",
+   "fieldtype": "Float",
+   "label": "Total Billing Space Used"
+  },
+  {
+   "fieldname": "column_break_xgpf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sales_person",
+   "fieldtype": "Link",
+   "label": "Sales Person",
+   "options": "Sales Person"
+  },
+  {
+   "fieldname": "section_break_kwxd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "activities",
+   "fieldtype": "Table",
+   "label": "Warehouse Activity",
+   "options": "Warehouse Activity"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-12-17 18:23:49.564102",
+ "modified_by": "Administrator",
+ "module": "Logistics",
+ "name": "Warehouse Register",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
