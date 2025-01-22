@@ -3,9 +3,9 @@ frappe.ui.form.on('Drivers', {
         if (!frm.doc.__islocal && !frm.__is_reloaded) {
             calculate_totals(frm);
         }
-        if(!frm.doc.__islocal){
-            frm.events.set_dashboard_indicators(frm);
-        }
+        // if(!frm.doc.__islocal){
+        //     frm.events.set_dashboard_indicators(frm);
+        // }
         add_custom_button(frm);
     },
     set_dashboard_indicators: function (frm) {
