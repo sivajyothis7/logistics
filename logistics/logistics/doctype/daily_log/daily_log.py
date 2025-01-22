@@ -2,11 +2,19 @@ import frappe
 from frappe.model.document import Document
 
 class DailyLog(Document):
-    
     def on_update(self):
-        # Get the driver document associated with this daily log
-        driver_doc = frappe.get_doc("Drivers", self.driver)
-        
+        # Check if a driver is associated with this daily log
+        if not self.driver:
+            frappe.msgprint("No driver associated with this daily log. Form saved without updating driver data.")
+            return
+
+        try:
+            # Get the driver document associated with this daily log
+            driver_doc = frappe.get_doc("Drivers", self.driver)
+        except frappe.DoesNotExistError:
+            frappe.msgprint(f"Driver with ID '{self.driver}' does not exist. Form saved without updating driver data.")
+            return
+
         # Find if there is already payment data for this daily log in the driver document
         existing_payment_data = next((data for data in driver_doc.payment_data if data.daily_log == self.name), None)
 
@@ -37,6 +45,7 @@ class DailyLog(Document):
         # Provide feedback to the user
         driver_link = frappe.utils.get_link_to_form(driver_doc.doctype, self.driver)
         frappe.msgprint(f"Driver Payment Data updated successfully for Driver: {driver_link}")
+
 
     
 @frappe.whitelist()
