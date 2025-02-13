@@ -31,6 +31,13 @@
   "section_break_kml0",
   "notes",
   "tab_2_tab",
+  "rate_finder_section",
+  "route_name",
+  "from_location",
+  "to_location",
+  "column_break_evod",
+  "driver_rate_rate_finder",
+  "company_rate_rate_finder",
   "logistics_section",
   "from",
   "company_rate",
@@ -255,6 +262,45 @@
    "fieldname": "wasiqa_charges",
    "fieldtype": "Data",
    "label": "Wasiqa Charges"
+  },
+  {
+   "fieldname": "rate_finder_section",
+   "fieldtype": "Section Break",
+   "label": "Rate Finder"
+  },
+  {
+   "fieldname": "route_name",
+   "fieldtype": "Link",
+   "label": "Route Name",
+   "options": "Rate Finder"
+  },
+  {
+   "fetch_from": "route_name.from_location",
+   "fieldname": "from_location",
+   "fieldtype": "Data",
+   "label": "From Location"
+  },
+  {
+   "fetch_from": "route_name.to_location",
+   "fieldname": "to_location",
+   "fieldtype": "Data",
+   "label": "To Location"
+  },
+  {
+   "fieldname": "column_break_evod",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "route_name.driver_rate",
+   "fieldname": "driver_rate_rate_finder",
+   "fieldtype": "Data",
+   "label": "Driver Rate Rate Finder"
+  },
+  {
+   "fetch_from": "route_name.company_rate",
+   "fieldname": "company_rate_rate_finder",
+   "fieldtype": "Data",
+   "label": "Company Rate Rate Finder"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -276,7 +322,7 @@
    "link_fieldname": "custom_daily_log"
   }
  ],
- "modified": "2024-12-17 18:44:17.279864",
+ "modified": "2025-02-13 09:28:41.070827",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Log",
