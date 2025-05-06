@@ -49,10 +49,10 @@ frappe.ui.form.on("Job Details", {
                             custom_job_number: frm.doc.name,
                             docstatus: 1,
                         },
-                        fields: ['base_grand_total', 'outstanding_amount'],
+                        fields: ['base_total', 'outstanding_amount'],
                     },
                     callback: function (response) {
-                        let purchaseInvoiceTotals = process_invoices(response.message, true, 'base_grand_total');
+                        let purchaseInvoiceTotals = process_invoices(response.message, true, 'base_total');
 
                         frappe.call({
                             method: 'frappe.client.get_list',
