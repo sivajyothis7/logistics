@@ -30,6 +30,32 @@
   "way_bill_data",
   "section_break_kml0",
   "notes",
+  "transport_data_tab",
+  "shipment_modes",
+  "consignee",
+  "shipper",
+  "chargeable_weight",
+  "shipment_type",
+  "clearance_agent",
+  "bl_no",
+  "delivery_needed",
+  "delivery_place",
+  "delivery_date",
+  "date_of_departure",
+  "date_of_arrival",
+  "column_break_sxlz",
+  "from_place",
+  "to_place",
+  "type",
+  "cost_price",
+  "selling_price",
+  "port_of_clearance",
+  "awb_no",
+  "booking_agent",
+  "waiting_charges_applicable",
+  "waiting_charge",
+  "container_no",
+  "item_details",
   "tab_2_tab",
   "rate_finder_section",
   "route_name",
@@ -301,6 +327,152 @@
    "fieldname": "company_rate_rate_finder",
    "fieldtype": "Data",
    "label": "Company Rate Rate Finder"
+  },
+  {
+   "fieldname": "transport_data_tab",
+   "fieldtype": "Tab Break",
+   "label": "Transport Data"
+  },
+  {
+   "fieldname": "shipment_modes",
+   "fieldtype": "Select",
+   "label": "Shipment Modes",
+   "options": "\nAIR\nCLEARENCE\nSEA FREIGHT\nLTL"
+  },
+  {
+   "depends_on": "eval:doc.job_type=='TRANSPORTATION'\n",
+   "fieldname": "consignee",
+   "fieldtype": "Data",
+   "label": "Consignee"
+  },
+  {
+   "depends_on": "eval:doc.shipment_modes=='AIR'\n",
+   "fieldname": "shipper",
+   "fieldtype": "Data",
+   "label": "Shipper"
+  },
+  {
+   "fieldname": "cost_price",
+   "fieldtype": "Currency",
+   "label": "Cost Price"
+  },
+  {
+   "depends_on": "eval:doc.shipment_modes=='AIR'\n",
+   "fieldname": "shipment_type",
+   "fieldtype": "Select",
+   "label": "Shipment Type",
+   "options": "\nAIR\nFCL\nLCL"
+  },
+  {
+   "fieldname": "clearance_agent",
+   "fieldtype": "Data",
+   "label": "Clearance Agent"
+  },
+  {
+   "depends_on": "eval:doc.shipment_type==\"FCL\" || doc.shipment_type==\"LCL\"\n",
+   "fieldname": "bl_no",
+   "fieldtype": "Data",
+   "label": "BL No"
+  },
+  {
+   "default": "0",
+   "fieldname": "delivery_needed",
+   "fieldtype": "Check",
+   "label": "Delivery Needed"
+  },
+  {
+   "depends_on": "eval:doc.delivery_needed==1\n",
+   "fieldname": "delivery_place",
+   "fieldtype": "Data",
+   "label": "Delivery Place"
+  },
+  {
+   "depends_on": "eval:doc.delivery_needed==1\n",
+   "fieldname": "delivery_date",
+   "fieldtype": "Datetime",
+   "label": "Delivery Date"
+  },
+  {
+   "fieldname": "date_of_departure",
+   "fieldtype": "Date",
+   "label": "Date of Departure"
+  },
+  {
+   "fieldname": "date_of_arrival",
+   "fieldtype": "Date",
+   "label": "Date of Arrival"
+  },
+  {
+   "fieldname": "column_break_sxlz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "from_place",
+   "fieldtype": "Data",
+   "label": "From Place"
+  },
+  {
+   "fieldname": "to_place",
+   "fieldtype": "Data",
+   "label": "To Place"
+  },
+  {
+   "depends_on": "eval:doc.shipment_modes=='AIR'\n",
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "\nImport\nExport"
+  },
+  {
+   "depends_on": "eval:doc.shipment_modes=='AIR'\n",
+   "fieldname": "chargeable_weight",
+   "fieldtype": "Data",
+   "label": "Chargeable Weight"
+  },
+  {
+   "fieldname": "selling_price",
+   "fieldtype": "Currency",
+   "label": "Selling Price"
+  },
+  {
+   "depends_on": "eval:doc.shipment_modes=='CLEARENCE'\n",
+   "fieldname": "port_of_clearance",
+   "fieldtype": "Data",
+   "label": "Port of Clearance"
+  },
+  {
+   "depends_on": "eval:doc.shipment_modes=='SEA FREIGHT'",
+   "fieldname": "booking_agent",
+   "fieldtype": "Data",
+   "label": "Booking Agent"
+  },
+  {
+   "depends_on": "eval:doc.shipment_type==\"AIR\" ",
+   "fieldname": "awb_no",
+   "fieldtype": "Data",
+   "label": "AWB No"
+  },
+  {
+   "default": "0",
+   "fieldname": "waiting_charges_applicable",
+   "fieldtype": "Check",
+   "label": "Waiting Charges Applicable"
+  },
+  {
+   "depends_on": "eval:doc.waiting_charges_applicable==1\n",
+   "fieldname": "waiting_charge",
+   "fieldtype": "Data",
+   "label": "Waiting Charge"
+  },
+  {
+   "fieldname": "container_no",
+   "fieldtype": "Data",
+   "label": "Container No"
+  },
+  {
+   "fieldname": "item_details",
+   "fieldtype": "Small Text",
+   "label": "Item Details"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -322,7 +494,7 @@
    "link_fieldname": "custom_daily_log"
   }
  ],
- "modified": "2025-02-13 09:28:41.070827",
+ "modified": "2025-11-04 15:11:47.238983",
  "modified_by": "Administrator",
  "module": "Logistics",
  "name": "Daily Log",
